@@ -1,2 +1,3 @@
 # 2.0
-localized test
+
+localized test.
