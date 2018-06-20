@@ -1,2 +1,2 @@
 # 2.0
-localized
+localized test
