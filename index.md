@@ -1,5 +1,5 @@
 ---
-title: Welcome to EvoStream Documentation
+title: EvoStreamドキュメントページ
 keywords: EMS
 sidebar: home_sidebar
 permalink: index.html
