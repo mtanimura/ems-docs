@@ -358,7 +358,7 @@ entries:
 
     folderitems:
     - title: Overview
-      url: /eventoverview.html
+      url: /eventsoverview.html
       output: web, pdf
 
     - title: Configuring Event Notifications
@@ -374,10 +374,10 @@ entries:
       output: web, pdf
 
     - title: Event List
-      url: /eventlist.html
+      url: /eventslist.html
       output: web, pdf
 
     - title: Event Definitions
-      url: /eventdefinition.html
+      url: /eventsdefinition.html
       output: web, pdf
 
