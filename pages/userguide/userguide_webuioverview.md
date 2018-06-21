@@ -1,5 +1,5 @@
 ---
-title: EMS Web UI Overview
+title: EMS Web UIの概要
 sidebar: userguide_sidebar
 permalink: userguide_webuioverview.html
 folder: userguide

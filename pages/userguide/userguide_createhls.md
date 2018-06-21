@@ -1,5 +1,5 @@
 ---
-title: Create HLS Stream
+title: HLSストリーム生成
 keywords: hls
 sidebar: userguide_sidebar
 permalink: userguide_createhls.html

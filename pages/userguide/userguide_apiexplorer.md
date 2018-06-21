@@ -1,5 +1,5 @@
 ---
-title: Using the API Explorer
+title: API Explorerについて
 keywords: API
 sidebar: userguide_sidebar
 permalink: userguide_apiexplorer.html

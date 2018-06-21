@@ -1,5 +1,5 @@
 ---
-title: Installation on Other OS
+title: その他のOSでのインストール
 sidebar: userguide_sidebar
 permalink: userguide_installotheros.html
 folder: userguide

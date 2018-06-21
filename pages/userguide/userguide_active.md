@@ -1,5 +1,5 @@
 ---
-title: Active Streams
+title: アクティブなストリーム
 keyword: liststreams
 sidebar: userguide_sidebar
 permalink: userguide_active.html

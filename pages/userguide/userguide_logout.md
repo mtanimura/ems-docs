@@ -1,5 +1,5 @@
 ---
-title: Log Out
+title: ログアウト
 Keywords: Logout
 sidebar: userguide_sidebar
 permalink: userguide_logout.html

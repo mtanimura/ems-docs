@@ -1,5 +1,5 @@
 ---
-title: Starting EvoStream Media Server
+title: EvoStream Media Serverの起動
 keyword: start ems
 sidebar: userguide_sidebar
 permalink: userguide_startems.html

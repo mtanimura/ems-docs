@@ -1,5 +1,5 @@
 ---
-title: Record a Stream
+title: ストリームRecord
 keywords: record
 sidebar: userguide_sidebar
 permalink: userguide_record.html
@@ -55,10 +55,10 @@ record localstreamname=myStream pathtofile=../media/myRecord type=mp4
 
 ```
 media:                           --> targetfolder
--testRecord.mp4.info             --> mp4 file on creation                     
--testRecord.mp4.mdat             --> mp4 file on creation               
--testRecord.mp4.track1           --> mp4 file on creation   
--testRecord.mp4.track2           --> mp4 file on creation   
+-testRecord.mp4.info             --> mp4 file on creation
+-testRecord.mp4.mdat             --> mp4 file on creation
+-testRecord.mp4.track1           --> mp4 file on creation
+-testRecord.mp4.track2           --> mp4 file on creation
 ```
 
 ストリームソースが終了または接続断となった場合、MP4ファイルはひとつにコンパイルされます:
@@ -74,10 +74,10 @@ media:                           --> targetfolder
 ```
 media:                           --> targetfolder
 -testRecord_part0000.mp4 	    --> completed mp4 file chunk
--testRecord_part0001.mp4.info    --> mp4 file on creation                    
--testRecord_part0001.mp4.mdat    --> mp4 file on creation          
--testRecord_part0001.mp4.track1  --> mp4 file on creation   
--testRecord_part0001.mp4.track2  --> mp4 file on creation   
+-testRecord_part0001.mp4.info    --> mp4 file on creation
+-testRecord_part0001.mp4.mdat    --> mp4 file on creation
+-testRecord_part0001.mp4.track1  --> mp4 file on creation
+-testRecord_part0001.mp4.track2  --> mp4 file on creation
 ```
 
 
@@ -162,17 +162,17 @@ record localstreamname=myStream pathtofile=../media/myRecord type=ts
 
 ```
 media:                           --> targetfolder
--testRecord.ts  		       --> ts file         
+-testRecord.ts  		       --> ts file
 ```
 
 `chunkLength`パラメータが与えられている場合:
 
 ```
 media:                           --> targetfolder
--testRecord_part0000.ts          --> ts file chunk                     
--testRecord_part0001.ts          --> ts file chunk          
--testRecord_part0002.ts          --> ts file chunk         
--testRecord_part0003.ts          --> ts file chunk       
+-testRecord_part0000.ts          --> ts file chunk
+-testRecord_part0001.ts          --> ts file chunk
+-testRecord_part0002.ts          --> ts file chunk
+-testRecord_part0003.ts          --> ts file chunk
 ...
 ```
 
@@ -223,10 +223,10 @@ testRecord.flv                   --> flv file
 
 ```
 media:                            --> targetfolder
--testRecord_part0000.flv          --> flv file chunk                     
--testRecord_part0001.flv          --> flv file chunk          
--testRecord_part0002.flv          --> flv file chunk         
--testRecord_part0003.flv          --> flv file chunk       
+-testRecord_part0000.flv          --> flv file chunk
+-testRecord_part0001.flv          --> flv file chunk
+-testRecord_part0002.flv          --> flv file chunk
+-testRecord_part0003.flv          --> flv file chunk
 ...
 ```
 

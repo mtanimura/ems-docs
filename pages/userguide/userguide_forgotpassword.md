@@ -1,5 +1,5 @@
 ---
-title: Forgot Password
+title: パスワードを忘れてしまったら
 kwyword: password
 sidebar: userguide_sidebar
 permalink: userguide_forgotpassword.html

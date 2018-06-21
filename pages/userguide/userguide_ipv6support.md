@@ -1,5 +1,5 @@
 ---
-title: Using IPv6
+title: IPv6について
 keywords: demo
 sidebar: userguide_sidebar
 permalink: userguide_ipv6support.html

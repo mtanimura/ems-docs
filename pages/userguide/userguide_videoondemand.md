@@ -1,5 +1,5 @@
 ---
-title: Video On Demand
+title: ビデオオンデマンド(VOD)
 keyword: vod
 sidebar: userguide_sidebar
 permalink: userguide_videoondemand.html

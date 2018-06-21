@@ -1,5 +1,5 @@
 ---
-title: Push-in a Stream
+title: プッシュインストリーム
 keywords: push-in
 sidebar: userguide_sidebar
 permalink: userguide_pushin.html
@@ -64,7 +64,7 @@ EMSは外部サーバーからプッシュされたストリームを受ける�
    				--{
    				--	token="",
    				--},
-    },  
+    },
     ]]-- //remove
    ```
 

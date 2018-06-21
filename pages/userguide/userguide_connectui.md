@@ -1,5 +1,5 @@
 ---
-title: Connecting to Web UI
+title: Web UIへの接続
 sidebar: userguide_sidebar
 permalink: userguide_connectui.html
 folder: userguide

@@ -1,5 +1,5 @@
 ---
-title: Using API Proxy Authentication
+title: APIプロキシ認証(Proxy Authentication)
 keywords: apiproxy
 sidebar: userguide_sidebar
 permalink: userguide_usingapiproxy.html
@@ -14,7 +14,7 @@ EMS v2.0からapiProxyはデフォルトで有効化されています。設定�
 "apiProxy":
 	{
 		"enable" : true,
-		"authentication": "basic", 			
+		"authentication": "basic",
 		"pseudoDomain": "apiproxy",
 		"address": "127.0.0.1",
 		"port": 7777,

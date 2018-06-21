@@ -1,5 +1,5 @@
 ---
-title: Installation on Linux OS
+title: Linux OSでのインストール
 sidebar: userguide_sidebar
 permalink: userguide_installlinuxos.html
 folder: userguide
@@ -229,12 +229,12 @@ EvoStream Media Serverのインストールは以下の手順です。この手�
 │   │   │   |   ├── basic-auth
 │   │   │   |   ├── connect
 │   │   │   |   └── winston
-│   │   |   └── req_handlers     
+│   │   |   └── req_handlers
 │   │   │   |   ├── authproxy.js
 │   │   │   |   ├── default.js
 │   │   │   |   ├── httpstream.js
 │   │   │   |   ├── php.js
-│   │   │   |   └── resphdrs.js  
+│   │   │   |   └── resphdrs.js
 ```
 
 **B.2. Node-Webservicesファイル**
@@ -247,17 +247,17 @@ EvoStream Media Serverのインストールは以下の手順です。この手�
 │   │   |   ├── base_plugins
 │   │   │   |   ├── basehdsplugin.js
 │   │   │   |   ├── basehlsplugin.js
-│   │   │   |   └── baseplugin.js    
+│   │   │   |   └── baseplugin.js
 │   │   |   ├── bin
-│   │   │   |   └── www       
+│   │   │   |   └── www
 │   │   |   ├── config
 │   │   │   |   ├── logging.json
-│   │   │   |   └── plugins.json    
+│   │   │   |   └── plugins.json
 │   │   |   ├── core_modules
-│   │   │   |   └── ems-api-core.js      
+│   │   │   |   └── ems-api-core.js
 │   │   |   ├── LICENSE
 │   │   |   ├── logs
-│   │   │   |   └── evowebservices.log          
+│   │   │   |   └── evowebservices.log
 │   │   |   ├── node_modules
 │   │   │   |   ├── body-parser
 │   │   │   |   ├── comment-json
@@ -275,12 +275,12 @@ EvoStream Media Serverのインストールは以下の手順です。この手�
 │   │   │   |   ├── amazonhlsupload.js
 │   │   │   |   ├── streamautorouter.js
 │   │   │   |   ├── streamloadbalancer.js
-│   │   │   |   └── streamrecorder.js   
+│   │   │   |   └── streamrecorder.js
 │   │   |   ├── README.md
 │   │   |   ├── README.txt
 │   │   |   ├── routes
 │   │   │   |   ├── evowebservices.js
-│   │   │   |   └── index.js      
+│   │   │   |   └── index.js
 │   │   |   ├── services
 │   │   │   |   └── plugin-service.js
 │   │   |   ├── views
@@ -312,7 +312,7 @@ EvoStream Media Serverのインストールは以下の手順です。この手�
 │   │   │   │   └──  socket-io-api.js
 │   │   |   ├── data
 │   │   │   │   ├── help.json
-│   │   │   │   └──  user.json   
+│   │   │   │   └──  user.json
 │   │   |   ├── logs
 │   │   │   │   ├── webui.log
 │   │   |   ├── models
@@ -328,7 +328,7 @@ EvoStream Media Serverのインストールは以下の手順です。この手�
 │   │   │   │   ├── js
 │   │   │   │   └──  media
 │   │   |   ├── routes
-│   │   │   │   ├── api-explorer.js   
+│   │   │   │   ├── api-explorer.js
 │   │   │   │   ├── dashboard.js
 │   │   │   │   ├── ems.js
 │   │   │   │   ├── index.js
@@ -340,7 +340,7 @@ EvoStream Media Serverのインストールは以下の手順です。この手�
 │   │   │   │   ├── admin
 │   │   │   │   ├── index
 │   │   │   │   ├── error.hbs
-│   │   │   └── └──  index.hbs  
+│   │   │   └── └──  index.hbs
 ```
 
 **4. XML ファイル**
@@ -373,7 +373,7 @@ EvoStream Media Serverのインストールは以下の手順です。この手�
     │   │   ├── jsonMetaWriteTest.html
     │   │   └── loading.gif
     │   ├── clientaccesspolicy.xml
-    │   └── crossdomain.xml    
+    │   └── crossdomain.xml
 ```
 
 **6. Log ファイル**
@@ -405,16 +405,16 @@ EvoStream Media Serverのインストールは以下の手順です。この手�
   │   │   ├── base_plugins
   │   │   │	  ├── basehdsplugin.js
   │   │   │	  ├── basehlsplugin.js
-  │   │   │	  └── baseplugin.js    
+  │   │   │	  └── baseplugin.js
   │   │   ├── bin
-  │   │   │   └── www       
+  │   │   │   └── www
   │   │   ├── config
   │   │   │	  ├── logging.json
-  │   │   │	  └── plugins.json    
+  │   │   │	  └── plugins.json
   │   │   ├── core_modules
-  │   │   │	  └── ems-api-core.js       
+  │   │   │	  └── ems-api-core.js
   │   │   ├── logs
-  │   │   │	  └── evowebservices.log          
+  │   │   │	  └── evowebservices.log
   │   │   ├── node_modules
   │   │   │	  ├── body-parser
   │   │   │	  ├── comment-json
@@ -431,10 +431,10 @@ EvoStream Media Serverのインストールは以下の手順です。この手�
   │   │   │	  ├── amazonhlsupload.js
   │   │   │	  ├── streamautorouter.js
   │   │   │	  ├── streamloadbalancer.js
-  │   │   │	  └── streamrecorder.js   
+  │   │   │	  └── streamrecorder.js
   │   │   ├── routes
   │   │   │	  ├── evowebservices.js
-  │   │   │	  └── index.js      
+  │   │   │	  └── index.js
   │   │   ├── services
   │   │   │	  └── plugin-service.js
   │   │   ├── views
@@ -445,7 +445,7 @@ EvoStream Media Serverのインストールは以下の手順です。この手�
   │   │   ├── LICENSE
   │   │   ├── package.json
   │   │   ├── README.md
-  │   ├── └── README.txt  
+  │   ├── └── README.txt
   │   ├── node-ews
   │   │   ├── node_modules
   │   │   │   ├── basic-auth
@@ -456,7 +456,7 @@ EvoStream Media Serverのインストールは以下の手順です。この手�
   │   │   │   ├── default.js
   │   │   │   ├── httpstream.js
   │   │   │   ├── php.js
-  │   │   │   └── resphdrs.js  
+  │   │   │   └── resphdrs.js
   │   │   ├── evo-phpengine.exe
   │   │   ├── ews.node
   │   │   ├── fileRotateSize.js
@@ -479,7 +479,7 @@ EvoStream Media Serverのインストールは以下の手順です。この手�
   │   │   │   └── socket-io-api.js
   │   │   ├── data
   │   │   │   ├── help.json
-  │   │   │   └── user.json   
+  │   │   │   └── user.json
   │   │   ├── logs
   │   │   │   └── webui.log
   │   │   ├── models
@@ -495,7 +495,7 @@ EvoStream Media Serverのインストールは以下の手順です。この手�
   │   │   │   ├── js
   │   │   │   └── media
   │   │   ├── routes
-  │   │   │   ├── api-explorer.js   
+  │   │   │   ├── api-explorer.js
   │   │   │   ├── dashboard.js
   │   │   │   ├── ems.js
   │   │   │   ├── index.js
@@ -507,10 +507,10 @@ EvoStream Media Serverのインストールは以下の手順です。この手�
   │   │   │   ├── admin
   │   │   │   ├── index
   │   │   │   ├── error.hbs
-  │   │   │   └── index.hbs  
+  │   │   │   └── index.hbs
   │   │   ├── app.js
   │   │   ├── LICENSE
-  │   │   └── package.json     
+  │   │   └── package.json
   │   ├── emsTranscoder.sh
   │   ├── evo-avconv
   │   ├── evo-mp4writer
@@ -519,7 +519,7 @@ EvoStream Media Serverのインストールは以下の手順です。この手�
   │   ├── run_console_ems.sh
   │   ├── run_console_webui.sh
   │   ├── run_daemon_ems.sh
-  │   ├── run_daemon_webui.sh  
+  │   ├── run_daemon_webui.sh
   │   └── run_stop_webui.sh
   ├── config
   │   ├── auth.xml
@@ -540,7 +540,7 @@ EvoStream Media Serverのインストールは以下の手順です。この手�
   │   ├── demo
   │   │   ├── css
   │   │   │   ├── common.css
-  │   │   │	  └── common.css.orig  
+  │   │   │	  └── common.css.orig
   │   │   ├── js
   │   │   │	  └── evohtml5player-latest.bundle.js
   │   │   ├── evo.png

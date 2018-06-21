@@ -1,5 +1,5 @@
 ---
-title: EMS Stream Types
+title: EMSストリームタイプ(Stream Types)
 keywords: stream
 sidebar: userguide_sidebar
 permalink: userguide_streamtypes.html

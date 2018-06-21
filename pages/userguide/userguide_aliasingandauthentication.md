@@ -1,5 +1,5 @@
 ---
-title: Security and Authentication
+title: セキュリティと認証
 sidebar: userguide_sidebar
 permalink: userguide_aliasingandauthentication.html
 folder: userguide

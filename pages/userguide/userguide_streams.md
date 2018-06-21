@@ -1,5 +1,5 @@
 ---
-title: The Streams Page
+title: Streamsページ
 sidebar: userguide_sidebar
 permalink: userguide_streams.html
 folder: userguide

@@ -1,5 +1,5 @@
 ---
-title: Adding Streams
+title: ストリームの追加
 sidebar: userguide_sidebar
 permalink: userguide_add.html
 folder: userguide
