@@ -63,7 +63,7 @@ Stream with “**testpullStream**” as `localStreamName` will have an alias of 
 
 JSON responseは以下を含みます:
 
-- data – パースするデータ
+- data – パースすべきデータ
   - aliasName – `localStreamName`のエイリアス
   - expirePeriod – エイリアスの有効期限
   - localStreamName – 元のストリーム名

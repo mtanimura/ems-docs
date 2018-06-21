@@ -7,27 +7,28 @@ folder: api
 toc: false
 ---
 
-Stops the WebRTC Signalling client to an ERS (Evostream Rendezvous Server)
+ERS(Evostream Rendezvous Server)のWebRTC Signallingクライエントを停止します。
 
 
 
-## API Parameter Table
-
-This function has no parameters.
+## API パラメータ
 
 
+パラメータはありません
 
-## API Call Template
 
-``` 
+
+## API Call テンプレート
+
+```
 stopwebrtc
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "ersip":"52.6.14.61",
@@ -43,18 +44,18 @@ stopwebrtc
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data– Nothing to parse for this command
-  - ersip – The IP address of the ERS
-  - ersport – The port of the ERS
-  - roomId – The room identifier
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data– パースするデータはありません
+  - ersip – ERSのipアドレス
+  - ersport – ERSのポート
+  - roomId – roomid
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## Related Links
+## 関連リンク
 
 -  [startWebRTC](startWebRTC.html)
 -  [WebRTC Overview](html5players_wrtcoverview.html)

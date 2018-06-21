@@ -9,28 +9,28 @@ toc: false
 
 
 
-Enable or disable a service.
+serviceを有効化／無効化するコマンド
 
 
 
-## API Parameter Table
+## API パラメータ
 
-| **Parameter Name** |  Type   | **Mandatory** | **Default Value** | **Description**                          |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :----------------: | :-----: | :-----------: | :---------------: | ---------------------------------------- |
-|         id         | integer |     true      |      *null*       | The id of the service                    |
-|       enable       | boolean |     true      |      *null*       | **1** to enable, **0** to disable service |
+|         id         | 整数値 |     true      |      *null*       | service id
+|       enable       | ブーリアン |     true      |      *null*       | service有効化は**1** 無効化は **0**  |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 enableService id=<serviceId> enable=<enableValue>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
 ```
 enableService id=5 enable=0
@@ -46,7 +46,7 @@ This **enables** the service with an id of 5.
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
 ```
 {
@@ -74,28 +74,28 @@ This **enables** the service with an id of 5.
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data –  The data to parse.
-  - acceptedConnectionsCount – The number of active connections using the service
-  - appId – The ID of the application using the service
-  - appName – The name of the application using the service
-  - droppedConnectionsCount – The number of dropped connections
-  - enabled - **true** if the service is enabled, **false** if not
-  - id = ID of the service
-  - ip = The IP address bound to the service
-  - port – The port bound to the service
-  - protocol – The protocol bound to the service
-  - sslCert – The SSL certificate (for some protocols only)
-  - sslKey – The SSL certificate key (for some protocols only)
-  - useLengthPadding – **true** if padding is enabled, **false** if not (for some protocols only)
-  - waitForMetadata – **true** if metadata is required, **false** if not (for some protocols only)
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - acceptedConnectionsCount – serviceを使用するアクティブ接続数
+  - appId – serviceを使用するアプリケーションID
+  - appName – serviceを使用するアプリケーション名
+  - droppedConnectionsCount – ドロップした接続数
+  - enabled - serviceが有効な場合は**true** そうでなければ**false**
+  - id = serviceID
+  - ip = serviceにバインドされたipアドレス
+  - port – serviceにバインドされたポート
+  - protocol – serviceにバインドされたプロトコル
+  - sslCert – SSL証明書 (特定のプロトコルのみ)
+  - sslKey – SSLキー(特定のプロトコルのみ)
+  - useLengthPadding – Paddingが有効な場合**true** 、そうでない場合**false** (特定のプロトコルのみ)
+  - waitForMetadata – メタデータが必要なら**true** 、そうでなければ **false** (特定のプロトコルのみ)
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [createService](createService.html)
 - [listServices](listServices.html)

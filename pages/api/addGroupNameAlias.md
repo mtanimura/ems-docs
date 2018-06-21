@@ -9,42 +9,41 @@ toc: false
 
 
 
-This command creates secondary name(s) for group names. Once an alias is created the group name cannot be used to request HTTP playback of that stream. Once an alias is used (requested by a client) the alias is removed. Aliases are designed to be used to protect/hide your source streams.
+グルーム名に二次的な名前を付けます。エイリアスがいったん作成されるとグループ名はHTTPリクエストで使用できなくなります。またエイリアスが一度使用されると(クライエントのリクエスト)、そのエイリアスは削除されます。エイリアス機能はソースストリームの保護・隠蔽に使用するようデザインされています。
 
 
 
 
 
-## API Parameter Table
+## API パラメータ
 
 
-
-| Parameter Name |  Type  | Mandatory | Default Value | Description                             |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :------------: | :----: | :-------: | :-----------: | --------------------------------------- |
-|   groupName    | string |   true    |    *null*     | The original group name                 |
-|   aliasName    | string |   true    |    *null*     | The alias alternative to the group name |
+|   groupName    | 文字列 |   true    |    *null*     | オリジナルのグループ名 |
+|   aliasName    | 文字列 |   true    |    *null*     | グループ名エイリアス |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 addGroupNameAlias groupName=<groupName> aliasName=<groupAliasName>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 addGroupNameAlias groupName=testAliasGroupName aliasName=testGroupAlias
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 "data":{
 	"aliasName":"testGroupAlias",
 	"cliProtocolId":97,
@@ -66,23 +65,24 @@ addGroupNameAlias groupName=testAliasGroupName aliasName=testGroupAlias
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - aliasName – The alias alternative to the `localStreamName`
-  - groupName – The assigned groupName where alias is applied
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - aliasName – `localStreamName`に対するエイリアス
+  - groupName – エイリアスが適用されているグループ名
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
+
 
 ------
 
 ## Notes
 
-- **hasGroupNameAliases** in webconfig.lua should be **TRUE**
+- webconfig.luaの**hasGroupNameAliases**は**TRUE**に設定する必要があります
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [hasGroupNameAliases](userguide_webconfig.html#hasgroupnamealiases)
 - [listGroupNameAliases](listGroupNameAliases.html)

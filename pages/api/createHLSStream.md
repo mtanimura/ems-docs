@@ -108,7 +108,7 @@ createHLSStream localstreamnames=testpullStream targetfolder=/var/evo-webroot gr
 
 JSON responseは下記の詳細を含みます:
 
-- data – パースするデータ
+- data – パースすべきデータ
   - AESKeyCount - HLSストリームを暗号化しながら自動的に生成されローテーションされるキー数
   - audioOnly - trueの場合、EMSはオーディオのみストリームします
   - bandwidths – ストリーミングの帯域を指定する整数値の配列

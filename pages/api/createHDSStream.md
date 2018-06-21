@@ -81,7 +81,7 @@ createHDSStream localstreamnames=testpullStream targetfolder=/var/evo-webroot gr
 
 JSON responseは下記の詳細を含みます:
 
-- data – パースするデータ
+- data – パースすべきデータ
   - bandwidths – ストリーミングの帯域を指定する整数値の配列
   - chunkBaseName – 出力HDS chunksのベース名またはプレフィックス
   - chunkLength – プレイリストエレメント(.f4mファイル)の長さ(秒)
