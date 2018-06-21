@@ -139,18 +139,18 @@ table > tfoot > tr > th,
 table > thead > tr > td,
 table > tbody > tr > td,
 table > tfoot > tr > td {
-    padding: 0px;
+    padding: 5px;
     line-height: 1.42857143;
     vertical-align: top;
-    border-top: 1px solid #ddd;
+    border: 1px solid #ddd;
 }
 table > thead > tr > th {
-    vertical-align: bottom;
-    border-bottom: 2px solid #ddd;
+    border: 1px solid #ddd;
     text-transform: none;
     background-color: #777;
     color: white;
-    text-align: left;
+    text-align: center;
+    vertical-align: middle;
 }
 table > caption + thead > tr:first-child > th,
 table > colgroup + thead > tr:first-child > th,
@@ -1053,7 +1053,7 @@ ol li ul li ol li ul li{
 }
 
 .post-content table th {
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 table thead th code.highlighter-rouge {
