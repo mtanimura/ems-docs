@@ -1,5 +1,5 @@
 ---
-title: Create MSS Stream
+title: MSSストリーム生成
 keywords: mss
 sidebar: userguide_sidebar
 permalink: userguide_createmss.html

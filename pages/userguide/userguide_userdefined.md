@@ -1,5 +1,5 @@
 ---
-title: User Defined Variables
+title: ユーザー定義変数
 keywords: demo
 sidebar: userguide_sidebar
 permalink: userguide_userdefined.html

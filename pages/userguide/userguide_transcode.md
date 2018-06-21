@@ -1,5 +1,5 @@
 ---
-title: Transcode Streams
+title: ストリームのトランスコード
 keywords: transcode
 sidebar: userguide_sidebar
 permalink: userguide_transcode.html

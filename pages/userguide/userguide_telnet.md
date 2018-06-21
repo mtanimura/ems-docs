@@ -1,5 +1,5 @@
 ---
-title: Accessing the Run-Time API
+title: Run-Time APIへのアクセス
 keywords: API
 sidebar: userguide_sidebar
 permalink: userguide_telnet.html

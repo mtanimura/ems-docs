@@ -1,5 +1,5 @@
 ---
-title: Stream Configuration
+title: ストリーム設定
 keyword: listconfig
 sidebar: userguide_sidebar
 permalink: userguide_config.html
@@ -62,7 +62,7 @@ EMSのすべてのプッシュ／プル設定をリスト表示します。以�
 
 
 
-**ストリームステータス**が表示されます: 
+**ストリームステータス**が表示されます:
 
 - Current:
 - Previous:

@@ -1,5 +1,5 @@
 ---
-title: Create HDS Stream
+title: HDSストリーム生成
 keywords: hds
 sidebar: userguide_sidebar
 permalink: userguide_createhds.html

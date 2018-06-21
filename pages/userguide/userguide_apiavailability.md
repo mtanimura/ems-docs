@@ -1,5 +1,5 @@
 ---
-title: API Version Support List
+title: APIバージョンサポートリスト
 keywords: API
 sidebar: userguide_sidebar
 permalink: userguide_apiavailability.html

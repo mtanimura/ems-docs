@@ -1,5 +1,5 @@
 ---
-title: Create DASH Stream
+title: DASHストリーム生成
 keywords: dash
 sidebar: userguide_sidebar
 permalink: userguide_createdash.html

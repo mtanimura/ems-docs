@@ -1,5 +1,5 @@
 ---
-title: Protocol Support and Specifics
+title: プロトコルサポート
 keywords: API
 sidebar: userguide_sidebar
 permalink: userguide_protocols.html
@@ -74,8 +74,8 @@ RTMPTクライエントからのリクエストにEMSを対応させるにはcon
 
 ```
 {
-      ip="0.0.0.0",                                  
-      port=8081,                                     
+      ip="0.0.0.0",
+      port=8081,
       protocol="inboundRtmpt"
 },
 
@@ -95,11 +95,11 @@ OpenSSL(*.crt)などのライブラリをつかって署名付き証明書およ
 
 ```
 {
-      ip="0.0.0.0",                                  
-      port=8082,                                     
-      protocol="inboundRtmps",                       
-      sslKey="server.key",                           
-      sslCert="server.crt"                           
+      ip="0.0.0.0",
+      port=8082,
+      protocol="inboundRtmps",
+      sslKey="server.key",
+      sslCert="server.crt"
 },
 
 ```

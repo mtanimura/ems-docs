@@ -1,5 +1,5 @@
 ---
-title: Sending Streams
+title: ストリームの送信
 keyword: pushstream
 sidebar: userguide_sidebar
 permalink: userguide_send.html

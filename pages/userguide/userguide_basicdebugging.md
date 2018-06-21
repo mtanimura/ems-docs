@@ -1,5 +1,5 @@
 ---
-title: Basic Debugging
+title: 基本的なトラブルシューティング
 keywords: debug
 sidebar: userguide_sidebar
 permalink: userguide_basicdebugging.html

@@ -1,5 +1,5 @@
 ---
-title: Raspberry Pi OMX-based Transcoder
+title: Raspberry PiでのOMXベースのトランスコーダー
 sidebar: userguide_sidebar
 permalink: userguide_rpitranscoder.html
 folder: userguide

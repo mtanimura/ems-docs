@@ -1,5 +1,5 @@
 ---
-title: File Descriptions
+title: インストールされるファイルについて
 sidebar: userguide_sidebar
 permalink: userguide_filedescriptions.html
 folder: userguide

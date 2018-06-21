@@ -1,5 +1,5 @@
 ---
-title: Blacklisting
+title: ブラックリスト設定
 sidebar: userguide_sidebar
 permalink: userguide_blacklisting.html
 folder: userguide

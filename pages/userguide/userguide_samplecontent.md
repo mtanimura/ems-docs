@@ -1,5 +1,5 @@
 ---
-title: Sample Content
+title: サンプルコンテンツ
 keywords: apiproxy
 sidebar: userguide_sidebar
 permalink: userguide_samplecontent.html

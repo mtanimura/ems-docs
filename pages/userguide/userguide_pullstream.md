@@ -1,5 +1,5 @@
 ---
-title: Pull a Stream
+title: プルストリーム
 keywords: pullstream
 sidebar: userguide_sidebar
 permalink: userguide_pullstream.html

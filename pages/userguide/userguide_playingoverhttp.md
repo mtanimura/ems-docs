@@ -1,5 +1,5 @@
 ---
-title: Play Over HTTP
+title: HTTP経由でのストリーム再生
 keywords: http
 sidebar: userguide_sidebar
 permalink: userguide_playoverhttp.html

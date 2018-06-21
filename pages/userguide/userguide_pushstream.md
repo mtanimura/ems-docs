@@ -1,5 +1,5 @@
 ---
-title: Push a Stream
+title: プッシュストリーム
 keywords: pushstream
 sidebar: userguide_sidebar
 permalink: userguide_pushstream.html

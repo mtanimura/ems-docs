@@ -1,5 +1,5 @@
 ---
-title: Create Local Account
+title: ローカルアカウントの作成
 keyword: create account
 sidebar: userguide_sidebar
 permalink: userguide_createaccount.html

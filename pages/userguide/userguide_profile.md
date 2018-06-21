@@ -1,5 +1,5 @@
 ---
-title: Profile
+title: アカウントプロフィール
 keywords: profile
 sidebar: userguide_sidebar
 permalink: userguide_profile.html

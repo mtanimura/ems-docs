@@ -1,5 +1,5 @@
 ---
-title: Configuring and Receiving Event Notifications
+title: イベント通知の設定
 keywords: events
 sidebar: userguide_sidebar
 permalink: userguide_confevents.html
