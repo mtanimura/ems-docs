@@ -9,11 +9,11 @@ toc: true
 
 
 
-## Stream Events
+## ストリームイベント
 
 ### inStreamCreated, outStreamCreated, streamCreated
 
-A new inbound, outbound or neutral stream has been created.
+インバウンド、アウトバウンド、中間ストリームが生成された
 
 ```
 appName: evostreamms
@@ -31,7 +31,7 @@ appName: evostreamms
     name: test
     port: 49730
     pullSettings:
-        audioCodecBytes: 
+        audioCodecBytes:
         configId: 1
         emulateUserAgent: EvoStream Media Server (www.evostream.com) player
         forceTcp: false
@@ -39,13 +39,13 @@ appName: evostreamms
         keepAlive: true
         localStreamName: test
         operationType: 1
-        pageUrl: 
-        ppsBytes: 
+        pageUrl:
+        ppsBytes:
         rtcpDetectionInterval: 10
-        spsBytes: 
-        ssmIp: 
-        swfUrl: 
-        tcUrl: 
+        spsBytes:
+        ssmIp:
+        swfUrl:
+        tcUrl:
         tos: 256
         ttl: 256
         uri: rtmp://cp76072.live.edgefcs.net/live/MED-HQ-Flash@42814
@@ -63,45 +63,45 @@ appName: evostreamms
         packetsCount: 0
 ```
 
-- appName – Name of the application using the stream
+- appName – ストリームを使用するアプリケーション名
 
-- audio – Statistics about the audio stream
+- audio – オーディオストリームの統計情報
 
-- bandwidth – Bandwidth of the stream
+- bandwidth – ストリームの帯域
 
-- connectionType – Connection type used by stream
+- connectionType – ストリーム接続タイプ
 
-- creationTimestamp – Epoch time stamp when the stream was created (msec since 1/1/70)
+- creationTimestamp – ストリームが生成されたエポックタイムスタンプ (1/1/70からのmsec)
 
-- ip – IP address used by the stream
+- ip – ストリームに使用されるIPアドレスIP
 
-- nearIP – The address of the host computer
+- nearIP – ホストコンピューターのアドレス
 
-- farIP – The IP of the stream source
+- farIP – ストリームソースのIP
 
-- name – Name assigned to the stream
+- name – ストリームに割りあてられた名前
 
-- port – Port used by the stream
+- port – ストリームに使用されるポート
 
-- nearPort – The port used by the host computer
+- nearPort – ホストコンピューターに使用されるポート
 
-- farPort – the port used by the stream source
+- farPort – ストリームソースに使用されるポート
 
-- pullSettings – `pullstream` settings. *Only present for inbound streams that are pulled via the pullStream API command*
+- pullSettings – `pullstream`設定 *pullStream APIコマンドでプルされたインバウンドストリームのみ*
 
-- queryTimestamp – Epoch time stamp when the stream was queried (msec since 1/1/70)
+- queryTimestamp – ストリームがクエリーされたエポックタイムスタンプ(1/1/70からのmsec)
 
-- record – Record settings for the stream
+- record – ストリームのRecord設定
 
-- type – Protocol type (see Table of Protocol Types)
+- type – プロトコルタイプ
 
-- typeNumeric – Protocol type in decimal
+- typeNumeric – 10進数表記でのプロトコルタイプ
 
-- uniqueId – Stream ID
+- uniqueId – ストリームID
 
-- upTime – Stream duration in milliseconds
+- upTime – ミリ秒単位のストリームデュレーション
 
-- video – Statistics about the video stream
+- video – ビデオストリームの統計情報
 
 
 
@@ -111,7 +111,7 @@ appName: evostreamms
 
 ### inStreamClosed, outStreamClosed, streamClosed
 
-An inbound, outbound or neutral stream has been closed
+インバウンド、アウトバウンド、中間ストリームがクローズされた
 
 ```
 appName: evostreamms
@@ -131,7 +131,7 @@ appName: evostreamms
 		0: 3
 	port: 49730
 	pullSettings:
-		audioCodecBytes: 
+		audioCodecBytes:
 		configId: 1
 		emulateUserAgent: EvoStream Media Server (www.evostream.com) player
 		forceTcp: false
@@ -139,13 +139,13 @@ appName: evostreamms
 		keepAlive: true
 		localStreamName: test
 		operationType: 1
-		pageUrl: 
-		ppsBytes: 
+		pageUrl:
+		ppsBytes:
 		rtcpDetectionInterval: 10
-		spsBytes: 
-		ssmIp: 
-		swfUrl: 
-		tcUrl: 
+		spsBytes:
+		ssmIp:
+		swfUrl:
+		tcUrl:
 		tos: 256
 		ttl: 256
 		uri: rtmp://cp76072.live.edgefcs.net/live/MED-HQ-Flash@42814
@@ -163,50 +163,52 @@ appName: evostreamms
 		packetsCount: 1147
 ```
 
-- appName – Name of the application using the stream
+- appName – ストリームに使用されるアプリケーション名
 
-- audio – Statistics about the audio stream
+- audio – オーディオストリームの統計情報
 
-- bandwidth – Bandwidth of the stream
+- bandwidth – ストリームの帯域
 
-- connectionType – Connection type used by stream
+- connectionType – ストリーム接続タイプ
 
-- creationTimestamp – Epoch time stamp when the stream was created (msec since 1/1/70)
+- creationTimestamp – ストリームが生成されたエポックタイムスタンプ (1/1/70からのmsec)
 
-- ip – IP address used by the stream
+- ip – ストリームに使用されるIPアドレスIP
 
-- nearIP – The address used by the host computer
+- nearIP – ホストコンピューターのアドレス
 
-- farIP – the adress used by the stream source
+- farIP – ストリームソースのIP
 
-- name – Name assigned to the stream
+- name – ストリームに割りあてられた名前
 
-- port – Port used by the stream
+- port – ストリームに使用されるポート
 
-- nearPort – The port used by the host computer
+- nearPort – ホストコンピューターに使用されるポート
 
-- farPort – the port used by the stream source
+- farPort – ストリームソースに使用されるポート
 
-- queryTimestamp – Epoch time stamp when the stream was queried (msec since 1/1/70)
+- pullSettings – `pullstream`設定 *pullStream APIコマンドでプルされたインバウンドストリームのみ*
 
-- record – Record settings for the stream
+- queryTimestamp – ストリームがクエリーされたエポックタイムスタンプ(1/1/70からのmsec)
 
-- type – Protocol type (see Table of Protocol Types below)
+- record – ストリームのRecord設定
 
-- typeNumeric – Protocol type in decimal
+- type – プロトコルタイプ
 
-- uniqueId – Stream ID
+- typeNumeric – 10進数表記でのプロトコルタイプ
 
-- upTime – Stream duration in milliseconds
+- uniqueId – ストリームID
 
-- video – Statistics about the video stream
+- upTime – ミリ秒単位のストリームデュレーション
+
+- video – ビデオストリームの統計情報
 
 
 
 
 ### inStreamCodecsUpdated, outStreamCodecsUpdated, streamCodecsUpdated
 
-A new inbound, outbound or neutral stream has been identified with a specific codec.
+新規インバウンド、アウトバウンド、中間ストリームが特定のcodecとともに同定された
 
 ```
 appName: evostreamms
@@ -224,7 +226,7 @@ appName: evostreamms
 	name: test
 	port: 49730
 	pullSettings:
-		audioCodecBytes: 
+		audioCodecBytes:
 		configId: 1
 		emulateUserAgent: EvoStream Media Server (www.evostream.com) player
 		forceTcp: false
@@ -232,13 +234,13 @@ appName: evostreamms
 		keepAlive: true
 		localStreamName: test
 		operationType: 1
-		pageUrl: 
-		ppsBytes: 
+		pageUrl:
+		ppsBytes:
 		rtcpDetectionInterval: 10
-		spsBytes: 
-		ssmIp: 
-		swfUrl: 
-		tcUrl: 
+		spsBytes:
+		ssmIp:
+		swfUrl:
+		tcUrl:
 		tos: 256
 		ttl: 256
 		uri: rtmp://cp76072.live.edgefcs.net/live/MED-HQ-Flash@42814
@@ -256,52 +258,52 @@ appName: evostreamms
 		packetsCount: 1
 ```
 
-- appName – Name of the application using the stream.
+- appName – ストリームを使用するアプリケーション名
 
-- audio – Statistics about the audio stream.
+- audio – オーディオストリームの統計情報
 
-- bandwidth – Bandwidth of the stream.
+- bandwidth – ストリームの帯域
 
-- connectionType – Connection type used by stream.
+- connectionType – ストリーム接続タイプ
 
-- creationTimestamp – Epoch time stamp when the stream was created (msec since 1/1/70)
+- creationTimestamp – ストリームが生成されたエポックタイムスタンプ (1/1/70からのmsec)
 
-- ip – IP address used by the stream
+- ip – ストリームに使用されるIPアドレスIP
 
-- nearIP – The address used by the host computer
+- nearIP – ホストコンピューターのアドレス
 
-- farIP – the address used by the stream source
+- farIP – ストリームソースのIP
 
-- name – Name assigned to the stream
+- name – ストリームに割りあてられた名前
 
-- port – Port used by the stream
+- port – ストリームに使用されるポート
 
-- nearPort – The port used by the host computer
+- nearPort – ホストコンピューターに使用されるポート
 
-- farPort – the port used by the stream source
+- farPort – ストリームソースに使用されるポート
 
-- pullSettings – `pullstream` settings. *Only present for inbound streams that are pulled via the pullStream API command*
+- pullSettings – `pullstream`設定 *pullStream APIコマンドでプルされたインバウンドストリームのみ*
 
-- queryTimestamp – Epoch time stamp when the stream was queried (msec since 1/1/70)
+- queryTimestamp – ストリームがクエリーされたエポックタイムスタンプ(1/1/70からのmsec)
 
-- record – Record settings for the stream
+- record – ストリームのRecord設定
 
-- type – Protocol type (see Table of Protocol Types below)
+- type – プロトコルタイプ
 
-- typeNumeric – Protocol type in decimal
+- typeNumeric – 10進数表記でのプロトコルタイプ
 
-- uniqueId – Stream ID
+- uniqueId – ストリームID
 
-- upTime – Stream duration in milliseconds
+- upTime – ミリ秒単位のストリームデュレーション
 
-- video – Statistics about the video stream
+- video – ビデオストリームの統計情報
 
 
 
 
 ### audioFeedStopped, videoFeedStopped
 
-Event triggered when an audio or video packet is lost
+ビデオまたはオーディオパケットロストによりイベントがトリガされた
 
 ```
 audioFeedStopped
@@ -309,9 +311,9 @@ audioFeedStopped
 videoFeedStopped
 ```
 
-- streamId – The stream ID
+- streamId – ストリームID
 
-- localStreamName – Name of the stream which lost the audio
+- localStreamName – オーディオをロストしたストリーム名
 
 
 
@@ -321,7 +323,7 @@ videoFeedStopped
 
 ### playlistItemStart, firstPlaylistItemStart, lastPlaylistItemStart
 
-These events are created when an RTMP playlist item starts to play
+RTMPプレイリストアイテムが再生を開始した際に生成されるイベント
 
 ```
 firstPlaylistItemStart
@@ -337,9 +339,9 @@ PID: 12268
 playlistName: stream.lst
 ```
 
-- PID: the process ID
+- PID: プロセスID
 
-- playlistName - the playlist file name
+- playlistName - プレイリストファイル名
 
 
 
@@ -348,7 +350,7 @@ playlistName: stream.lst
 
 ### hlsChunkCreated, hdsChunkCreated, mssChunkCreated, dashChunkCreated
 
-Event triggered when an HLS/HDS/MSS/DASH chunk file was opened on disk.
+HLS/HDS/MSS/DASHチャンクファイルがディスク書き込み用にオープンされる際にトリガされるイベント
 
 ```
 hlsChunkCreated
@@ -367,13 +369,13 @@ dashChunkCreated
 /evo-webroot/dash/stream1/video/229376/1416464032000.fmp4
 ```
 
-**file** – Name of the HLS/HDS/MSS/DASH chunk file that was opened
+**file** – HLS/HDS/MSS/DASHチャンクファイル名
 
 
 
 ### hlsChunkClosed, hdsChunkClosed, mssChunkClosed, dashChunkClosed
 
-Event triggered when an HLS/HDS/MSS/DASH chunk file was closed on disk.
+HLS/HDS/MSS/DASHチャンクファイルがクローズされた際にトリガされるイベント
 
 ```
 hlsChunkClosed
@@ -389,27 +391,27 @@ dashChunkClosed
 /evo-webroot/dash/stream1/video/229376/1416464032000.fmp4
 ```
 
-**file** – Name of the HLS/HDS/MSS/DASH chunk file that was closed.
+**file** – クローズしたHLS/HDS/MSS/DASHチャンクファイル名
 
 
 
 ### hlsChunkError, hdsChunkError, mssChunkError, dashChunkError
 
-Event triggered when an error occurs while writing an HLS/HDS/MSS/DASH chunk file.
+HLS/HDS/MSS/DASHチャンクファイル書き込みのエラー発生時にトリガされるイベント
 
 ```
 Could not write video sample to /evo-webroot/hls/stream1/
 segment_1362025844863_1362025844863_14.ts
 ```
 
-- error – description of the error encountered
+- error – エラー内容
 
 
 
 
 ### hlsChildPlaylistUpdated, hdsChildPlaylistUpdated
 
-Event triggered when an HLS or HDS stream specific playlist file was modified
+HLSまたはHDSストリームのプレイリストが更新された際にトリガされるイベント
 
 ```
 hlsChildPlaylistUpdated
@@ -420,13 +422,13 @@ hdsChildPlaylistUpdated
 /evo-webroot/hds/stream1/stream1.f4m
 ```
 
-**file** – Name of the HLS or HDS playlist that was updated
+**file** – 更新されたHLSまたはHDSプレイリスト名
 
 
 
 ### hlsMasterPlaylistUpdated, hdsMasterPlaylistUpdated
 
-Event triggered when an HLS or HDS group playlist file was modified
+HLSまたはHDSグループプレイリストファイルが更新された際にトリガされるイベント
 
 ```
 hlsMasterPlaylistUpdated
@@ -437,13 +439,13 @@ hdsMasterPlaylistUpdated
 /evo-webroot/hds/stream1.f4m
 ```
 
-**file** – Name of the HLS or HDS playlist that was updated
+**file** – 更新されたHLSまたはHDSプレイリスト名
 
 
 
 ### mssPlaylistUpdated, dashPlaylistUpdated
 
-Event triggered when an MSS/DASH stream specific playlist file was modified
+MSS/DASHストリームのプレイリストが更新された際にトリガされるイベント
 
 ```
 mssPlaylistUpdated
@@ -453,52 +455,52 @@ dashPlaylistUpdated
 /evo-webroot/dash/stream1/manifest.mpd
 ```
 
-**file** – Name of the MSS/DASH manifest that was updated
+**file** – 更新されたMSS/DASH manifest名
 
 
 
 ### recordChunkCreated, recordChunkClosed, recordChunkError
 
-Event triggered when a new record fragment has been opened, completed and ready on disk, or failed due to a write error
+新規録画フラグメントのオープン、完了、ディスク上でReady、書き込みエラーしたなどの際にトリガされるイベント
 
 ```
 /media/record/stream1_part0008.mp4
 ```
 
-**file** – Name of the record fragment that was opened, closed, or had a write error
+**file** – オープン／クローズ／書き込みエラーがあったrecordフラグメント名
 
 
 
-## Web Server Events
+## Web Serverイベント
 
 ### streamingSessionStarted
 
-This event is created right after an HTTP streaming session has started.
+HTTPストリーミングセッションが開始した際に生成されるイベント
 
-- clientIP – Address of connecting client
+- clientIP – 接続しにきたクライエントアドレス
 
-- sessionID – Internal ID
+- sessionID – 内部ID
 
-- playlist – The playlist file
+- playlist – プレイリストファイル
 
-- startTime – Time session started
+- startTime – セッション開始タイム
 
 
 
 
 ### streamingSessionEnded
 
-This event is created right after an HTTP streaming session has stopped.
+HTTPストリーミングセッションが停止した際に生成されるイベント
 
-- clientIP – Address of connecting client
+- clientIP – 接続クライエントのアドレス
 
-- sessionID – Internal ID
+- sessionID – 内部ID
 
-- playlist – The playlist file
+- playlist – プレイリストファイル
 
-- startTime – Time session started
+- startTime – セッション開始タイム
 
-- stopTime – Time session stopped
+- stopTime – セッション停止タイム
 
 
 
@@ -506,35 +508,35 @@ This event is created right after an HTTP streaming session has stopped.
 
 ### fileDownloaded
 
-This event is created right after an HTTP file download has completed.
+HTTPファイルダウンロードが完了した際に生成されるイベント
 
-- clientIP – Address of connecting client.
+- clientIP – 接続クライエントアドレス
 
-- mediaFile – The path to the media file.
+- mediaFile – メディアファイルパス
 
-- startTime – Time session started.
+- startTime – セッション開始タイム
 
-- elapsed – The number of seconds since the session started
-
-
+- elapsed – セッション開始からの経過時間(秒)
 
 
 
 
 
-## API Based Events
+
+
+## APIベースイベント
 
 ### cliRequest
 
-The EMS has received a Runtime API command.
+EMSがRuntime APIコマンドを受信した
 
-- command – The CLI command received by the EMS
+- command – EMSが受信したCLIコマンド
 
-- parameters – Optional parameters for the CLI command
+- parameters – CLIコマンドのオプションパラメータ
 
 
 
-**Example:**
+**例:**
 
 ```
 command: launchProcess
@@ -546,7 +548,7 @@ command: launchProcess
 
 ### cliResponse
 
-The response generated by the EMS for the last Runtime API command.
+Runtime APIコマンドに対してEMSが生成するレスポンス
 
 ```
 data:
@@ -559,11 +561,11 @@ data:
     status: SUCCESS
 ```
 
-- data – Optional data for the CLI response
+- data – CLIレスポンスについてのオプションデータ
 
-- description – A description of the CLI response
+- description – CLIレスポンスについての詳細情報
 
-- status – SUCCESS or FAIL. The result of parsing (not necessarily executing) the CLI command
+- status – SUCCESS または FAIL  CLIコマンドのパース結果
 
 
 
@@ -571,7 +573,7 @@ data:
 
 ### processStarted, processStopped
 
-A process has been started/stopped at the request of the launchProcess API command.
+launchProcess APIコマンドリクエストによりプロセスが開始／停止した
 
 ```
 arguments: 
@@ -581,13 +583,13 @@ configId: 1
     operationType: 6
 ```
 
-- arguments – Arguments for the process just started.
+- arguments – 開始プロセスのパラメータ
 
-- configId – The configuration ID for the process just started.
+- configId – 開始プロセスの設定ID
 
-- fullBinaryPath – Full path to the binary of the process just started.
+- fullBinaryPath – 開始プロセスのバイナリフルパス
 
-- keepAlive – If true, reconnection is attempted every second when the connection is severed.
+- keepAlive – trueの場合、接続が切断された際、再接続が毎秒試行されます
 
 - operationType – 0:STANDARD, 1:PUSH, 2:PULL, 3:HLS, 4:HDS, 5:RECORD, or 6:LAUNCHPROCESS.
 
@@ -596,7 +598,7 @@ configId: 1
 
 ### timerCreated
 
-A new timer has been created via the setTimer API command
+setTimer APIコマンドで新規タイマーが作成された
 
 ```
 arguments: 
@@ -606,11 +608,11 @@ configId: 1
     operationType: 6
 ```
 
-- timerId – The ID of the timer created
+- timerId – 新規作成されたタイマーのID
 
-- triggerCount – The number of times the timer triggered since it was created
+- triggerCount – タイマーが作成されて以降トリガした回数
 
-- value – The time value for the timer
+- value – タイマー値
 
 
 
@@ -618,7 +620,7 @@ configId: 1
 
 ### timerTriggered
 
-A timer has triggered.
+タイマーがトリガされた
 
 ```
 timerId: 9
@@ -626,11 +628,11 @@ triggerCount: 0
 value: 100
 ```
 
-- timerId – The ID of the timer that triggered
+- timerId – トリガされたタイマーID
 
-- triggerCount – The number of times the timer triggered since it was created
+- triggerCount – タイマーが作成されて以降トリガした回数
 
-- value – The time value for the timer
+- value – タイマー値
 
 
 
@@ -638,7 +640,7 @@ value: 100
 
 ### timerClosed
 
-A timer has been closed and will not create any new timerTriggered events.
+タイマーがクローズされ、以降timerTriggerdイベントは起きません
 
 ```
 timerId: 9
@@ -646,20 +648,20 @@ triggerCount: 2
 value: 100
 ```
 
-- timerId – The ID of the timer closed
+- timerId – クローズしたタイマーID
 
-- triggerCount – The number of times the timer triggered since it was created
+- triggerCount – タイマーが作成されて以降トリガした回数
 
-- value – The time value for the timer
-
-
+- value – タイマー値
 
 
-## Connection Based Events
+
+
+## 接続ベースのイベント
 
 ### protocolRegisteredToApp
 
-A connection has been fully established.
+接続が確立された
 
 ```
     customParameters:
@@ -672,16 +674,16 @@ A connection has been fully established.
     protocolType: IJSONCLI
 ```
 
-- customParameters – Custom parameters for the protocol.
+- customParameters – プロトコルカスタムパラメータ
 
-- protocolType – Protocol type (see Table of Protocol Types below).
+- protocolType – プロトコルタイプ
 
 
 
 
 ### protocolUnregisteredFromApp
 
-A connection has been disconnected.
+接続が切断された
 
 ```
     customParameters:
@@ -694,9 +696,9 @@ A connection has been disconnected.
     protocolType: IJSONCLI
 ```
 
-- customParameters – Custom parameters for the protocol.
+- customParameters – プロトコルカスタムパラメータ
 
-- protocolType – Protocol type (see Table of Protocol Types below).
+- protocolType – プロトコルタイプ
 
 
 
@@ -704,7 +706,7 @@ A connection has been disconnected.
 
 ### carrierCreated
 
-Some IO handler, such as a TCP socket, has been created.
+TCPソケットなど、なにかのIOハンドラが作成された
 
 
 
@@ -712,17 +714,17 @@ Some IO handler, such as a TCP socket, has been created.
 
 ### carrierClosed
 
-Some IO handler, such as a UDP socket, has been closed.
+UDPソケットなど、なにかのIOハンドラがクローズされた
 
 
 
 
 
-## Application Based Events
+## アプリケーションベースのイベント
 
 ### applicationStart, applicationStop
 
-These events are created right after the internal EMS application has started and when that application has stopped, likely indicating server shutdown.
+内部EMSアプリケーションの起動および停止（サーバーシャットダウン等）の直後に生成されるイベント
 
 ```
 config:
@@ -731,47 +733,47 @@ acceptors:
 	ip: 127.0.0.1
 	port: 1112
 	protocol: inboundJsonCli
-	sslCert: 
-	sslKey: 
+	sslCert:
+	sslKey:
 	useLengthPadding: true
 1:
 	ip: 0.0.0.0
 	port: 7777
 	protocol: inboundHttpJsonCli
-	sslCert: 
-	sslKey: 
+	sslCert:
+	sslKey:
 2:
 	ip: 0.0.0.0
 	port: 1935
 	protocol: inboundRtmp
-	sslCert: 
-	sslKey: 
+	sslCert:
+	sslKey:
 3:
 	clustering: true
 	ip: 127.0.0.1
 	port: 1936
 	protocol: inboundRtmp
-	sslCert: 
-	sslKey: 
+	sslCert:
+	sslKey:
 4:
 	clustering: true
 	ip: 127.0.0.1
 	port: 1113
 	protocol: inboundBinVariant
-	sslCert: 
-	sslKey: 
+	sslCert:
+	sslKey:
 5:
 	ip: 0.0.0.0
 	port: 5544
 	protocol: inboundRtsp
-	sslCert: 
-	sslKey: 
+	sslCert:
+	sslKey:
 6:
 	ip: 0.0.0.0
 	port: 6666
 	protocol: inboundLiveFlv
-	sslCert: 
-	sslKey: 
+	sslCert:
+	sslKey:
 	waitForMetadata: true
 aliases:
 	0: er
@@ -792,7 +794,7 @@ eventLogger:
 		hasStreamAliases: false
 		initApplicationFunction: GetApplication_evostreamms
 		initFactoryFunction: GetFactory_evostreamms
-		library: 
+		library:
 		maxRtmpOutBuffer: 524288
 		mediaStorage:
 			1:
@@ -809,18 +811,18 @@ id: 1
 name: evostreamms
 ```
 
-- config – Configuration of the application that just started (see EMS User’s Guide for details)
+- config – アプリケーション設定
 
-- id – ID of the application that just started
+- id – アプリケーションID
 
-- name – Name of the application that just started
+- name – アプリケーション名
 
 
 
 
 ### serverStarted
 
-The server has started.
+サーバーが起動した
 
 ```
 00001	serverStarted
@@ -838,7 +840,8 @@ The server has started.
 
 ### serverStopped
 
-The server is just about to stop.
+サーバーが停止
+
 
 ```
 00002	serverStopping
@@ -856,12 +859,12 @@ The server is just about to stop.
 
 ## Notes:
 
-- Make sure [eventLogger](userguide_configlua.html#eventLogger) is not commented to be able to use events.
+-  config.luaの[eventLogger](userguide_configlua.html#eventLogger)の項がコメントアウトされ、イベント利用が有効化されていることを確認してください
 
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [List of Events](eventslist.html)
 

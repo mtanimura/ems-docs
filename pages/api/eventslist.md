@@ -7,87 +7,87 @@ folder: api
 toc: true
 ---
 
-## Stream Events
+## ストリームイベント
 
-|         Event          | Description                              |
+|         イベント          | 内容                              |
 | :--------------------: | ---------------------------------------- |
-|    inStreamCreated     | A new inbound stream has been created    |
-|    outStreamCreated    | A new outbound stream has been created   |
-|     streamCreated      | A new neutral (neither in nor out) stream has been created |
-|     inStreamClosed     | An inbound stream has been closed        |
-|    outStreamClosed     | An outbound stream has been closed       |
-|      streamClosed      | A neutral stream has been closed         |
-| inStreamCodecsUpdated  | The audio and/or video codecs for this inbound stream have been identified or changed |
-| outStreamCodecsUpdated | The audio and/or video codecs for this outbound stream have been identified or changed |
-|  streamCodecsUpdated   | The audio and/or video codecs for this neutral stream have been identified or changed |
-|    audioFeedStopped    | The audio feed has stopped for an extended period |
-|    videoFeedStopped    | The video feed has stopped for an extended period |
+|    inStreamCreated     | 新規インバウンドストリームが生成されました    |
+|    outStreamCreated    | 新規アウトバウンドストリームが生成されました   |
+|     streamCreated      | 新規中間ストリーム(inでもoutでもない)が生成されました |
+|     inStreamClosed     | インバウンドストリームがクローズされました        |
+|    outStreamClosed     | アウトバウンドストリームがクローズされました       |
+|      streamClosed      | 中間ストリームがクローズされました         |
+| inStreamCodecsUpdated  | インバウンドストリームのオーディオ／ビデオが確認または変更されました |
+| outStreamCodecsUpdated | アウトバウンドストリームのオーディオ／ビデオが確認または変更されました |
+|  streamCodecsUpdated   | 中間ストリームのオーディオ／ビデオが確認または変更されました |
+|    audioFeedStopped    | オーディオフィードが一定時間以上停止しました |
+|    videoFeedStopped    | ビデオフィードが一定時間以上停止しました |
 
 
 
-## Adaptive Streaming/File-based Streaming Events
+## Adaptiveストリーミング/File-basedストリーミングイベント
 
-|          Event           | Description                              |
+|          イベント           | 内容                              |
 | :----------------------: | ---------------------------------------- |
-| hlsChildPlaylistUpdated  | Stream specific HLS playlist has been modified |
-| hlsMasterPlaylistUpdated | HLS group playlist has been modified     |
-|     hlsChunkCreated      | A new HLS segment was opened on disk     |
-|      hlsChunkClosed      | A new HLS segment has been completed and is ready on disk |
-|      hlsChunkError       | A failure occurred when writing to an HLS segment file |
-|     hlsChunkDeleted      | An HLS chunk was deleted                 |
-| hdsChildPlaylistUpdated  | Stream specific HDS manifest has been modified |
-| hdsMasterPlaylistUpdated | HDS group manifest has been modified     |
-|     hdsChunkCreated      | A new HDS segment file has been opened   |
-|      hdsChunkClosed      | A new HDS segment has been completed and is ready on disk |
-|      hdsChunkError       | A failure occurred when writing to an HDS segment/fragment file |
-|     hdsChunkDeleted      | An HDS chunk was deleted                 |
-|     mssChunkCreated      | A new MSS fragment file has been opened  |
-|      mssChunkClosed      | A new MSS fragment has been completed and is ready on disk |
-|      mssChunkError       | A failure occurred when writing to an MSS fragment file |
-|    mssPlaylistUpdated    | MSS manifest has been modified           |
-|     dashChunkCreated     | A new DASH fragment file has been opened |
-|     dashChunkClosed      | A new DASH fragment has been completed and is ready on disk |
-|      dashChunkError      | A failure occurred when writing to an DASH fragment file |
-|     dashChunkDeleted     | A DASH chunk was deleted                 |
-|   dashPlaylistUpdated    | A DASH manifest has been modified        |
-|    recordChunkCreated    | A new MP4 fragment file has been opened  |
-|    recordChunkClosed     | A new MP4 fragment has been completed and is ready on disk |
-|     recordChunkError     | A failure occurred when writing to an MP4 file |
+| hlsChildPlaylistUpdated  | ストリームに特定のHLSプレイリストが更新されました |
+| hlsMasterPlaylistUpdated | HLSグループプレイリストが更新されました     |
+|     hlsChunkCreated      | 新規HLSセグメントがオープンされました     |
+|      hlsChunkClosed      | 新規HLSセグメントが完了し、ディスク上でReadyとなりました |
+|      hlsChunkError       | HLSセグメントファイル書き込み時にエラーが起きました |
+|     hlsChunkDeleted      | HLSチャンクが削除されました                 |
+| hdsChildPlaylistUpdated  | ストリームに特定のHDS manifestが更新されました |
+| hdsMasterPlaylistUpdated | HDSグループmanifestが更新されました |
+|     hdsChunkCreated      | 新規HDSセグメントファイルがオープンされました |
+|      hdsChunkClosed      | 新規HDSセグメントが完了し、ディスク上でReadyとなりました |
+|      hdsChunkError       | HDSセグメント/フラグメントファイル書き込み時にエラーが起きました |
+|     hdsChunkDeleted      | HDSチャンクが削除されました |
+|     mssChunkCreated      | 新規MSSフラグメントファイルがオープンされました |
+|      mssChunkClosed      | 新規MSSフラグメントが完了し、ディスク上でReadyとなりました |
+|      mssChunkError       | MSSフラグメントファイル書き込みじにエラーが起きました |
+|    mssPlaylistUpdated    | MSS manifest が更新されました           |
+|     dashChunkCreated     | 新規DASHフラグメントファイルがオープンされました |
+|     dashChunkClosed      | 新規DASHフラグメントが完了し、ディスク上でReadyとなりました |
+|      dashChunkError      | DASHフラグメントフィアル書き込み時にエラーが起きました |
+|     dashChunkDeleted     | DASHチャンクが削除されました                 |
+|   dashPlaylistUpdated    | DASH manifestが更新されました |
+|    recordChunkCreated    | 新規MP4フラグメントがオープンされました |
+|    recordChunkClosed     | 新規MP4フラグメントが完了し、ディスク上でReadyとなりました |
+|     recordChunkError     | MP4ファイル書き込み時にエラーが起きました |
 
 
 
-## Web Server Events
+## Web Serverイベント
 
-|          Event          | Description                            |
+|          イベント          | 内容                            |
 | :---------------------: | -------------------------------------- |
-| streamingSessionStarted | A streaming session has been started   |
-|  streamingSessionEnded  | A streaming session has been completed |
-|   mediaFileDownloaded   | A file download has been completed     |
+| streamingSessionStarted | ストリーミングセッションが開始されました |
+|  streamingSessionEnded  | ストリーミングセッションが完了しました |
+|   mediaFileDownloaded   | ファイルダウンロードが完了しました |
 
 
 
-## API Based Events
+## API Based イベント
 
-|     Events     | Description                              |
+|     イベント     | 内容                              |
 | :------------: | ---------------------------------------- |
-|   cliRequest   | The EMS has received a Runtime API command |
-|  cliResponse   | The response generated by the EMS for the last Runtime API command |
-| processStarted | A process has been started at the request of the `launchProcess` API command |
-| processStopped | A process started via the `launchProcess` API command has been stopped |
-|  timerCreated  | A new timer has been created via the `setTimer` API command |
-| timerTriggered | The requested timer event                |
-|  timerClosed   | Indicates the timer is no longer valid and will not create any futher `timerTriggered`events |
+|   cliRequest   | EMSがランタイムAPIコマンドを受信しました |
+|  cliResponse   | 直前のランタイムAPIコマンドにたいしてEMSがレスポンスを生成しました |
+| processStarted | `launchProcess` APIコマンドリクエストによりプロセスが開始しました |
+| processStopped | `launchProcess` APIコマンドで開始されたプロセスが停止しました |
+|  timerCreated  | `setTimer` APIコマンドにより新規タイマーが生成されました |
+| timerTriggered | リクエストされたタイマーイベント |
+|  timerClosed   | タイマーがクローズし、以降`timerTriggered`イベントは生成されません |
 
 
 
-## Connection Based vents
+## Connection Based イベント
 
-|           Events            | Description                              |
+|           イベント            | 内容                              |
 | :-------------------------: | ---------------------------------------- |
-|   protocolRegisteredToApp   | A connection has been fully established  |
-| protocolUnregisteredFromApp | A connection has been disconnected       |
-|       carrierCreated        | Some IO handler, such as a TCP socket, has been created.  This is not analogous to a connection creation |
-|        carrierClosed        | Some IO handler, such as a UDP socket, has been closed.  This is not analogous to a connection being closed |
+|   protocolRegisteredToApp   | 接続が確立されました |
+| protocolUnregisteredFromApp | 接続が切断されました |
+|       carrierCreated        | TCPソケットなどなんらかのIOハンドラが生成されました。 接続の生成とは異なります |
+|        carrierClosed        | UDPソケットなどなんらかのIOハンドラがクローズされました。接続のクローズとは異なります |
 |      playlistItemStart      |                                          |
 |   firstPlaylistItemStart    |                                          |
 |    lastPlaylistItemStart    |                                          |
@@ -95,35 +95,34 @@ toc: true
 |        webRTCStopped        |                                          |
 | webRTCPeerConnectionCreated |                                          |
 | webRTCPeerConnectionClosed  |                                          |
-|   webRTCPeerStreamStarted   | A new stream using WEBRTC was opened     |
-|   webRTCPeerStreamClosed    | A stream using WEBRTC was closed         |
-|    webRtcServiceStarted     | A new webRTC service was started         |
-|    webRtcServiceStopped     | A webRTC service was stopped             |
+|   webRTCPeerStreamStarted   | WebRTC新規ストリームがオープンされました |
+|   webRTCPeerStreamClosed    | WebRTCストリームクローズされました       |
+|    webRtcServiceStarted     | WebRTC serviceが開始しました             |
+|    webRtcServiceStopped     | WebRTC serviceが停止しました             |
 |     webRtcPeerConnected     |                                          |
 |   webRtcPeerDisconnected    |                                          |
 |       webRtcPeerError       |                                          |
-|       WSStreamStarted       | A new stream using WEBSOCKET was opened  |
-|       WSStreamClosed        | A stream using WEBSOCKET was closed      |
+|       WSStreamStarted       | WebSocket新規ストリームがオープンされました  |
+|       WSStreamClosed        | WebSocketストリームがクローズされました  |
 
 
 
-## Application Based Events
+## Application Based イベント
 
-|      Events      | Description                              |
+|      イベント      | 内容                              |
 | :--------------: | ---------------------------------------- |
-| applicationStart | The internal EMS application has started |
-| applicationStop  | The internal EMS application has stopped, likely indicating a shutdown is about to occur |
-|  serverStarted   | The EMS has fully started                |
-|  serverStopping  | The EMS is about to shutdown.  This is sent as late as possible, but clearly not after shutdown has been completed |
+| applicationStart | 内部EMSアプリケーションが開始しました |
+| applicationStop  | 内部EMSアプリケーションが停止しました。シャットダウンが間もなく起こることを示しています |
+|  serverStarted   | EMSが開始しました |
+|  serverStopping  | EMSがシャットダウンします。シャットダウン完了直前に発せられます |
 
 ------
 
 The data definitions for each event can be found below. The specific schema for each event will depend up on the `serializerType` chosen for your Event Notification Sink (defined earlier in this document).
 
-The data definitions for each event can be found below. The specific schema for each event will depend up on the `serializerType` chosen for your Event Notification Sink (defined earlier in this document).
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [Events Overview](eventsoverview.html)

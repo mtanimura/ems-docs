@@ -7,31 +7,30 @@ folder: api
 toc: false
 ---
 
-Returns the most recently received string currently cached by the Metadata Manager. The call is stateless so multiple clients may each poll for metadata with no impact on each other. This may result in getting the same string multiple times if no new string has arrived.
+Metadata Managerによりキャッシュされている最近受信した文字列を返します。ステートレスコールですので複数のクライエントがそれぞれメタデータをポーリングしても性能にインパクトは与えません。新規文字列が届いてなければ、同じ文字列が複数回返ってくるでしょう。
 
 
+## API パラメータ
 
-## API Parameter Table
-
-| Parameter Name  |  Type   | Mandatory | Default Value | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :-------------: | :-----: | :-------: | :-----------: | ---------------------------------------- |
-| localStreamName | string  |   true    |    *null*     | Name of the incoming stream from which the associated metadata will be returned. Default most recent |
-|    streamId     | integer |   false   |       0       | Identifies the particular stream from which the associated metadata will be returned. Default most recent |
-|     noWrap      | boolean |   false   |   0 *false*   | If **true**, the returned string will not have the CLI JSON wrapping |
+| localStreamName | 文字列  |   true    |    *null*     | 関連メタデータが返される入力ストリーム名。デフォルトは最近のストリーム |
+|    streamId     | 整数値 |   false   |       0       | 関連メタデータが返されるストリーム。デフォルトは最近のストリーム |
+|     noWrap      | ブーリアン |   false   |   0 *false*   | **true**の場合、返り値文字列はCLI JSONラッピングされません |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 getMetadata localStreamName=<localStreamName>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 getMetadata localStreamName=testpullStream noWrap=0
 ```
 
@@ -39,9 +38,9 @@ getMetadata localStreamName=testpullStream noWrap=0
 getMetadata localStreamName=testpullStream noWrap=1
 ```
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":"{\"EMS\":{\"type\":\"json\",\"timestamp\":46125},\"data\":{\"lat\":\"32.809668\",\"lon\":\"-117.255317\",\"alt\":\"44.7\",\"speed\":\"20\",\"dir\":\"300\"}}",
 "description":"Metadata",
@@ -67,20 +66,20 @@ getMetadata localStreamName=testpullStream noWrap=1
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - type - response type
-  - timestamp -  The timestamp when metadata is generated
-  - lat - latitude value
-  - lon - longitude value
-  - alt -altitude value
-  - speed - speed value
-  - dir - direction value
+- data – パースすべきデータ
+  - type - レスポンスタイプ
+  - timestamp -  メタデータが生成されたタイムスタンプ
+  - lat - 緯度
+  - lon - 経度
+  - alt -標高
+  - speed - スピード
+  - dir - 方位
 
 
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
