@@ -1,5 +1,5 @@
 ---
-title: Overview
+title: 概要
 keywords: EMS
 sidebar: home_sidebar
 permalink: /home_overview.html
@@ -21,7 +21,7 @@ EvoStreamのユニークなアーキテクチャは、他のJavaベースのメ�
 ##EMSの特徴とメリット
 EvoStream Media Serverは単なるマルチフォーマット・マルチプロトコルサーバーというだけでなく、多数のスクリーンやプラットフォームへリッチメディアコンテンツを配信することができます。またエンタープライズ向けの低コストな配信サーバーです。EvoStreamは業界で最も高効率かつフレキシブルなストリーミングメディアサーバーといえます。
 
-![](../../images/home/intro1.jpg)
+![](images/home/intro1.jpg)
 
 - **次世代ストリーミング**
 HTML5ブラウザにダイレクトに低遅延にストリーム配信可能です。プラグインやカスタムアプリを別途インストールする必要はありません。ピア・ツー・ピアストリーミングは運用コストを低減します。リアルタイムにフレーム付随するメタデータを配信可能。
@@ -49,7 +49,7 @@ EvoStream Media Serverは独立して実行されるアプリケーションで�
 - **ストリームルーティング**
 EvoStreamが備える充実したAPIには **pull/pushストリーミング機能** がありますので、ユーザはRTMP/RTSP/HLS/MPEG-TSその他のストリームをCDNやサービスプロバイダなどとの間で簡単に取り込んだり(pull)、送り出したり(push)といった事が簡単にできます。
 
-![](../../images/home/intro2.jpg)
+![](images/home/intro2.jpg)
 
 ## EMSが動作するOS環境は？
 事実上すべてのOSといってもいいでしょう。Windows, Linux, Mac OSX, BSD, Solaris上で動作します。堅牢なサーバーからARMベースのIPカメラまでどんな環境でも動作可能です。
