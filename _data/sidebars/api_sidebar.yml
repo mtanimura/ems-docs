@@ -26,7 +26,7 @@ entries:
 
     folderitems:
     - title: Overview
-      url: /overview.html
+      url: /api_overview.html
       output: web, pdf
 
 
@@ -137,8 +137,8 @@ entries:
       url: /listGroupNameAliases.html
       output: web, pdf
 
-    - title: removeGroupNameAliases
-      url: /removeGroupNameAliases.html
+    - title: removeGroupNameAlias
+      url: /removeGroupNameAlias.html
       output: web, pdf
 
     - title: flushGroupNameAliases
@@ -240,6 +240,10 @@ entries:
 
     - title: setLogLevel
       url: /setLogLevel.html
+      output: web, pdf
+
+    - title: getLicenseId
+      url: /getLicenseId.html
       output: web, pdf
 
     - title: version
@@ -350,34 +354,24 @@ entries:
 
     - title: addMetadataListener
       url: /addMetadataListener.html
-      output: web, pdf	  
+      output: web, pdf
 
-
+    - title: listMetadataListeners
+      url: /listMetadataListeners.html
+      output: web, pdf
+  
   - title: Event Notification System
     output: web, pdf
 
     folderitems:
-    - title: Overview
+    - title: Events Overview
       url: /eventsoverview.html
       output: web, pdf
 
-    - title: Configuring Event Notifications
-      url: /eventnotification.html
-      output: web, pdf
-
-    - title: Event Sinks
-      url: /eventsinks.html
-      output: web, pdf
-
-    - title: Application vs. Server Events
-      url: /eventappvsserver.html
-      output: web, pdf
-
-    - title: Event List
+    - title: Events List
       url: /eventslist.html
       output: web, pdf
 
-    - title: Event Definitions
+    - title: Events Definitions
       url: /eventsdefinition.html
-      output: web, pdf
-
+      output: web, pdf  

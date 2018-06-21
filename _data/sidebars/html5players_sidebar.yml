@@ -3,7 +3,7 @@
 
 entries:
 - title: Sidebar
-  product: HTML5 Players
+  product: ERS and HTML5 Players
 #  version: 1.0
   folders:
 
@@ -32,6 +32,10 @@ entries:
       url: /html5players_ersinstallation.html
       output: web, pdf
 
+    - title: ERS Admin Page
+      url: /html5players_ersadminpage.html
+      output: web, pdf
+
     - title: ERS API
       url: /html5players_ersapi.html
       output: web, pdf
@@ -45,7 +49,7 @@ entries:
       url: /html5players_wrtcoverview.html
       output: web, pdf
 
-    - title: Playing Videos Using WebRTC Demo Player
+    - title: Playing Videos Using WebRTC
       url: /html5players_wrtcdemo.html
       output: web, pdf
 
@@ -67,10 +71,30 @@ entries:
       url: /html5players_wsmetadata.html
       output: web, pdf
 
-    - title: Playing Videos Using WebSocket Demo Player
+    - title: Websockets Metadata Read and Write Demo Page
+      url: /html5players_wsmetademo.html
+      output: web, pdf
+
+    - title: Playing Videos Using Websockets
       url: /html5players_wsdemo.html
       output: web, pdf
 
     - title: Browser Compatibility
       url: /html5players_wscompatibility.html
+      output: web, pdf  
+
+  - title: Appendix
+    output: web, pdf
+
+    folderitems:
+    - title: Player Events
+      url: /html5players_playerevents.html
+      output: web, pdf
+
+    - title: EMS Integration Ready Player Libraries
+      url: /html5players_emsjslib.html
+      output: web, pdf
+
+    - title: Basic Debugging
+      url: /html5players_basicdebugging.html
       output: web, pdf
