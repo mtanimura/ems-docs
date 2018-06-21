@@ -1,5 +1,5 @@
 ---
-title: Installation on Windows OS
+title: Windows OSでのインストール
 sidebar: userguide_sidebar
 permalink: userguide_installwinos.html
 folder: userguide
@@ -136,11 +136,11 @@ C:\EvoStream
    │   ├── libx264-veryfast_firstpass.avpreset
    │   ├── libx264-veryslow.avpreset
    │   └── libx264-veryslow_firstpass.avpreset
-   ├── evo-webroot  
+   ├── evo-webroot
    │   ├── demo
    │   │   ├── css
    │   │   │	├── common.css
-   │   │   │	└── common.css.orig  
+   │   │   │	└── common.css.orig
    │   │   ├── js
    │   │   │	└── evohtml5player-latest.bundle.js
    │   │   ├── evo.png
@@ -150,21 +150,21 @@ C:\EvoStream
    │   │   ├── jsonMetaWriteTest.html
    │   │   └── loading.gif
    │   ├── clientaccesspolicy.xml
-   │   └── crossdomain.xml   
+   │   └── crossdomain.xml
    ├── node-evowebservices
    │   │   ├── base_plugins
    │   │   │	├── basehdsplugin.js
    │   │   │	├── basehlsplugin.js
-   │   │   │	└── baseplugin.js    
+   │   │   │	└── baseplugin.js
    │   │   ├── bin
-   │   │   │	└── www       
+   │   │   │	└── www
    │   │   ├── config
    │   │   │	├── logging.json
-   │   │   │	└── plugins.json    
+   │   │   │	└── plugins.json
    │   │   ├── core_modules
-   │   │   │	└── ems-api-core.js       
+   │   │   │	└── ems-api-core.js
    │   │   ├── logs
-   │   │   │	└── evowebservices.log          
+   │   │   │	└── evowebservices.log
    │   │   ├── node_modules
    │   │   │	├── body-parser
    │   │   │	├── comment-json
@@ -181,10 +181,10 @@ C:\EvoStream
    │   │   │	├── amazonhlsupload.js
    │   │   │	├── streamautorouter.js
    │   │   │	├── streamloadbalancer.js
-   │   │   │	└── streamrecorder.js   
+   │   │   │	└── streamrecorder.js
    │   │   ├── routes
    │   │   │	├── evowebservices.js
-   │   │   │	└── index.js      
+   │   │   │	└── index.js
    │   │   ├── services
    │   │   │	└── plugin-service.js
    │   │   ├── views
@@ -196,7 +196,7 @@ C:\EvoStream
    │   │   ├── package.json
    │   │   ├── README.md
    │   └── └── README.txt
-   ├── logs   
+   ├── logs
    ├── media
    ├── node-ews
    │   ├── ext
@@ -210,7 +210,7 @@ C:\EvoStream
    │   │   ├── default.js
    │   │   ├── httpstream.js
    │   │   ├── php.js
-   │   │   └── resphdrs.js  
+   │   │   └── resphdrs.js
    │   ├── evo-phpengine.exe
    │   ├── ews.node
    │   ├── fileRotateSize.js
@@ -235,7 +235,7 @@ C:\EvoStream
    │   │   └── socket-io-api.js
    │   ├── data
    │   │   ├── help.json
-   │   │   └── user.json   
+   │   │   └── user.json
    │   ├── logs
    │   │   └── webui.log
    │   ├── models
@@ -251,7 +251,7 @@ C:\EvoStream
    │   │   ├── js
    │   │   └── media
    │   ├── routes
-   │   │   ├── api-explorer.js   
+   │   │   ├── api-explorer.js
    │   │   ├── dashboard.js
    │   │   ├── ems.js
    │   │   ├── index.js
@@ -263,18 +263,18 @@ C:\EvoStream
    │   │   ├── admin
    │   │   ├── index
    │   │   ├── error.hbs
-   │   │   └── index.hbs  
+   │   │   └── index.hbs
    │   ├── app.js
    │   ├── LICENSE
-   │   └── package.json   
+   │   └── package.json
    ├── services
    │   ├── ems
    │   │   ├── create.bat
    │   │   ├── remove.bat
-   │   │   ├── start.bat   
-   │   │   ├── stop.bat      
-   │   │   └── uninstall.bat    
-   │   └── nssm.exe   
+   │   │   ├── start.bat
+   │   │   ├── stop.bat
+   │   │   └── uninstall.bat
+   │   └── nssm.exe
    ├── emsTranscoder.bat
    ├── evo-avconv.exe
    ├── evo-mp4writer.exe
