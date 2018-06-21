@@ -1,5 +1,5 @@
 ---
-title: Release Notes
+title: リリースノート
 keywords: release notes
 sidebar: home_sidebar
 permalink: /home_releasenotes.html
@@ -9,7 +9,7 @@ toc: false
 
 # EMS 2.0.1
 
-## バグfix
+## bug fix
 
 - 不正アクセスを防ぐため、UIのログインページからGoogleおよびFacebookアカウントログインオプションを削除
 - ウインドウズでエイリアスを用いたVODファイルの再生ができない問題を修正
@@ -70,7 +70,7 @@ toc: false
 
 ------
 
-## バグfix
+## bug fix
 
 - ログファイルのローリング機能をより適切に
 - HTTP-ProxyのURLパラメータ区切りに"%3f"ではなく"?"を使用
