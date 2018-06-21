@@ -1,5 +1,5 @@
 ---
-title: Obtaining a License
+title: ライセンスの取得
 keyword: license
 sidebar: userguide_sidebar
 permalink: userguide_obtainlicense.html
