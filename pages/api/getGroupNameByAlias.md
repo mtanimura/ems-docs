@@ -9,41 +9,41 @@ toc: false
 
 
 
-This command returns the group name given the alias name.
+エイリアス名が与えられたグループ名を返します
 
 
 
 
 
-## API Parameter Table
+## API パラメータ
 
 
 
-| Parameter Name |  Type  | Mandatory | Default Value | Description                             |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :------------: | :----: | :-------: | :-----------: | --------------------------------------- |
-|   aliasName    | string |   true    |    *null*     | The alias alternative to the group name |
+|   aliasName    | 文字列 |   true    |    *null*     | グループ名のエイリアス |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 getGroupNameByAlias aliasName=<groupAliasName>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 getGroupNameByAlias aliasName=testGroupAlias
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 "data":{
 	"aliasName":"testGroupAlias",
 	"cliProtocolId":97,
@@ -64,23 +64,23 @@ getGroupNameByAlias aliasName=testGroupAlias
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse.
-  - aliasName – The alias alternative to the `localStreamName`
-  - groupName – The assigned groupName where alias is applied
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - aliasName – `localStreamName`に対するエイリアス
+  - groupName – エイリアスが適用されたグループ名
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
 ## Notes
 
-- **hasStreamAliases** in config.lua should be **TRUE**
+-  config.luaの**hasStreamAliases**は**TRUE**である必要があります
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [hasGroupNameAliases](userguide_webconfig.html#hasgroupnamealiases)
 - [addGroupNameAlias](addGroupNameAlias.html)

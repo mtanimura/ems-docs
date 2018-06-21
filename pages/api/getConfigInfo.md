@@ -1,4 +1,4 @@
----
+a---
 title: getConfigInfo
 keywords: api
 sidebar: api_sidebar
@@ -9,37 +9,36 @@ toc: false
 
 
 
-Returns the information of the stream by the configId.
+configIdによるストリーム情報を返す
 
 
 
-## API Parameter Table
+## API パラメータ
 
 
-
-| Parameter Name |  Type   | Mandatory | Default Value | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :------------: | :-----: | :-------: | :-----------: | ---------------------------------------- |
-|       id       | integer |   true    |    *null*     | The `configId` of the configuration to get some information |
+|       id       | 整数値 |   true    |    *null*     | `configId`による設定情報取得のid |
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 getConfigInfo id=<configId>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 getConfigInfo id=1
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
 "audioCodecBytes":"",
@@ -92,25 +91,25 @@ getConfigInfo id=1
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The information about the configuration
-  - Other fields present are dependent on stream type
+- data – 設定に関する情報
+  - 他のフィールド内容はストリームタイプによって異なります
 
 
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- description – コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
 ## Notes
 
-- The response varies depending on the configuration.
+- レスポンスは設定によってことなります
 
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [listConfig](listConfig.html)
 - [removeConfig](removeConfig.html)

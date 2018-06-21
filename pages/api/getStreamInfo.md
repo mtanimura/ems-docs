@@ -7,48 +7,48 @@ folder: api
 toc: false
 ---
 
-Returns a detailed set of information about a stream.
+ストリームに関して詳細情報を返します
 
 
 
 
 
-## API Parameter Table
+## API パラメータ
 
-| **Parameter Name** |  Type   | Mandatory |  **Default Value**   | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :----------------: | :-----: | :-------: | :------------------: | ---------------------------------------- |
-|         id         | integer |   true    |        *null*        | The **configID** of the stream. Usually a value returned by `listStreamsIDs`. This parameter is not mandatory but either this or the `localStreamName` should be present to identify the particular stream |
-|  localStreamName   | string  |   true    | *zero length string* | The name of the stream. This parameter is not mandatory but either this or the `id` should be present to identify the particular stream |
+|         id         | 整数値 |   true    |        *null*        | ストリームの**configID** 通常`listStreamsIDs`の返り値 このパラメータは必須ではなく、本パラメータ若しくは`localStreamName`のどちらかがストリーム特定のために必要です |
+|  localStreamName   | 文字列  |   true    | *zero length string* | ストリーム名。このパラメータは必須ではなく、本パラメータ若しくは`id`のどちらかがストリーム特定のために必要です |
 
 
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 getStreamInfo id=<configId>
 ```
 
-OR
+または
 
-``` 
+```
 getStreamInfo localStreamName=<localStreamName>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 getStreamInfo localStreamName=testpullStream
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
 "appName":"evostreamms",
@@ -141,90 +141,90 @@ getStreamInfo localStreamName=testpullStream
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - appName - The name of the application using the service
-  - audio – stats about the audio portion of the stream
-    - aveAudioBitRate - The average bitrate of the audio frames from the start of the stream
-    - bytesCount - Total amount of audio data received
-    - codec - The name of the audio codec 
-    - codecNumeric - Code used for internal use only
-    - currAudioBitRate - The bitrate of the last audio frame received when calling the command
-    - droppedBytesCount - The number of video bytes lost
-    - droppedPacketsCount – The number of lost audio packets
-    - packetsCount – Total number of audio packets received
-  - bandwidth – The current bandwidth utilization of the stream
+- data – パースすべきデータ
+  - appName - serviceを利用するアプリケーション名
+  - audio – ストリームのオーディオ部分の統計情報
+    - aveAudioBitRate - ストリーム開始店からのオーディオフレームの平均ビットレート
+    - bytesCount - 受信したオーディオデータ総量
+    - codec - オーディオcodec名
+    - codecNumeric - 内部使用コード
+    - currAudioBitRate - コマンドコール時点で最後のオーディオフレームのビットレート
+    - droppedBytesCount - ロストしたビデオバイト数
+    - droppedPacketsCount – ロストオーディオパケット数
+    - packetsCount – 受信オーディオパケット総数
+  - bandwidth – ストリームの現在の使用帯域
   - connectionType - 1=pull, 2=push, 3=HLS, 4=HDS, 5=MSS, 6=DASH, 7=record, 8=launchprocess, 9=webrtc, 10=metadata, 0=standard
-  - creationTimestamp – The UNIX timestamp for when the stream was created. UNIX time is expressed as the number of seconds since the UNIX Epoch (Jan 1, 1970)
-  - farIp - The IP address of the distant party
-  - farPort - The port used by the distant party
-  - ip - IP address of the source stream’s host
-  - name – the `localStreamName` for this stream.
-  - nearIp - The IP address used by the local computer
-  - nearPort - The port used by the local computer
-  - outStreamsUniqueIDs – *For pulled streams*. An array of the “out” stream IDs associated with this “in” stream
-  - pageUrl - A link to the page that originated the request (often unused)
-  - port - The port bound to the service
-  - processID - The process ID of the EMS instance processing the API command
-  - processType - Origin or edge, depending on the EMS instance processing the API command
-  - pullSettings/pushSettings – Not present for streams requested by a 3rd party (IE player/client). A copy of the parameters used in the `pullStream` or `pushStream` command.
-    - _callback -Essential to lazy pull, for internal use only
-    - audioCodecBytes - The audio codec setup of this RTP stream if it is audio
-    - configId – The identifier for the pullPushConfig.xml entry
-    - emulateUserAgent – The string that the EMS uses to identify itself with the other server. It can be modified so that EMS identifies itself as, say, a Flash Media Server
-    - forceTcp – Whether TCP MUST be used, or if UDP can be used
-    - httpProxy - May either be IP:Port combination or self
-    - isAudio - Indicates if the currently pulled stream is an audio source
-    - keepAlive – If true, the stream will try to reconnect if the connection is severed
-    - localStreamName – Same as the above “name” field
-    - operationType – The type of operation
-    - pageUrl – A link to the page that originated the request (often unused)
-    - ppsBytes - The video PPS bytes of this RTP stream if it is video
-    - rangeEnd - The length in seconds for the playback
-    - rangeStart - A value from which the playback should start expressed in seconds
-    - rtcpDetectionInterval – Used for RTSP. This is the time period the EMS waits to determine if an RTCP connection is available for the RTSP/RTP stream. (RTSP is used for synchronization between audio and video)
-    - sendRenewStream - If 1, the server will send RenewStream via SET_PARAMETER when a new client connects
-    - spsBytes - The video SPS bytes of this RTP stream if it is video
-    - swfUrl – The location of the Flash Client that is generating the stream (if any)
-    - tcUrl – An RTMP parameter that is essentially a copy of the URI
-    - tos – Type of Service network flag
-    - ttl – Time To Live network flag
-    - uri – The parsed values of the source streams URI
-  - queryTimestamp – The time (in UNIX seconds) when the information in this request was populated
-  - serverAgent - The server agent used
-  - swfUrl - The location of the Flash Client that is generating the stream (if any)
-  - tcUrl - An RTMP parameter that is essentially a copy of the URI
-  - type – The type of stream this is. The first two characters are of most interest:
-    - char 1 = I for inbound, O for outbound
-    - char 2 = N for network, F for file
-    - char 3+ = further details about stream
-    - example: INR = Inbound Network Stream (a stream coming from the network into the EMS)
-  - typeNumeric - A number obtained from an array of 8 bytes filled with the characters of the stream type padded with 0's
-  - uniqueId – The unique ID of the stream (integer)
-  - upTime – The time in seconds that the stream has been alive/running for.
-  - video – Stats about the video portion of the stream
-    - aveFrameRate- The average frame rate since the stream has started
-    - aveKeyFramesPerSec - The average keyframe per second since the stream has started
-    - aveVideoBitRate -  The average bitrate of the video frames from the start of the stream
-    - bytesCount - Total amount of video data received
-    - codec - The name of the video codec 
-    - codecNumeric - Code used for internal use only
-    - currFrameRate - The number of video frames processed within a one second time frame
-    - currKeyFramesPerSec - The number of video keyframes processed within a one second time frame
-    - currVideoBitRate - The bitrate of the last video frame received when calling the command
-    - droppedBytesCount – The number of video bytes lost
-    - droppedPacketsCount – The number of lost video packets
-    - height - The video stream’s pixel height
-    - level - H264 level
-    - packetsCount – Total number of video packets received
-    - profile - H264 profile
-    - width - The video stream’s pixel width
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+  - creationTimestamp – ストリーム生成時点のUNIXタイムスタンプ。UNIXタイムはUNIXエポック(1970年1月1日)からの秒数です
+  - farIp - リモート側のIPアドレス
+  - farPort - リモート側の使用ポート
+  - ip - ソースストリームホストのIPアドレス
+  - name – ストリームの`localStreamName`
+  - nearIp - ローカルコンピューターで使用されるIPアドレス
+  - nearPort - ローカルコンピューターで使用されるポート
+  - outStreamsUniqueIDs – *プルしたストリーム* inストリームに関連するoutストリームIDの配列
+  - pageUrl - リクエスト元のページへのリンク
+  - port - serviceにバインドされたポート
+  - processID - APIコマンドを処理するEMSインスタンスのプロセスID
+  - processType - APIコマンドを処理するEMSインスタンスにより、Origin または edge
+  - pullSettings/pushSettings – 外部プレーヤー／クライエントによりリクエストされたストリームには無い。`pullStream` または `pushStream`コマンドで使用されたパラメータ
+    - _callback -lazy pullでは必須。内部使用のみ
+    - audioCodecBytes - オーディオの場合のRTPストリームのオーディオcodec設定
+    - configId – pullPushConfig.xmlエントリでのid
+    - emulateUserAgent – EMSが他のサーバーから自身を特定するための文字列。EMSが自身を例えばFlash Media Serverとして特定させるよう編集可能
+    - forceTcp – TCPを強制するかどうか
+    - httpProxy - IP:Portの組み合わせまたはself
+    - isAudio - 現在プルされているストリームがオーディオソースかどうかを示す
+    - keepAlive – trueの場合、接続が切断した際ストリームは再接続を試みます
+    - localStreamName – ストリームの`localStreamName`
+    - operationType – オペレーションタイプ
+    - pageUrl – リクエスト元のページへのリンク
+    - ppsBytes - ビデオの場合RTPストリームのvideo PPSバイト
+    - rangeEnd - 再生する長さ(秒)
+    - rangeStart - 再生開始点（秒）
+    - rtcpDetectionInterval – RTSPで使用され、RTSP/RTPストリームのためのRTCP接続ができるかどうか判定するEMSの待ち時間(RTSPはオーディオとビデオの同期に使用されます)
+    - sendRenewStream - 1の場合、新規クライエント接続時にサーバーはSET_PARAMETERでRenewSTreamを送ります
+    - spsBytes - ビデオの場合RTPストリームのビデオSPSバイト
+    - swfUrl – ストリームを生成するFlashクライエントの場所
+    - tcUrl – RTMPパラメータの一種、実質的にはURIのコピー
+    - tos – Type of Serviceネットワークフラグ
+    - ttl – Time To Liveネットワークフラグ
+    - uri – ソースストリームURIのパースされた値
+  - queryTimestamp – リクエストによる情報が投入された時間のタイムスタンプ(UNIX時間)
+  - serverAgent - 使用されたサーバーエージェント
+  - swfUrl - ストリームを生成するFlashクライエントのロケーション
+  - tcUrl - RTMPパラメータの一種、実質的にはURIのコピー
+  - type – ストリームタイプ。重要な情報は最初の２文字:
+    - char 1 = インバウンドはI、アウトバウンドは O
+    - char 2 = ネットワークはN、 ファイルはF
+    - char 3+ = ストリームに関する詳細情報
+    - 例: INR = Inbound Network Stream (ネットワークからEMSに入ってくるストリーム)
+  - typeNumeric - ストリームタイプ文字に0で埋めて8バイトにした配列から得られる数値
+  - uniqueId – ストリームのuniqueID(整数値)
+  - upTime – ストリームがaliveかつ実行中の期間(秒数)
+  - video – ストリームのビデオ部分の統計情報
+    - aveFrameRate- ストリーム開始からの平均フレームレート
+    - aveKeyFramesPerSec - ストリーム開始からの平均毎秒キーフレーム
+    - aveVideoBitRate -  ストリーム開始からのビデオフレームの平均ビットレート
+    - bytesCount - 受信ビデオデータ総量
+    - codec - ビデオcodec名
+    - codecNumeric - 内部使用コード
+    - currFrameRate - 秒あたりで処理されているビデオフレーム数
+    - currKeyFramesPerSec - 秒あたりで処理されるビデオキーフレーム数
+    - currVideoBitRate - コマンドコール時点の最後のビデオフレームのビットレート
+    - droppedBytesCount – ロストしたビデオバイト数
+    - droppedPacketsCount – ロストしたビデオパケット数
+    - height - ビデオストリームの縦ピクセル数
+    - level - H264レベル
+    - packetsCount – ビデオパケット受信総数
+    - profile - H264プロファイル
+    - width - ビデオストリームの横ピクセル数
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [getStreamsCount](getStreamsCount.html)
