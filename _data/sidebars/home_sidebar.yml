@@ -25,18 +25,18 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Overview
+    - title: 概要
       url: /home_overview.html
       output: web, pdf
 
-    - title: Quick Start Guide on Windows
+    - title: Windowsクイックスタート・イド
       url: /home_quickstartguidewindows.html
       output: web, pdf
 
-    - title: Quick Start Guide on Linux
+    - title: Linuxクイックスタートガイド
       url: /home_quickstartguidelinux.html
       output: web, pdf
 
-    - title: Release Notes
+    - title: リリースノート
       url: /home_releasenotes.html
       output: web, pdf
