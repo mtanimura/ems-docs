@@ -116,7 +116,7 @@ pullstream uri=rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4 locals
 
 JSON responseは下記の詳細を含みます:
 
-- data – パースするデータ
+- data – パースすべきデータ
   - audioCodecBytes - RTPストリームがaudioの場合、RTPストリームでのオーディオ
   - configID – コマンドのconfig id
   - emulateUserAgent – EMSが自身を同定するために使用する文字列。EMSが自身を同定するのにたとえばFlash Media Serverなどと変更することが可能

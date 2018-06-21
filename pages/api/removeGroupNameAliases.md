@@ -7,39 +7,39 @@ folder: api
 toc: false
 ---
 
-This command will remove the group name given the alias name.
+このコマンドはグループのエイリアス名を削除します。
 
 
 
-## API Parameter Table
+## API パラメータ
 
 
 
-| Parameter Name |  Type  | Mandatory | Default Value | Description                             |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :------------: | :----: | :-------: | :-----------: | --------------------------------------- |
-|   aliasName    | string |   true    |    *null*     | The alias alternative to the group name |
+|   aliasName    | 文字列 |   true    |    *null*     | グループのエイリアス |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 removeGroupNameAlias aliasName=<groupAliasName>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 removeGroupNameAlias aliasName=testGroupAlias
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":[
     {
@@ -56,24 +56,24 @@ removeGroupNameAlias aliasName=testGroupAlias
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data– Provides the following information for each group name alias
-  - aliasName – The alias alternative to the `groupname`
-  - groupName – The original group name
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data– 各グループ名エイリアスに関する以下の情報を提供します
+  - aliasName – `groupname`のエイリアス
+  - groupName – オリジナルのグループ名
+- description – コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
 ## Notes
 
-- **hasGroupNameAliases** in webconfig.lua should be **TRUE**
+- webconfig.luaの**hasGroupNameAliases**は **TRUE**に設定されている必要があります。
 
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [hasGroupNameAliases](userguide_webconfig.html#hasgroupnamealiases)
 - [addGroupNameAliases](addGroupNameAliases.html)

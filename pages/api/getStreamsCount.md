@@ -47,7 +47,7 @@ getStreamsCount
 
 JSON responseは以下を含みます:
 
-- data – パースするデータ
+- data – パースすべきデータ
   - ​	streamCount – アクティブなストリーム数
 - description– コマンドのパース・実行結果
 - status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**

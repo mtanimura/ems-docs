@@ -7,39 +7,39 @@ folder: api
 toc: false
 ---
 
-Specifies a new acceptor during runtime
+ランタイムで新規acceptorを指定します
 
 
 
 ## API Parameter Table
 
-| Parameter Name  |  Type   | Mandatory | Default Value | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :-------------: | :-----: | :-------: | :-----------: | ---------------------------------------- |
-|      port       | integer |   true    |    *null*     | The port to bind on                      |
-|       ip        | string  |   false   |    0.0.0.0    | The IP address to bind on                |
-| localStreamName | string  |   false   |   0 ~ 0 ~ 0   | The localStreamName to bind on. The default value (0 ~ 0 ~ 0) means it will be applied on any stream |
+|      port       | 整数値|   true    |    *null*     | バインドされるポート |
+|       ip        | 文字列  |   false   |    0.0.0.0    | バインドされるipアドレス |
+| localStreamName | 文字列  |   false   |   0 ~ 0 ~ 0   | バインドされるlocalStreamName デフォルト値(0 ~ 0 ~ 0) は全てのストリームに適用を意味します。
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 addMetadataListener port=3535
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 addMetadataListener port=3535 localstreamname=meta
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
 "acceptedConnectionsCount":0,
@@ -62,27 +62,27 @@ addMetadataListener port=3535 localstreamname=meta
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - acceptedConnectionsCount - Number of active connections
-  - appId - ID of application using the service
-  - appName - Application using the service
-  - droppedConnectionsCount - Number of dropped connections
-  - enabled - `true` if the service is enabled, `false` if not
-  - id - ID of the service
-  - ip - IP address used by the service
-  - localStreamName - Name of the stream to which the associated metadata will be sent
-  - port - Port used by the service
-  - protocol - Protocol used by the service
+- data – パースすべきデータ
+  - acceptedConnectionsCount - アクティブな接続数
+  - appId - serviceを使用するアプリケーションID
+  - appName - serviceを使用するアプリケーション
+  - droppedConnectionsCount - ドロップした接続数
+  - enabled - serviceが有効の場合は`true`、そうでなければ `false`
+  - id - serviceのID
+  - ip - serviceが使用するipアドレス
+  - localStreamName - 関連メタデータが送られるストリーム名Name of the stream to which the associated metadata will be sent
+  - port - serviceが使用するポート
+  - protocol - serviceが使用するプロトコル
 
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [mediaStorage](userguide_confuglua.html#mediastorage)
 - [listStorage](listStorage.html)

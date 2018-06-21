@@ -107,7 +107,7 @@ pushStream uri=rtmp://192.168.1.200/live localStreamName=testpullStream targetSt
 
 pullStreamに対するJSON responseは下記の詳細を含みます:
 
-- data – パースするデータ
+- data – パースすべきデータ
   - configID – コマンドのconfig id
   - emulateUserAgent – EMSが自身を同定するために使用する文字列。EMSが自身を同定するのにたとえばFlash Media Serverなどと変更することが可能
   - forceTcp – TCPを強制するかどうか、またはUDPを許容するか

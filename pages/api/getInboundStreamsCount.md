@@ -43,7 +43,7 @@ getInboundStreamsCount
 
 JSON responseは以下を含みます:
 
-- data – パースするデータ
+- data – パースすべきデータ
   - inboundStreamsCount - アクティブなインバウンドストリーム数
 
 

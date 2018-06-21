@@ -47,7 +47,7 @@ listTimers
 
 JSON responseは以下を含みます:
 
-- data – パースするデータ
+- data – パースすべきデータ
   - timerId – 追加されるタイマーID
   - triggerCount – タイマーがトリガーされた回数
 - description– コマンドのパース・実行結果

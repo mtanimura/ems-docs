@@ -84,7 +84,7 @@ createDASHStream localstreamnames=testpullStream targetfolder=/var/evo-webroot g
 
 JSON responseは下記の詳細を含みます:
 
-- data – パースするデータ
+- data – パースすべきデータ
   - bandwidths – ストリーミングの帯域を指定する整数値の配列
   - chunkLength – プレイリストエレメント(.mpdファイル)の長さ(秒)
   - chunkOnIDR – **true**の場合、IDR境界でchunkが作成されます
