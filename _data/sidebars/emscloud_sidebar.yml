@@ -24,7 +24,7 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Overview
+    - title: 概要
       url: /emscloud_overview.html
       output: web, pdf
 
@@ -32,19 +32,19 @@ entries:
     output: web, pdf
 
     folderitems:
-     - title: Overview
+     - title: 概要
        url: /emscloud_amazon_overview.html
        output: web, pdf
 
-     - title: Deploying an Instance
+     - title: インスタンスのディプロイ
        url: /emscloud_amazon_deployinstance.html
        output: web, pdf
 
-     - title: Connecting to EMS
+     - title: EMSへの接続
        url: /emscloud_amazon_connectEMS.html
        output: web, pdf
 
-     - title: Stopping/Terminating EMS Instance
+     - title: EMSインスタンスの停止／終了
        url: /emscloud_amazon_stopEMS.html
        output: web, pdf
 
@@ -53,22 +53,22 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Overview
+    - title: 概要
       url: /emscloud_azure_overview.html
       output: web, pdf
 
-    - title: Creating Virtual Machine
+    - title: Virtual Machineの作成
       url: /emscloud_azure_createVM.html
       output: web, pdf
 
-    - title: Connecting to EMS
+    - title: EMSへの接続
       url: /emscloud_azure_connectEMS.html
       output: web, pdf
 
-    - title: Stopping/Terminating EMS Instance
+    - title: EMSインスタンスの停止／終了
       url: /emscloud_azure_stopEMS.html
       output: web, pdf
 
-    - title: EMS Load Balancer
+    - title: EMSロードバランサー
       url: /emscloud_azure_loadbalancer.html
       output: web, pdf

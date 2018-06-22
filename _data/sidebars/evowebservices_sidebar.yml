@@ -24,55 +24,55 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Overview
+    - title: 概要
       url: /evowebservices_overview.html
       output: web, pdf
 
-  - title: Installation and Configuration
+  - title: インストールと設定
     output: web, pdf
 
     folderitems:
-    - title: Install and Start EvoWebservices
+    - title: EvoWebservicesのインストールと起動
       url: /evowebservices_nodeinstall.html
       output: web, pdf
 
-    - title: Configuring EvoWebservices Event Notifications
+    - title: EvoWebservicesイベント通知設定
       url: /evowebservices_eventconfiguration.html
       output: web, pdf
 
-    - title: Configuring the EvoWebservices Plugins
+    - title: EvoWebservicesプラグインの設定
       url: /evowebservices_pluginconfiguration.html
       output: web, pdf
 
 
-  - title: Web Service Plugins
+  - title: Web Serviceプラグイン
     output: web, pdf
 
     folderitems:
-    - title: Stream AutoRouting
+    - title: ストリーム自動ルーティング
       url: /evowebservices_streamautorouting.html
       output: web, pdf
 
-    - title: Stream Recorder
+    - title: ストリームRecorder
       url: /evowebservices_streamrecorder.html
       output: web, pdf
 
-    - title: Stream Load Balancer
+    - title: ストリームロードバランサ
       url: /evowebservices_streamloadbalancer.html
       output: web, pdf
 
-    - title: Amazon S3 HLS Upload
+    - title: Amazon S3 HLSアップロード
       url: /evowebservices_HLSupload.html
       output: web, pdf
 
-    - title: Amazon S3 DASH Upload
+    - title: Amazon S3 DASHアップロード
       url: /evowebservices_DASHupload.html
       output: web, pdf
 
-    - title: Amazon S3 HDS Upload
+    - title: Amazon S3 HDSアップロード
       url: /evowebservices_HDSupload.html
       output: web, pdf
 
-    - title: Event Notification System
+    - title: Event通知システム
       url: /evowebservices_event.html
       output: web, pdf

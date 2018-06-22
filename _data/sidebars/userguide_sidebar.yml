@@ -24,7 +24,7 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Overview
+    - title: 概要
       url: /userguide_overview.html
       output: web, pdf
 
@@ -32,36 +32,36 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Obtaining a License
+    - title: ライセンスの取得
       url: /userguide_obtainlicense.html
       output: web, pdf
 
-    - title: Installation on Windows OS
+    - title: Windows OSでのインストール
       url: /userguide_installwinos.html
       output: web, pdf
 
-    - title: Installation on Linux OS
+    - title: Linux OSでのインストール
       url: userguide_installlinuxos.html
       output: web, pdf
 
-    - title: Installation on Other OS
+    - title: その他のOSでのインストール
       url: /userguide_installotheros.html
       output: web, pdf
 
-    - title: File Descriptions
+    - title: インストールされるファイルについて
       url: /userguide_filedescriptions.html
       output: web, pdf
 
-    - title: Starting EvoStream Media Server
+    - title: EvoStream Media Serverの起動
       url: /userguide_startems.html
       output: web, pdf
 
-    - title: Connecting to EMS Web UI
+    - title: EMS Web UIへの接続
       url: /userguide_connectui.html
       output: web, pdf
 
 
-  - title: EMS Configuration Files
+  - title: EMS設定ファイル
     output: web, pdf
 
     folderitems:
@@ -115,33 +115,33 @@ entries:
 
 
 
-  - title: Using the EMS Web UI
+  - title: EMS Web UIの使用
     output: web, pdf
 
     folderitems:
-    - title: EMS Web UI Overview
+    - title: EMS Web UIの概要
       url: /userguide_webuioverview.html
       output: web, pdf
 
-    - title: Create Local Account
+    - title: Local Accountの作成
       url: /userguide_createaccount.html
       output: web, pdf
 
-    - title: Log In
+    - title: ログイン
       url: /userguide_login.html
       output: web, pdf
 
-    - title: Forgot Password
+    - title: パスワードを忘れてしまったら
       url: /userguide_forgotpassword.html
       output: web, pdf
 
-    - title: Log Out
+    - title: ログアウト
       url: /userguide_logout.html
       output: web, pdf
 
 
 
-  - title: The Web UI Dashboard
+  - title: Web UI Dashboard
     output: web, pdf
 
     folderitems:
@@ -149,7 +149,7 @@ entries:
       url: /userguide_dashboard.html
       output: web, pdf
 
-    - title: Profile
+    - title: アカウントプロフィール
       url: /userguide_profile.html
       output: web, pdf
 
@@ -160,27 +160,27 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: The Streams Page
+    - title: Streamsページ
       url: /userguide_streams.html
       output: web, pdf
- 
-    - title: Adding Streams
+
+    - title: ストリームの追加
       url: /userguide_add.html
       output: web, pdf
 
-    - title: Sending Streams
+    - title: ストリームの送信
       url: /userguide_send.html
       output: web, pdf
 
-    - title: Checking Active Streams
+    - title: アクティブなストリーム
       url: /userguide_active.html
       output: web, pdf
 
-    - title: Configure Streams
+    - title: ストリーム設定
       url: /userguide_config.html
       output: web, pdf
 
-    - title: VOD Streams
+    - title: VODストリーム
       url: /userguide_vod.html
       output: web, pdf
 
@@ -190,7 +190,7 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Using the API Explorer
+    - title: API Explorerについて
       url: /userguide_apiexplorer.html
       output: web, pdf
 
@@ -200,67 +200,67 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Accessing the Run-Time API
+    - title: Run-Time APIへのアクセス
       url: /userguide_telnet.html
       output: web, pdf
 
-    - title: Pull a Stream
+    - title: プルストリーム
       url: /userguide_pullstream.html
       output: web, pdf
 
-    - title: Push a Stream
+    - title: プッシュストリーム
       url: /userguide_pushstream.html
       output: web, pdf
 
-    - title: Push-in a Stream
+    - title: プッシュインストリーム
       url: /userguide_pushin.html
       output: web, pdf
-  
-    - title: Create HLS Stream
+
+    - title: HLSストリーム生成
       url: /userguide_createhls.html
       output: web, pdf
 
-    - title: Create DASH Stream
+    - title: DASHストリーム生成
       url: /userguide_createdash.html
       output: web, pdf
 
-    - title: Create HDS Stream
+    - title: HDSストリーム生成
       url: /userguide_createhds.html
       output: web, pdf
 
-    - title: Create MSS Stream
+    - title: MSSストリーム生成
       url: /userguide_createmss.html
       output: web, pdf
 
-    - title: Record a Stream
+    - title: ストリームRecord
       url: /userguide_record.html
       output: web, pdf
 
-    - title: Transcode
+    - title: トランスコード
       url: /userguide_transcode.html
       output: web, pdf
 
-    - title: Aliasing and Authentication
+    - title: セキュリティと認証
       url: /userguide_aliasingandauthentication.html
       output: web, pdf
 
-    - title: Video On Demand
+    - title: ビデオオンデマンド(VOD)
       url: /userguide_videoondemand.html
       output: web, pdf
 
-    - title: Play Over HTTP
+    - title: HTTP経由でのストリーム再生
       url: /userguide_playoverhttp.html
       output: web, pdf
 
-    - title: Blacklisting
+    - title: ブラックリスト
       url: /userguide_blacklisting.html
       output: web, pdf
 
-    - title: Using API Proxy Authentication
+    - title: APIプロキシ認証(Proxy Authentication)
       url: /userguide_usingapiproxy.html
       output: web, pdf
 
-    - title: Raspberry Pi OMX-based Transcoder
+    - title: Raspberry PiでのOMXベースのトランスコーダー
       url: /userguide_rpitranscoder.html
       output: web, pdf
 
@@ -269,27 +269,27 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Using IPv6
+    - title: IPv6について
       url: /userguide_ipv6support.html
       output: web, pdf
 
-    - title: Using EMS on Docker
+    - title: Docker上でのEMSについて
       url: /userguide_docker.html
       output: web, pdf
 
-    - title: Protocol Support and Specifics
+    - title: プロトコルサポート
       url: /userguide_protocols.html
       output: web, pdf
 
-    - title: EMS Stream Types
+    - title: EMSストリームタイプ
       url: /userguide_streamtypes.html
       output: web, pdf
 
-    - title: Sample Content
+    - title: サンプルコンテンツ
       url: /userguide_samplecontent.html
       output: web, pdf
 
-    - title: Basic Debugging
+    - title: 基本的なデバッグ
       url: /userguide_basicdebugging.html
       output: web, pdf
 

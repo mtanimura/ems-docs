@@ -25,12 +25,12 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: Overview
+    - title: 概要
       url: /api_overview.html
       output: web, pdf
 
 
-  - title: Streams API
+  - title: ストリームAPI
     output: web, pdf
 
     folderitems:
@@ -104,7 +104,7 @@ entries:
 
 
 
-  - title: Aliasing API
+  - title: エイリアスAPI
     output: web, pdf
 
     folderitems:
@@ -164,7 +164,7 @@ entries:
 
 
 
-  - title: Utility and Feature API Functions
+  - title: ユーティリティAPI Functions
     output: web, pdf
 
     folderitems:
@@ -263,7 +263,7 @@ entries:
       output: web, pdf
 
 
-  - title: Connections API
+  - title: 接続API
     output: web, pdf
 
     folderitems:
@@ -329,7 +329,7 @@ entries:
       url: /setBandwidthLimit.html
       output: web, pdf
 
- 
+
   - title: Services API
     output: web, pdf
 
@@ -359,12 +359,12 @@ entries:
     - title: listMetadataListeners
       url: /listMetadataListeners.html
       output: web, pdf
-  
+
   - title: Event Notification System
     output: web, pdf
 
     folderitems:
-    - title: Events Overview
+    - title: イベントの概要
       url: /eventsoverview.html
       output: web, pdf
 
@@ -374,4 +374,4 @@ entries:
 
     - title: Events Definitions
       url: /eventsdefinition.html
-      output: web, pdf  
+      output: web, pdf
