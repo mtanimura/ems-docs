@@ -83,7 +83,7 @@ entries:
       url: /html5players_wscompatibility.html
       output: web, pdf
 
-  - title: Appendix
+  - title: 付録
     output: web, pdf
 
     folderitems:

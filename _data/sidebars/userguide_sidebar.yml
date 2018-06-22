@@ -28,7 +28,7 @@ entries:
       url: /userguide_overview.html
       output: web, pdf
 
-  - title: Getting Started
+  - title: はじめに
     output: web, pdf
 
     folderitems:
@@ -115,7 +115,7 @@ entries:
 
 
 
-  - title: EMS Web UIの使用
+  - title: EMS Web UI
     output: web, pdf
 
     folderitems:
@@ -156,7 +156,7 @@ entries:
 
 
 
-  - title: Working with Streams
+  - title: ストリームでの作業
     output: web, pdf
 
     folderitems:
@@ -265,7 +265,7 @@ entries:
       output: web, pdf
 
 
-  - title: Appendix
+  - title: 付録
     output: web, pdf
 
     folderitems:

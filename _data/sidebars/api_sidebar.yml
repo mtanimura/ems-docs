@@ -360,7 +360,7 @@ entries:
       url: /listMetadataListeners.html
       output: web, pdf
 
-  - title: Event Notification System
+  - title: イベント通知システム
     output: web, pdf
 
     folderitems:
