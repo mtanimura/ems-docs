@@ -1,6 +1,6 @@
 ---
 title: blacklist.txt
-keywords: blacklist
+keywords: ブラックリスト
 sidebar: userguide_sidebar
 permalink: userguide_blacklist.html
 folder: userguide
