@@ -7,46 +7,45 @@ folder: api
 toc: false
 ---
 
-Checks a specific stream if it is running or not.
+指定したストリームが実行中かどうかを確認します
 
 
 
-## API Parameter Table
+## API パラメータ
 
 
 
-| Parameter Name  |  Type   | Mandatory | Default Value | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :-------------: | :-----: | :-------: | :-----------: | ---------------------------------------- |
-|       id        | integer |   true    |    *null*     | The **configID** of the stream to check. |
-| localStreamName | string  |   true    |    *null*     | The name of the stream to check.         |
+|       id        | 整数値 |   true    |    *null*     | 確認したいストリームの**configID** |
+| localStreamName | 文字列  |   true    |    *null*     | 確認したいストリーム名         |
 
-## API Call Template
-
-``` 
+## API Call テンプレート
+```
 isStreamRunning id=<configId>
 ```
 
-OR
+または
 
-``` 
+```
 isStreamRunning localStreamName=<localStreamName>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 isStreamRunning localStreamName=testpullStream
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-**If running:**
+**実行中の場合は:**
 
-``` 
+```
 "data":{
 	"Running":true
 },
@@ -54,9 +53,9 @@ isStreamRunning localStreamName=testpullStream
 "status":"SUCCESS"
 ```
 
-**If not running:**
+**実行中でない場合:**
 
-``` 
+```
 "data":{
 	"Running":false
 },
@@ -68,23 +67,23 @@ isStreamRunning localStreamName=testpullStream
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse.
-  - Running - tells whether the stream is active **true** or **false**
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - Running - **true** または **false**でストリームがアクティブかどうかを示します
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
 ## Notes
 
-- Either add the parameter **id** or **localStreamName** in the API call
+- **id** または **localStreamName** のどちらかのパラメータをAPIコールに含めてください
 
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [listStreams](listStreams.html)
 - [listStreamsIds](listStreamsIds.html)

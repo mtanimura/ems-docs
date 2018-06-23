@@ -7,47 +7,48 @@ folder: api
 toc: false
 ---
 
-This command will both stop the stream and remove the corresponding configuration entry. This command is the same as performing `shutdownStream permanently=1`.
+ストリームを停止し、関連する設定エントリを削除します。このコマンドは`shutdownStream permanently=1`を行うのと同じです。
 
 
 
-## API Parameter Table
+## API パラメータ
 
 
 
-|  Parameter Name   |  Type   | Mandatory | Default Value | Description                              |
+
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :---------------: | :-----: | :-------: | :-----------: | ---------------------------------------- |
-|        id         | integer |   true    |    *null*     | The configId of the configuration that needs to be removed. ConfigId’s can be obtained from the `listConfig` interface. Removing an inbound stream will also automatically remove all associated outbound streams. |
-|     groupName     | string  |   false   |    *null*     | The name of the group that needs to be removed (applicable to HLS, HDS and external processes). *Mandatory only if the id parameter is not specified.* |
-| removeHlsHdsFiles | boolean |   false   |   0 *false*   | If **true** and the stream is HLS or HDS, the folder associated with it will be removed |
+|        id         | 整数値 |   true    |    *null*     | 削除される設定のconfigid。configidは`listConfig`で得ることができます インバウンドストリームを削除すると、関連するアウトバウンドストリームもすべて削除されます |
+|     groupName     | 文字列  |   false   |    *null*     | 削除されるグループ名 (HLSやHDS、外部プロセスの場合にのみ適用) *idパラメータが指定されていない場合のみ必須* |
+| removeHlsHdsFiles | ブーリアン |   false   |   0 *false*   | **true**でかつストリームがHLS または HDSの場合、関連するフォルダが削除されます |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 removeConfig id=<configId>
 ```
 
-OR
+または
 
-``` 
+```
 removeConfig groupName=<groupName>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 removeConfig id=555
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     *..remove details for clarity*
@@ -61,24 +62,24 @@ removeConfig id=555
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse.
-  - configId – The identifier for the pullPushConfig.xml entry
-  - Other fields present are dependent on stream type
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - configId – pullPushConfig.xmlエントリ用のid
+  - 他フィールドはストリームタイプに依存
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
 ## Notes
 
-- The config ID shown by the listConfig command is not the same as the stream ID shown by the listStreams command. The `removeConfig` command uses the config ID, not the stream ID.
+- listConfigコマンドで表示されるconfig IDは、listStreamsコマンドで表示されるstream IDとは異なります。`removeConfig`コマンドはconfig IDを使います(stream IDではなく)
 
 
 
 
-## Related Links
+## 関連リンク
 
 - [listConfig](listConfig.html)
 - [getConfigInfo](getConfigInfo.html)

@@ -9,51 +9,52 @@ toc: false
 
 
 
-This function changes the compression characteristics of an audio and/or video stream. This function allows you to change the resolution of a source stream, change the bitrate of a stream, change a VP8 or MPEG2 stream into H.264 and much more. This function will also allow users to create overlays on the final stream as well as crop streams.
-
-**Transcoding requires SIGNIFICANT computing resources and will severely impact performance. A general guideline is that you can accomplish one transcoding job per CPU core for HD streams.**
+ビデオ／オーディオストリームの圧縮性質を変更します。ソースストリームから解像度やビットレート変更したり、VP8やMPEG2ストリームをH.264ストリームに変更したりすることができます。またオーバーレイを入れたりクロップすることも可能です。
 
 
+**トランスコードには多大なコンピュータリソースを必要とし性能へのインパクトが大きいです。一般的なガイドラインとしては、ひとつのHDストリームのトランスコードジョブに対して１CPUコアが必要となります**
 
-## API Parameter Table
 
-|     **Parameter Name**      |  Type   | **Mandatory** |        **Default Value**         | **Description**                          |
+
+## API パラメータ
+
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :-------------------------: | :-----: | :-----------: | :------------------------------: | ---------------------------------------- |
-|           source            | string  |     true      |              *null*              | Can be a URI or a local stream name from EMS |
-|        destinations         | string  |     true      |              *null*              | The target URI(s) or stream name(s) of the transcoded stream. If only a name is given, it will be pushed back to the EMS |
-|      targetStreamNames      | string  |     false     |  transcoded_xxxx *(timestamp)*   | The name of the stream(s) at destination(s). If not specified, and a full URI is provided to destinations, name will have a time stamped value |
-|          groupName          | string  |     false     | transcoded_group_xxxx *(random)* | The group name assigned to this process. If not specified, `groupName` will have a random value |
-|        videoBitrates        | integer |     false     |      input video's bitrate       | Target output video bitrate(s) (in bits/s, append '**k**' to value for kbits/s). Accepts the value '**copy**' to copy the input bitrate. An empty value passed would mean no video |
-|         videoSizes          | integer |     false     |        input video's size        | Target output video size(s) in wxh (width x height) format. IE: 240x480 *See Note 3 below* |
-| videoAdvancedParamsProfiles | string  |     false     |              *null*              | Name of video profile template that will be used. See the contents of 'evo-avconv-presets' folder for sample file presets. *See Note 3 below* |
-|        audioBitrates        | integer |     false     |      input audio's bitrate       | Target output audio bitrate(s) (in bits/s, append '**k**' to value for kbits/s). Accepts the value '**copy**' to copy the input bitrate. An empty value passed would mean no audio |
-|     audioChannelsCounts     | integer |     false     |   input audio's channel count    | Target output audio channel(s) count(s). Valid values are **1** (mono), **2** (stereo), and so on. Actual supported channel count is dependent on the number of input audio channels. *See Note 4 below* |
-|      audioFrequencies       | string  |     false     |     input audio's frequency      | Target output audio frequency(ies) (in Hz, append '**k**' to value for 'kHz'. *See Note 4 below* |
-| audioAdvancedParamsProfiles | string  |     false     |              *null*              | Name of audio profile template that will be used. *See Note 4 below* |
-|          overlays           | string  |     false     |              *null*              | Location of the overlay source(s) to be used. These are transparent images (normally in PNG format) that have the same or smaller size than the video. Image is placed at the top-left position of the video |
-|          croppings          | string  |     false     |              *null*              | Target video cropping position(s) and size(s) in 'left : top : width : height' format (e.g. 0:0:200:100. Positions are optional (200:100 for a centered cropping of 200 width and 100 height in pixels). Values are limited to the actual size of the video |
-|          keepAlive          | integer |     false     |             1 *true*             | If **true**, the server will restart transcoding if it was previously activated |
-|        commandFlags         | integer |     false     |              *null*              | Other commands to the transcode process that are not supported by the baseline transcode command |
+|           source            | 文字列  |     true      |              *null*              | URIかまたはEMSからのローカルストリーム名を使用可 |
+|        destinations         | 文字列  |     true      |              *null*              | トランスコード処理したストリームのターゲットURIまたはストリーム名。名前のみ与えた場合EMSにプッシュバックされます |
+|      targetStreamNames      | 文字列  |     false     |  transcoded_xxxx *(timestamp)*   | 保存先でのストリーム名。指定がない場合はフルURIが保存先に使用され、タイムスタンプ値が名前に使用されます
+|          groupName          | 文字列  |     false     | transcoded_group_xxxx *(random)* | グループ名。指定がない場合ランダムな値が`groupName`に適用されます |
+|        videoBitrates        | 整数値 |     false     |      入力ビデオビットレート       | 出力ビデオターゲットビットレート(bit/s, kbit/s) 入力ビットレートをコピーするには`**copy**`を使用可能です。空の値はビデオ無しを意味します |
+|         videoSizes          | 整数値 |     false     |        入力ビデオサイズ        | 出力ビデオターゲットサイズ (width x height) 例: 240x480 *下記Note 3参照* |
+| videoAdvancedParamsProfiles | 文字列  |     false     |              *null*              | 適用ビデオプロファイルテンプレート名。'evo-avconv-presets'フォルダのサンプルプリセットを参照してください *下記Note 3参照* |
+|        audioBitrates        | 整数値 |     false     |      入力オーディオビットレート       | 出力オーディオターゲットビットレート(bit/s, kbit/s) 入力ビットレートをコピーするには`**copy**`を使用可能です。空の値はオーディオ無しを意味します |
+|     audioChannelsCounts     | 整数値 |     false     |   入力オーディオチャンネル数    | 出力オーディオターゲットチャンネル数。使用可能な数値は**1** (モノラル)、 **2** (ステレオ)などで、入力のオーディオチャンネル数にも依存します*下記Note 4参照* |
+|      audioFrequencies       | 文字列  |     false     |     入力オーディオ周波数      | 出力オーディオターゲット周波数 (`Hz`まはた`kHz`*下記Note 4参照* |
+| audioAdvancedParamsProfiles | 文字列  |     false     |              *null*              | オーディオプロファイルテンプレート名 *下記Note 4参照* |
+|          overlays           | 文字列  |     false     |              *null*              | オーバーレイの場所。(通常PNGフォーマットの)ビデオ解像度より小さなサイズのアルファ付き静止画ファイル。画面左上から配置されます |
+|          croppings          | 文字列  |     false     |              *null*              | クロップの位置とサイズ 'left : top : width : height' フォーマット (例 0:0:200:100 位置はオプショナルで200:100の場合は中央に200 x 100ピクセルで配置されます。使用可能な数値はビデオ解像度以内までに制限されます |
+|          keepAlive          | 整数値 |     false     |             1 *true*             | **true**の場合、アクティベートされたトランスコードは再開されます |
+|        commandFlags         | 整数値 |     false     |              *null*              | ベースラインtranscodeコマンドでサポートｓれていないトランスコードプロセスへのコマンド |
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 transcode source=<sourceURL> groupName=<groupName> destinations=<destinationStreamName> anyTranscodeParameter=<parameterValue>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
-transcode source=rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4 groupName=testGroup destinations=testTranscode groupName=group videoBitrates=200k audioBitrates=copy 
+```
+transcode source=rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4 groupName=testGroup destinations=testTranscode groupName=group videoBitrates=200k audioBitrates=copy
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "audioAdvancedParamsProfiles":["na"],
@@ -85,50 +86,50 @@ transcode source=rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4 grou
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - audioAdvancedParamsProfiles - An array of strings specifying the name of profile presets to be used for audio
-  - audioBitrates - An array of integers for target audio output bitrates
-  - audioChannelsCounts - An array of values for the target number of audio channels
-  - croppings - An array of values for the target cropping positions and size
-  - destinations - An array of target URIs or stream names
-  - dstUriPrefix - Default destination if destination is a stream name
-  - emsTargetStreamName - Target stream name used internally by EMS
-  - fullBinaryPath - Actual location of the transcoder binary
-  - groupName - Name of the group associated with this transcoding process
-  - keepAlive - Transcoding will restart if previously activated
-  - localStreamName - Actual EMS stream name of source (if given)
-  - overlays - An array of locations for the images to be used as overlays
-  - source - The actual stream/file to be used as input for transcoding
-  - srcUriPrefix - Default source if given source is a stream name
-  - targetStreamNames - An array of the target stream names to be used at the destination
-  - videoAdvancedParamsProfiles - An array of strings specifying the name of profile presets to be used for video
-  - videoBitrates - An array of values for target video output bitrates
-  - videoSizes - An array of values for target video sizes
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - audioAdvancedParamsProfiles - オーディオに使用されるプロファイルプリセット名を指定する文字列アレイ
+  - audioBitrates - 出力オーディオターゲットビットレートの整数値アレイ
+  - audioChannelsCounts - オーディオチャンネル数設定値のアレイ
+  - croppings - クロップの位置とサイズの設定値のアレイ
+  - destinations - ターゲットURIまたはストリーム名のアレイ
+  - dstUriPrefix - 保存先がストリーム名の場合のデフォルト保存先
+  - emsTargetStreamName - EMSが内部使用するターゲットストリーム名
+  - fullBinaryPath - トランスコードバイナリの場所
+  - groupName - トランスコードプロセスに紐付けられるグループ名
+  - keepAlive - アクティベートされていればトランスコードは再開します
+  - localStreamName - ソースEMSストリーム名
+  - overlays - オーバーレイに使用される静止画ファイルの場所
+  - source - トランスコードへの入力に使用されるストリーム／ファイル
+  - srcUriPrefix - ソースがストリーム名の場合のデフォルトソース
+  - targetStreamNames - 保存先で使用されるストリーム名のアレイ
+  - videoAdvancedParamsProfiles - ビデオプロファイルプリセット名を指定する文字列アレイ
+  - videoBitrates - 出力ビデオターゲットビットレート値のアレイ
+  - videoSizes - ビデオサイズターゲット値アレイ
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
 ## Notes
 
-- For **any parameter that is pluralized, you may specify one value, or multiple**.
+- 複数形のパラメータでは単数・複数の設定値が使用可能です
 
-  Multiple values must be separated by only a comma (comma-delimited). Specifying multiple values indicates multiple new streams will be created.
+  複数の値はカンマ区切りとしてください。複数の値を設定すると複数の新規ストリームが生成されます
 
-- There must be the **same number of values for all pluralized parameters**.
+- 複数のパラメータには同数の設定値が必要です
 
-  **Order is important!** all first values are grouped together to make the first stream, all second parameters are grouped to make the second stream, etc…
+  **順番が重要です!** 最初の設定値が最初のストリームに、２番目の設定値が２番めのストリームに適用されるという具合になります
 
-- Video related parameters are ignored if the parameter `videoBitrates` is not specified.
+- `videoBitrates`パラメータが指定されていない場合、ビデオ関連のパラメータは無視されます
 
-- Audio related parameters are ignored if the parameter `audioBitrates` is not specified.
+- `audioBitrates`パラメータが指定されていない場合、オーディオ関連のパラメータは無視されます
 
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [Transcode a Stream](userguide_transcode.html)
 
