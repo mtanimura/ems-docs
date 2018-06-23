@@ -1,4 +1,4 @@
-a---
+---
 title: getConfigInfo
 keywords: api
 sidebar: api_sidebar
