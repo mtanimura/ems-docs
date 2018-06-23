@@ -11,6 +11,7 @@ toc: true
 ## Mac OS X
 
 アーカイブ版(.tar.gz)ファイルからEMSをインストールすることができます。最新版のリリースは以下のサイトからダウンロード可能です
+
  EvoStream ウェブサイト: [https://evostream.com/software-downloads/](https://evostream.com/software-downloads/).
 
 ご利用のOSに適したディストリビューションを選択いただく必要があります。
@@ -24,6 +25,7 @@ toc: true
 ## FreeBSD
 
 アーカイブ版(.tar.gz)ファイルからEMSをインストールすることができます。最新版のリリースは以下のサイトからダウンロード可能です
+
  EvoStream ウェブサイト: [https://evostream.com/software-downloads/](https://evostream.com/software-downloads/)
 
 ご利用のOSに適したディストリビューションを選択いただく必要があります。
@@ -38,6 +40,7 @@ toc: true
 ## Windows Embedded
 
 Windows Embedded向けのビルドが必要な方はセールスサポートにご連絡ください
+
  [installation procedure on Windows](userguide_installwinos.html)
 
 
@@ -45,6 +48,7 @@ Windows Embedded向けのビルドが必要な方はセールスサポートに�
 ## Raspberry Pi
 
 アーカイブ版(.tar.gz)ファイルからEMSをインストールすることができます。最新版のリリースは以下のサイトからダウンロード可能です
+
  EvoStream ウェブサイト: [https://evostream.com/software-downloads/](https://evostream.com/software-downloads/)
 
 ご利用のOSに適したディストリビューションを選択いただく必要があります。
