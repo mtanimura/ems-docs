@@ -4,7 +4,7 @@ keywords: quick start guide
 sidebar: home_sidebar
 permalink: /home_quickstartguidewindows.html
 folder: home
-toc: false
+toc: true
 ---
 
 
@@ -26,55 +26,55 @@ toc: false
 
    ![](images/userguide/qsgfw1.jpg)
 
-   ​
+
 
    2.3. 言語を選択し**OK**をクリックしてください
 
    ![](images/userguide/qsgfw2.jpg)
 
-   ​
+
 
    2.4. **次へ**をクリックしインストールを続行してください
 
    ![](images/userguide/qsgfw3.jpg)
 
-   ​
+
 
    2.5 使用許諾書類が表示されますので、**許諾**を選択し**次へ**をクリックしてください
 
    ![](images/userguide/qsgfw4.jpg)
 
-   ​
+
 
    2.6. インストールされるパスを確認し、**次へ**をクリックしてください
 
    ![](images/userguide/qsgfw5.jpg)
 
-   ​
+
 
    2.7. **EMSデスクトップアイコンの追加**を選択し、**次へ**をクリックしてください
 
    ![](images/userguide/qsgfw6.jpg)
 
-   ​
+
 
    2.8. インストールの確認をおこない、**インストール**をクリックしてください
 
    ![](images/userguide/qsgfw7.jpg)
 
-   ​
+
 
    2.9. 情報が表示されます、**次へ**をクリックしてください
 
    ![](images/userguide/qsgfw8.jpg)
 
-   ​
+
 
    2.10. インストールを終了するため**終了**をクリックしてください
 
    ![](images/userguide/qsgfw9.jpg)
 
-   ​
+
 
    **Note:** EMSライセンスが未インストールの場合は**Launch EMS**のチェックをはずしてください
 
@@ -146,7 +146,8 @@ EMS Web UIについて詳しくは[詳細](http://docs.evostream.com/2.0/usergui
 2. 再生したいストリームの**Play**ボタンをクリックしてください
 
    ![](images/home/playback.JPG)
-   ​
+
+
 EMSは自動的にプルしたストリームを他のプロトコルで扱えるよう変換します。メディアプレーヤーで再生するには:
 
 1. Open Network Streamを選択し
@@ -181,4 +182,3 @@ shutdownServer key=bVjvUo8HQ6VzDFJv
 コマンドが送られるとEMSはシャットダウンします
 
 詳しくは[EMSユーザガイド](http://docs.evostream.com/2.0/userguide_overview.html) および [EMS API ガイド](http://docs.evostream.com/2.0/api_overview.html)を参照してください
-
