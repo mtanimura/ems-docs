@@ -7,12 +7,12 @@ folder: home
 toc: true
 ---
 
-#本文書の目的
+# 本文書の目的
 
 本文書はEvoStream Media Server (EMS)をウインドウズにインストールする方法について記述されています。
 またEMSを実際に起動する、ソースストリームをpullする、ストリームを再生する、EMSをシャットダウンするといった基本的な操作についても触れられています。
 
-#EvoStream Media Serverの取得
+# EvoStream Media Serverの取得
 
 1. <https://evostream.com/software-downloads>からEMSパッケージインストーラーをダウンロードしてください。
 
@@ -78,7 +78,7 @@ toc: true
 
 
 
-##ライセンスのインストールについて
+## ライセンスのインストールについて
 
 **Note:** ライセンスファイルをお手元にご用意ください。ライセンスファイルをまだお持ちでなく30日間の試用版を試したい方は、[試用版リクエスト](https://evostream.com/free-trial/) をクリックして表示されるページに必要事項を記入し試用版ライセンスを申請してください。その他のライセンスの購入に関するお問い合わせは[salesupport@evostream](mailto:salessupport@evostream.com) にお問い合わせください。
 
