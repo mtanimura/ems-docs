@@ -7,6 +7,7 @@ folder: home
 toc: true
 ---
 
+
 #本文書の目的
 
 本文書はEvoStream Media Server (EMS)をLinuxにインストールする方法について記述されています。
@@ -89,7 +90,7 @@ APT/YUM
 3. 下記コマンドを実行
     `./run_console_ems.sh`
 
-![](../../images/userguide/start1.png)
+![](http://docs.evostream.com/2.0/images/home/start1.png)
 
 4. 下記コマンドでEvoStreamが実行中かどうかを確認してください。
     `ps –e|grep evo`
@@ -106,7 +107,7 @@ APT/YUM
 1. ターミナルを開き
 2. 下記コマンドを実行
     `service evostreamms start_console`
-    ![](../../images/userguide/start1.png)
+    ![](http://docs.evostream.com/2.0/images/home/start1.png)
 
 下記コマンドでEvoStreamが実行中かどうかを確認してください。
 `ps –e|grep evo`
