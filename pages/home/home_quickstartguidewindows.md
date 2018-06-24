@@ -1,5 +1,5 @@
 ---
-title: Quick Start Guide on Windows
+title: クイックスタートガイド on Windows
 keywords: quick start guide
 sidebar: home_sidebar
 permalink: /home_quickstartguidewindows.html
