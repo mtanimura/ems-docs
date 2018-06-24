@@ -89,7 +89,7 @@ APT/YUM
 3. 下記コマンドを実行
     `./run_console_ems.sh`
 
-![](../../images/userguide/start1.png)
+![](images/userguide/start1.png)
 
 4. 下記コマンドでEvoStreamが実行中かどうかを確認してください。
     `ps –e|grep evo`
@@ -106,7 +106,7 @@ APT/YUM
 1. ターミナルを開き
 2. 下記コマンドを実行
     `service evostreamms start_console`
-    ![](../../images/userguide/start1.png)
+    ![](images/userguide/start1.png)
 
 下記コマンドでEvoStreamが実行中かどうかを確認してください。
 `ps –e|grep evo`
