@@ -29,7 +29,7 @@ entries:
       url: /home_overview.html
       output: web, pdf
 
-    - title: Windowsクイックスタート・イド
+    - title: Windowsクイックスタートガイド
       url: /home_quickstartguidewindows.html
       output: web, pdf
 
