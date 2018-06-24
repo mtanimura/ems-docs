@@ -4,7 +4,7 @@ keywords: quick start guide
 sidebar: home_sidebar
 permalink: /home_quickstartguidewindows.html
 folder: home
-toc: true
+toc: false
 ---
 
 
