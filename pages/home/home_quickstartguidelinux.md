@@ -8,20 +8,19 @@ toc: true
 ---
 
 
-#本文書の目的
-
+# 本文書の目的
 本文書はEvoStream Media Server (EMS)をLinuxにインストールする方法について記述されています。
 またEMSを実際に起動する、ソースストリームをpullする、ストリームを再生する、EMSをシャットダウンするといった基本的な操作についても触れられています。
 
-#EvoStream Media Serverの取得
-##Linux Archive
+# EvoStream Media Serverの取得
+## Linux Archive
 1. EMS .tarファイルを次のURLからダウンロードしてください
 2. https://evostream.com/software-downloads
 
 .tarファイルを伸長・展開し、ご希望のディレクトリにインストールしてください
 
 
-##APT/YUM
+## APT/YUM
 事前準備: インストールを行うにはシステム管理者権限が必要となります。
 
 sudo utilityが使用可能な場合は：
@@ -32,7 +31,7 @@ sudo utilityが使用不可な場合は：
 **Note:**
 管理者権限を得るとプロンプトが‘$’から‘#’に替わります
 
-#インストール:
+# インストール:
 
 1. 下記の要領でEvoStreamソフトウェアリポジトリをインストールするためのスクリプトをダウンロードしてください。
 
@@ -90,7 +89,7 @@ APT/YUM
 3. 下記コマンドを実行
     `./run_console_ems.sh`
 
-![](http://docs.evostream.com/2.0/images/home/start1.png)
+![](http://docs.evostream.com/2.0/images/userguide/start1.png)
 
 4. 下記コマンドでEvoStreamが実行中かどうかを確認してください。
     `ps –e|grep evo`
@@ -107,7 +106,7 @@ APT/YUM
 1. ターミナルを開き
 2. 下記コマンドを実行
     `service evostreamms start_console`
-    ![](http://docs.evostream.com/2.0/images/home/start1.png)
+    ![](http://docs.evostream.com/2.0/images/userguide/start1.png)
 
 下記コマンドでEvoStreamが実行中かどうかを確認してください。
 `ps –e|grep evo`
@@ -151,7 +150,8 @@ EMSは自動的にプルしたストリームを他のプロトコルで扱え�
     RTSPの場合: `rtsp://127.0.0.1:5544/test`
     RTMPの場合: `rtmp://127.0.0.1/live/test`
 
-![](​http://docs.evostream.com/2.0/images/home/rtspplayback.jpg)
+![](images/home/rtspplayback.jpg)
+
 
 ファイルがあればlocalStreamNameを参照し、ストリームを取得・再生します。
 
