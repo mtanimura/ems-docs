@@ -150,7 +150,8 @@ EMSは自動的にプルしたストリームを他のプロトコルで扱え�
     RTSPの場合: `rtsp://127.0.0.1:5544/test`
     RTMPの場合: `rtmp://127.0.0.1/live/test`
 
-![](​http://docs.evostream.com/2.0/images/home/rtspplayback.jpg)
+![](images/home/rtspplayback.jpg)
+
 
 ファイルがあればlocalStreamNameを参照し、ストリームを取得・再生します。
 
