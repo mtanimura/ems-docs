@@ -8,19 +8,19 @@ toc: true
 ---
 
 
-# 本文書の目的
+## 本文書の目的
 本文書はEvoStream Media Server (EMS)をLinuxにインストールする方法について記述されています。
 またEMSを実際に起動する、ソースストリームをpullする、ストリームを再生する、EMSをシャットダウンするといった基本的な操作についても触れられています。
 
-# EvoStream Media Serverの取得
-## Linux Archive
+## EvoStream Media Serverの取得
+### Linux Archive
 1. EMS .tarファイルを次のURLからダウンロードしてください
 2. https://evostream.com/software-downloads
 
 .tarファイルを伸長・展開し、ご希望のディレクトリにインストールしてください
 
 
-## APT/YUM
+### APT/YUM
 事前準備: インストールを行うにはシステム管理者権限が必要となります。
 
 sudo utilityが使用可能な場合は：
@@ -31,7 +31,7 @@ sudo utilityが使用不可な場合は：
 **Note:**
 管理者権限を得るとプロンプトが‘$’から‘#’に替わります
 
-# インストール:
+## インストール:
 
 1. 下記の要領でEvoStreamソフトウェアリポジトリをインストールするためのスクリプトをダウンロードしてください。
 
@@ -41,7 +41,7 @@ sudo utilityが使用不可な場合は：
     RedHatベースのLinuxディストリビューションの場合は以下(CentOS, Fedora, RHEL)
         `# curl http://yum.evostream.com/installkeys.sh -o /tmp/installkeys.sh`
 
-​
+
 2. スクリプトを実行しEvoStreamソフトウェアリポジトリおよびキーをインストールしてください。
 
     `# sh /tmp/installkeys.sh`
@@ -49,7 +49,7 @@ sudo utilityが使用不可な場合は：
     正常に終了したら、次のようなメッセージがコンソールに表示されます。
 
     `"EvoStream keys installed successfully"`
-​
+
     EvoStreamソフトウェアリポジトリおよびキーが正常にインストールされたら、次にパッケージのインストールをおこなってください。
 
 **Note:** 上記の手順１，２の実行は１回のみです
@@ -65,8 +65,7 @@ EvoStream Media Serverのインストールの手順（最新版にアップデ�
         # yum install evostream-mediaserver
 
 
-​
-# ライセンスのインストールについて
+## ライセンスのインストールについて
 Note: ライセンスファイルをお手元にご用意ください。ライセンスファイルをまだお持ちでなく30日間の試用版を試したい方は、[試用版リクエスト](https://evostream.com/free-trial/) をクリックして表示されるページに必要事項を記入し試用版ライセンスを申請してください。その他のライセンスの購入に関するお問い合わせは[salesupport@evostream](mailto:salessupport@evostream.com) にお問い合わせください。
 
 
@@ -128,15 +127,15 @@ APT/YUM
 EMS Web UIについて詳しくは[詳細](http://docs.evostream.com/2.0/userguide_webuioverview.html)をご参照ください。
 
 
-# 基本 EMS API
-## UIをつかったpullStream
+## 基本 EMS API
+### UIをつかったpullStream
 1. UIの**Add**ページを開きます
 2. pullコマンドを選択してください
 3. ストリームソースとして`rtmp://s2pchzxmtymn2k.cloudfront.net/cfx/st/mp4:sintel.mp4` を指定してください
 4. Local Stream Nameにはtestと入力
 5. Add Streamボタンをクリック
 
-## UIをつかったストリームの再生
+### UIをつかったストリームの再生
 プルされたストリーム情報は自動的にEMS内に保存されます。プルされたストリームを再生するには、メディアフォーマットに対応するメディアプレーヤーを使用するか、またはUI内で再生することもできます
 
 UIのActiveページを開き
