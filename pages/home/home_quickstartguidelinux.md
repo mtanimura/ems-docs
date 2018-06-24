@@ -1,4 +1,11 @@
-クイックスタートガイド on Linux
+---
+title: クイックスタートガイド on Linux
+keywords: quick start guide
+sidebar: home_sidebar
+permalink: /home_quickstartguidelinux.html
+folder: home
+toc: true
+---
 
 #本文書の目的
 
