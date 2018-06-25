@@ -1,5 +1,5 @@
 ---
-title: Stream Load Balancer
+title: ストリームロードバランサ
 keywords: webservices
 sidebar: evowebservices_sidebar
 permalink: evowebservices_streamloadbalancer.html

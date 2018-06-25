@@ -1,5 +1,5 @@
 ---
-title: Stream Recorder
+title: ストリームRecorder
 keywords: webservices
 sidebar: evowebservices_sidebar
 permalink: evowebservices_streamrecorder.html

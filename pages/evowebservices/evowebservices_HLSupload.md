@@ -1,5 +1,5 @@
 ---
-title: Amazon S3 HLS Upload
+title: Amazon S3 HLSアップロード
 keywords: webservices
 sidebar: evowebservices_sidebar
 permalink: evowebservices_HLSupload.html

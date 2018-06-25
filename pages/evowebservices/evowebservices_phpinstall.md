@@ -1,5 +1,5 @@
 ---
-title: Installation Using PHP
+title: PHPを利用したインストール
 keywords: webservices
 sidebar: evowebservices_sidebar
 permalink: evowebservices_phpinstall.html
@@ -71,7 +71,7 @@ After installation, the evowebservices will be found here: `..\evo-webroot\evow
 Linux: send `ps -e|grep evowebservices`
 
 ```
-Node: 
+Node:
 ```
 
 Windows: check in task manager

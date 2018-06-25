@@ -1,5 +1,5 @@
 ---
-title: Configuring EMS Event Notifications
+title: EMSイベント通知設定
 keywords: webservices
 sidebar: evowebservices_sidebar
 permalink: evowebservices_eventconfiguration.html

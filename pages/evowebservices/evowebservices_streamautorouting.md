@@ -1,5 +1,5 @@
 ---
-title: Stream AutoRouting
+title: ストリーム自動ルーティング
 keywords: webservices
 sidebar: evowebservices_sidebar
 permalink: evowebservices_streamautorouting.html

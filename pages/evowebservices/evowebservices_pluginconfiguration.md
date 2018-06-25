@@ -1,5 +1,5 @@
 ---
-title: Configuring the EMS Web Service Plugins
+title: EMS Web Serviceプラグインの設定
 keywords: webservices
 sidebar: evowebservices_sidebar
 permalink: evowebservices_pluginconfiguration.html

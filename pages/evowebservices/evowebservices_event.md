@@ -1,5 +1,5 @@
 ---
-title: Event Notification System
+title: イベント通知システム
 keywords: webservices
 sidebar: evowebservices_sidebar
 permalink: evowebservices_event.html
