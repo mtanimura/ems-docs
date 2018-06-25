@@ -7,27 +7,27 @@ folder: api
 toc: false
 ---
 
-Returns a complete list of aliases.
+エイリアスの全リストを返します
 
 
 
-## API Parameter Table
+## API パラメータ
 
-This function has no parameters.
+パラメータはありません
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 listGroupAliases
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":[
     {
@@ -44,24 +44,24 @@ listGroupAliases
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data– Provides the following information for each group name alias
-  - aliasName – The alias alternative to the `groupname`
-  - groupName – The original group name
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data– 各グループ名エイリアスについて次の情報が提供されます
+  - aliasName – `groupname`のエイリアス
+  - groupName – オリジナルのグループ名
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
 ## Notes
 
-- **hasGroupNameAliases** in webconfig.lua should be **TRUE**
+- webconfig.luaの**hasGroupNameAliases**は**TRUE**である必要があります
 
 
 ------
 
-## **Related Links**
+## 関連リンク
 
 - [hasGroupNameAliases](userguide_webconfig.html#hasgroupnamealiases)
 - [addGroupNameAliases](addGroupNameAliases.html)

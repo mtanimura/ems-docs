@@ -9,35 +9,35 @@ toc: false
 
 
 
-Removes an alias of a stream.
+ストリームエイリアスを削除します
 
 
 
-## API Parameter Table
+## API パラメータ
 
-| Parameter Name |  Type  | Mandatory | Default Value | Description         |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :------------: | :----: | :-------: | :-----------: | ------------------- |
-|   aliasName    | string |   true    |    *null*     | The alias to delete |
+|   aliasName    | 文字列 |   true    |    *null*     | 削除するエイリアス |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 removeStreamAlias aliasName=<aliasName>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 removeStreamAlias aliasName=testAlias
 ```
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
 	"aliasName":"testAlias"
@@ -51,23 +51,24 @@ removeStreamAlias aliasName=testAlias
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - ​	aliasName – The alias of the stream that was removed
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - ​	aliasName – 削除されたストリームエイリアス
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
+
 
 ------
 
 ## Notes
 
-- **hasStreamAliases** in config.lua should be **TRUE**
+- config.luaの**hasStreamAliases**は**TRUE**である必要があります
 
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [hasStreamAliases](userguide_configlua.html#hasstreamaliases)
 - [addStreamAlias](addStreamAlias.html)

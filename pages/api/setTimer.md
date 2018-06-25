@@ -7,29 +7,29 @@ folder: api
 toc: false
 ---
 
-This function adds a timer. When triggered, it will send an event to the event logger.
+タイマーを追加します。トリガーされるとevent loggerにイベントが送られます
 
 
 
-## API Parameter Table
+## API パラメータ
 
-| Parameter Name |  Type  | Mandatory | Default Value | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :------------: | :----: | :-------: | :-----------: | ---------------------------------------- |
-|     value      | string |   true    |     null      | The time value for the timer. It can be either the absolute time at which the trigger will be fired **(YYYY-MM-DDTHH:MM:SS or HH:MM:SS)** or period of time between pulses expressed in seconds between **1** and **86399** (1 sec up to a day). |
+|     value      | 文字列 |   true    |     null      | タイマーの設定値。タイマーがトリガされる絶対時間 **(YYYY-MM-DDTHH:MM:SS または HH:MM:SS)** で設定するかまたは、**1**秒から**86399**秒おきまで、期間(最長１日)で設定  |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 setTimer value=<value>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 setTimer value=10
 ```
 
@@ -41,9 +41,9 @@ setTimer value=2016-10-21T07:30:00
 setTimer value=07:30:00
 ```
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
   "data":{
     "timerId":8,
@@ -83,16 +83,16 @@ setTimer value=07:30:00
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - Id – The ID of the timer added
-  - triggerCount – The number of times the timer triggered since it was added
-  - value – The time value for the timer (see parameter table above)
+- data – パースすべきデータ
+  - Id – 追加されたタイマーID
+  - triggerCount – 追加されてからタイマーがトリガされた回数
+  - value – タイマーの設定値
 
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
 
 ------
 
@@ -103,7 +103,7 @@ The JSON response contains the following details:
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [listTimers](listTimers.html)
 - [removeTimer](removeTimer.html)

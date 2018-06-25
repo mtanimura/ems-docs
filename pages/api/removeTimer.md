@@ -7,37 +7,37 @@ folder: api
 toc: false
 ---
 
-This function removes a previously armed timer.
+設定中のタイマーを削除します
 
 
 
-## API Parameter Table
+## API パラメータ
 
-| Parameter Name |  Type   | Mandatory | Default Value | Description                       |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :------------: | :-----: | :-------: | :-----------: | --------------------------------- |
-|       id       | integer |   true    |     null      | The ID of the timer to be removed |
+|       id       | 整数値 |   true    |     null      | 削除するタイマーID |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 removeTimer id=<id>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 removeTimer id=8
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
   "data":{
     "timerId":8,
@@ -53,20 +53,19 @@ removeTimer id=8
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - Id – The ID of the timer added
-  - triggerCount – The number of times the timer triggered since it was added
-  - value – The time value for the timer (see parameter table above)
+- data – パースすべきデータ
+  - Id – タイマーID
+  - triggerCount – 追加されてからタイマーがトリガされた回数
+  - value – タイマーの設定値
 
-
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [setTimer](setTimer.html)
 - [listTimers](listTimers.html)

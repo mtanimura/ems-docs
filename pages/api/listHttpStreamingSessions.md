@@ -7,27 +7,27 @@ folder: api
 toc: false
 ---
 
-This command lists all currently active HTTP streaming sessions.
+アクティブなHTTPストリーミングセッションをリストします
 
 
 
-## API Parameter Table
+## API パラメータ
 
-This function has no parameters.
+パラメータはありません
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 listHttpStreamingSessions
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
   "data": [
     {
@@ -47,18 +47,19 @@ listHttpStreamingSessions
 
 #### JSON Response
 
-- data– The data to parse
-  - clientIP – The IP address of the connected client
-  - sessionId – An internal ID for the session
-  - startTime – The timestamp when the session started
-  - elapsedTime – The number of seconds since the session started
-  - targetFolder – The current folder used as the source for HTTP streaming
+- data – パースすべきデータ
+  - clientIP – 接続クライエントのIPアドレス
+  - sessionId – 内部セッションID
+  - startTime – セッション開始時のタイムスタンプ
+  - elapsedTime – セッション開始から経過時間
+  - targetFolder – HTTPストリーミングでソースとして使用されているフォルダ
 
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
+
 
 ------
 
-## **Related Links**
+## 関連リンク
 
 - [httpClientsConnected](httpClientsConnected.html)

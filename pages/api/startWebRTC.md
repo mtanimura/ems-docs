@@ -7,44 +7,43 @@ folder: api
 toc: false
 ---
 
-Starts a WebRTC signalling client to an ERS (Evostream Rendezvous Server).
+ERS (Evostream Rendezvous Server)に向けてWebRTCシグナリングクライエントを開始します
 
-This will open the port in the given IP address and will open doors for the room ID which can be accessed using the evowrtcclient.html
-
-
-
-## API Parameter Table
+与えられたIPアドレスのポートをオープンし、evowrtcclient.htmlを使用してアクセスできるroomIDを開きます。
 
 
 
-| Parameter Name |  Type  | Mandatory | Default Value | Description                              |
+## API パラメータ
+
+
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :------------: | :----: | :-------: | :-----------: | ---------------------------------------- |
-|     ersIp      | string |   true    |    *null*     | IP address (xx.yy.zz.xx) of ERS          |
-|    ersPort     | string |   true    |    *null*     | Port number where ERS will listen to     |
-|     roomId     | string |   true    |    *null*     | Unique room Identifier within ERS that will be used by client browsers to connect to this EMS |
-|     token      | string |   false   |    *null*     | The security token to be used within ERS |
+|     ersIp      | 文字列 |   true    |    *null*     | ERSのIPアドレス          |
+|    ersPort     | 文字列 |   true    |    *null*     | ERSがlistenしているポート |
+|     roomId     | 文字列 |   true    |    *null*     | クライエントブラウザがESMに接続するのに使用されるERSのroom ID |
+|     token      | 文字列 |   false   |    *null*     | ERS内で使用されるセキュリティトークン |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 startWebrtc ersip=<ERS_IPAddress> ersport=<ERS_Port> roomid=<roomID>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 startWebrtc ersip=52.6.14.61 ersport=3535 roomid=testRoom
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
           "data": {
                     "data": {
@@ -71,34 +70,36 @@ startWebrtc ersip=52.6.14.61 ersport=3535 roomid=testRoom
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse.
-  - configId - The configuration ID for this command
-  - ers - The name of the ERS
-  - ersOverSsl - The configuration of the SSL
-  - ersip – The IP address of the ERS
-  - ersport – The port of the ERS where it listens to
-  - keepAlive - If `keepAlive` is set to true, EMS will reconnect to ERS in the event that it gets disconnected
-  - name - The name of the application using the ERS
-  - operationType – The type of operation, for internal use only
-  - roomId – The room identifier
-  - sslCert - The SSL certificate
-  - sslKey - The SSL key certificate
-  - token - The security token used within ERS
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+
+  - configId - コマンドのconfigID
+  - ers - ERS名
+  - ersOverSsl - SSL設定
+  - ersip – ERSのIPアドレス
+  - ersport – ERSがlistenするポート
+  - keepAlive - `keepAlive`がtrueの場合、接続が切断した際EMSは再接続します
+  - name - ERSを使用するアプリケーション名
+  - operationType – オペレーションタイプ（内部使用）
+  - roomId – room ID
+  - sslCert - SSL証明書
+  - sslKey - SSLキー証明書
+  - token - ERS内で使用されるセキュリティトークン
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
+
 
 ------
 
 ## Notes
 
-- Room ID can only be started once
+- Room IDは一回のみ開始できます
 
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [stopWebRTC](stopWebRTC.html)
 - [WebRTC Overview](html5players_wrtcoverview.html)

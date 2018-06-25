@@ -9,37 +9,37 @@ toc: false
 
 
 
-Removes an RTMP ingest point.
+RTMPインジェストポイントを削除します
 
 
 
 
 
-## API Parameter Table
+## API パラメータ
 
-|  Parameter Name   |  Type  | Mandatory | Default Value | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :---------------: | :----: | :-------: | :-----------: | ---------------------------------------- |
-| privateStreamName | string |   true    |    *null*     | The Ingest Point that will be deleted identified by the `privateStreamName` |
+| privateStreamName | 文字列 |   true    |    *null*     | `privateStreamName`に同定される削除されるインジェストポイント |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 removeIngestPoint privateStreamName=<theIngestPoint>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 removeIngestPoint privateStreamName=testIngestPoint
 ```
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "privateStreamName":"testIngestPoint",
@@ -54,24 +54,24 @@ removeIngestPoint privateStreamName=testIngestPoint
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - privateStreamName – The `privateStreamName` of the deleted Ingest Point
-  - publicStreamName – The `publicStreamName` of the deleted Ingest Point
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - privateStreamName – 削除されたインジェストポイントの`privateStreamName`
+  - publicStreamName – 削除されたインジェストポイントの`publicStreamName`
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
 ## Notes
 
-- **hasIngestPoint** is config.lua should be set to **TRUE**
+-  config.luaの**hasIngestPoint**は**TRUE**である必要があります
 
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [hasIngestPoints](userguide_configlua.html#hasingestpoints)
 - [createIngestPoint](createIngestPoint.html)

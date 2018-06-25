@@ -7,27 +7,27 @@ folder: api
 toc: false
 ---
 
-Returns a complete list of aliases.
+エイリアスのリストを返します
 
 
 
-## API Parameter Table
+## API パラメータ
 
-This function has no parameters.
+パラメータはありません
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 listStreamAliases
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":[
     {
@@ -48,28 +48,28 @@ listStreamAliases
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – Contains an array of pairs of `aliasName` and `localStreamName`
-  - aliasName – The alias alternative to the `localStreamName`
-  - creationTime – The time the alias is created
-  - expirePeriod - The expiration period of the alias
-  - localStreamName – The original stream name
-  - oneShot - Determines if the alias can only be used once
-  - permanent - Determines if the alias is for permanent use (unless EMS is restarted)
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – `aliasName`と`localStreamName`の組み合わせのアレイ
+  - aliasName – `localStreamName`のエイリアス
+  - creationTime – エイリアスが作成された時間
+  - expirePeriod - エイリアスの有効期限
+  - localStreamName – オリジナルのストリーム名
+  - oneShot - エイリアスが一回のみの使用かどうかを決定
+  - permanent - エイリアスがEMSが再起動されるまで永続的にに使用できるかを決定
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
 ## Notes
 
-- **hasStreamAliases** in config.lua should be **TRUE**
+- config.luaの**hasStreamAliases**は**TRUE**である必要があります。
 
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [hasStreamAliases](userguide_configlua.html#hasstreamaliases)
 - [addStreamAlias](addStreamAlias.html)

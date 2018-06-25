@@ -9,27 +9,27 @@ toc: false
 
 
 
-This command invalidates all group name aliases.
+すべてのグルーム名エイリアスを無効化します
 
 
 
-## API Parameter Table
+## API パラメータ
 
-This function has no parameters.
+パラメータはありません
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 flushGroupNameAliases
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":null,
 "description":"All group name aliases are flushed",
@@ -41,21 +41,22 @@ flushGroupNameAliases
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data– Nothing to parse for this command
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータはありません
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
+
 
 ------
 
 ## Notes
 
-- **hasGroupNameAliases** in webconfig.lua should be **TRUE**
+-  webconfig.luaの**hasGroupNameAliases**は**TRUE**である必要があります
 
 ------
 
-## **Related Links**
+## 関連リンク
 
 - [hasGroupNameAliases](userguide_webconfig.html#hasgroupnamealiases)
 - [addGroupNameAliases](addGroupNameAliases.html)
