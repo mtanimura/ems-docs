@@ -1,5 +1,5 @@
 ---
-title: Web UIへの接続
+title: EMS Web UIへの接続
 sidebar: userguide_sidebar
 permalink: userguide_connectui.html
 folder: userguide

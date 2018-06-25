@@ -1,5 +1,5 @@
 ---
-title: VOD
+title: VODストリーム
 keyword: vod
 sidebar: userguide_sidebar
 permalink: userguide_vod.html
