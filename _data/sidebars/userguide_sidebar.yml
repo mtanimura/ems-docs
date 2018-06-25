@@ -123,7 +123,7 @@ entries:
       url: /userguide_webuioverview.html
       output: web, pdf
 
-    - title: Local Accountの作成
+    - title: ローカルアカウントの作成
       url: /userguide_createaccount.html
       output: web, pdf
 
@@ -252,7 +252,7 @@ entries:
       url: /userguide_playoverhttp.html
       output: web, pdf
 
-    - title: ブラックリスト
+    - title: ブラックリストブラック設定
       url: /userguide_blacklisting.html
       output: web, pdf
 
