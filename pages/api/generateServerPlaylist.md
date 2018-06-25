@@ -7,41 +7,41 @@ folder: api
 toc: false
 ---
 
-Will create a server-side playlist with the specified sources.
+指定されたソースのサーバーサイドプレイリストを作成します
 
 
 
-## API Parameter Table
+## API パラメータ
 
-| Parameter Name |  Type   | Mandatory |    Default Value     | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :------------: | :-----: | :-------: | :------------------: | ---------------------------------------- |
-|    sources     | string  |   true    |        *null*        | The stream or media file source(s) to be used as input. This is a comma-delimited list of active stream names or media files |
-|   pathToFile   | string  |   true    |        *null*        | The path to the output server playlist file |
-| sourceOffsets  | integer |   false   | *zero-length string* | The corresponding offsets for the source streams/files listed in sources. This can be a comma-delimited list |
-|   durations    | integer |   false   | *zero-length string* | The corresponding durations for the source streams/files listed in sources. This can be a comma-delimited list |
-|     repeat     | boolean |   false   |      0 *false*       | If **enabled**, will repeat playback from the start of the playlist |
+|    sources     | 文字列  |   true    |        *null*        | 入力ソースのストリームまたはメディアファイル。ストリーム名またはメディアファイル名のカンマ区切リストです |
+|   pathToFile   | 文字列  |   true    |        *null*        | 出力するサーバープレイリストファイルのパス |
+| sourceOffsets  | 整数値 |   false   | *zero-length string* | ソースのストリーム／ファイルのオフセット値。カンマ区切りリスト |
+|   durations    | 整数値 |   false   | *zero-length string* | ソースのストリーム／ファイルの継続時間値。カンマ区切りリスト |
+|     repeat     | ブーリアン |   false   |      0 *false*       | **enabled**の場合、プレイリストの先頭から再生を繰り返します |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 generateServerPlaylist sources=<sourceA,sourceB..> pathToFile=<filePathtoSave/fileName.lst> sourceOffsets=<valueA,valueB..> durations=-<valueA,valueB..>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 generateServerPlaylist sources=File1.mp4,File2.mp4 pathToFile=../media/testPlaylist.lst sourceOffsets=0,0 durations=60,1
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "durations":[60.1],
@@ -59,43 +59,44 @@ generateServerPlaylist sources=File1.mp4,File2.mp4 pathToFile=../media/testPlayl
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - durations – An array of durations for each stream/file in the list, expressed in seconds
-  - pathToFile – The full path and filename of the playlist file
-  - repeat - If **enabled**, will repeat playback from the start of the playlist
-  - sourceOffsets – An array of offsets for each stream/file in the list
-  - sources – An array of streams or media files
+- data – パースすべきデータ
+  - durations – ストリーム／ファイルの継続時間()秒リストのアレイ
+  - pathToFile – プレイリストファイルのフルパスおよびファイル名
+  - repeat - **enabled**の場合、プレイリストの先頭から再生を繰り返します
+  - sourceOffsets – ストリーム／ファイルのオフセット値アレイ
+  - sources – ストリームまたはメディアファイルのアレイ
 
 
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
+
 
 ------
 
 ## Notes
 
-- May place live streams or mp4 files for sources
+- ソースにはライブストリームまたはmp4ファイルを指定できます
 
-- **sourceOffsets** specifies the starting position, in seconds, for each of the source stream/file. This parameter can also be used to indicate whether the stream is live or a media file.
+- **sourceOffsets** は各ストリーム／ファイルの開始点を(秒で)指定します。このパラメータはストリームがライブかメディアファイルかを示すのに使用可能です
 
-  - -2 means that the EMS will look for a live stream with the source name specified. If a live stream is not found, it will attempt to play a media file with the source name. If a media file with that name and path cannot be found the EMS will wait for a live stream to become available.
-  - -1 implies that the source is explicitly a live stream. If no live stream is found, the EMS waits indefinitely if *duration* is set to -1. If *duration* is another value the EMS will wait *duration* seconds before moving to the next item in the playlist.
-  - 0 or a positive number implies that the specified source is a media file. The EMS will start playback *sourceOffset* seconds from the beginning of the file. If no file is found the playlist item is skipped.
-  - Any negative number other than -1 or -2 will be assumed to be -2
+  - -2 はEMSがライブストリームを検索にいきます。ライブストリームが見つからない場合はソース名のメディアファイル再生を試みます。メディアファイルが見つからない場合、ライブストリームがくるのを待ちます。
+  - -1 はソースがライブストリームであることを期待しており、ライブストリームが見つからない場合に*duration*が-1設定の場合EMSはライブストリームを待ち続けます。*duration*がそれ以外の値の場合はEMSは*duration*秒間待って、プレイリストの次の項目に移ります
+  - 0 または正の値では、ソースがメディアファイルであることを期待します。EMSはファイルの先頭から*sourceOffset*値のところから再生開始します。ファイルが見つからない場合はプレイリストの次項目にスキップします。
+  - -1,-2以外の負の値の場合は、-2と同様となります
 
-- **durations** specifies the length of the playback of each of the sources in seconds.
+- **durations** ソースの再生時間を秒指定します
 
-  - All positive numbers will cause the EMS to play the stream/file for *duration* seconds or until the end of the media file or live stream, whichever comes first.
-  - 0 means that only a single frame of the stream/file will be played.
-  - 1 means that the EMS will play a live stream until it is no longer available or a media file until its end.
-  - -2 will play media files until their end (same as -1 behavior). For live sources, it will play the live stream until that stream is no longer available. When the source stream is lost the EMS shall move to the next item in the playlist.
-  - Any negative number other than -1 or -2 will be assumed to be -2
+  - 正の値の場合、EMSがソースストリーム／ファイルを*duration*秒間かまたはストリーム／ファイルの終わりまでの早い方を再生します
+  - 0の場合、ストリーム／ファイルは１フレームのみ再生されます
+  - 1の場合、EMSはライブストリームがなくなるまで、またはメディアファイルの終わりまで再生します
+  - -2の場合、メディアファイルは最後まで再生( -1の場合と同じ)し、ライブソースはストリームが得られなくなるまで再生し、ソースストリームがロストしたらプレイリストの次の項目に進みます。
+  - -1,-2以外の負の値の場合は、-2と同様となります
 
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [insertPlaylistItem](insertPlaylistItem.html)

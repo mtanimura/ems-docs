@@ -7,42 +7,42 @@ folder: api
 toc: false
 ---
 
-Inserts a new item into an RTMP playlist. `insertPlaylistItem` may be called on playlists which are actively being played by one or more clients/players.
+RTMPプレイリストに新規項目を挿入します。`insertPlaylistItem`はアクティブな再生中のプレイリストに対してコール可能です。
 
 
 
-## API Parameter Table
+## API パラメータ
 
-|    Parameter Name    |  Type   | Mandatory | Default Value | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :------------------: | :-----: | :-------: | :-----------: | ---------------------------------------- |
-|    playllistName     | string  |   true    |    *null*     | The name of the *.lst file into which the stream will be inserted |
-|   localStreamName    | string  |   true    |    *null*     | The name of the live stream or file that needs to be inserted. If a file is specified, the path must be relative to any of the mediaStorage locations |
-|     insertPoint      | integer |   false   |     -1000     | The absolute time in milliseconds on the playlist timeline where the insertion will occur. Any negative value will be considered as “immediate”, meaning it will start playing the stream being inserted the very next frame |
-|     sourceOffset     | integer |   false   |     -2000     | Specifies the starting position, in milliseconds, of the source stream. This parameter can also be used to indicate whether the stream is live or recorded. **-2000** means that the EMS will look for a live stream with the `localStreamName` specified. If a live stream is not found, it will attempt to play a media file with the `localStreamName`. If a media file with that name and path cannot be found the EMS will wait for a live stream to become available. **-1000** implies that the `localStreamName` is explicitly a live stream. If no live stream is found, the EMS waits indefinitely if duration is set to **-1**. If duration is another value the EMS will wait duration seconds before moving to the next item in the playlist. **0** or a **positive number** implies that the specified `localStreamName` is a media file. The EMS will start playback `sourceOffset` milliseconds from the beginning of the file. If no file is found the playlist item is skipped. Any negative number other than **-1000** or -**2000** will be assumed to be **-2000** |
-|       duration       | integer |   false   |     -1000     | The duration of the playback of the stream in milliseconds. **-1000** means that the EMS will play a live stream until it is no longer available or a media file until its end. **0** means that only a single frame of the stream will be played. All **positive numbers** will cause the EMS to play the stream for duration milliseconds or until the end of the media file or live stream, whichever comes first. Any **negative number** passed other than **-1000** will be assumed to be **-1000** |
-| playlistInstanceName | string  |   false   |    *null*     | The value used to identify a particular instance of a playlist formatted as `<UUID>;*<playlistFileName>`. If not null, it will insert the `localStreamName` in the identified playlistInstanceName otherwise, it will insert the `localStreamName` in all streaming playlists. |
+|    playllistName     | 文字列 |   true    |    *null*     | ストリームが挿入される*.lstファイル名 |
+|   localStreamName    | 文字列 |   true    |    *null*     | 挿入されるライブストリーム名・ファイル名。ファイルの場合パスはmediaStorageの場所からの相対パスである必要があります |
+|     insertPoint      | 整数値 |   false   |     -1000     | 挿入されるプレイリストタイムライン上の絶対値ミリ秒。負の値は“immediate”を意味し、次フレームから挿入されます |
+|     sourceOffset     | 整数値 |   false   |     -2000     | 開始点(ミリ秒)を指定します。このパラメータはストリームがライブかファイルかを示すために使用できます。**-2000**は`localStreamName`のライブストリームを検索し、ライブストリームが見つからない場合、`localStreamName`という名のメディアファイルを再生試行します。メディアファイルが見つからない場合はライブストリームが得られるまで待ちます。**-1000**は`localStreamName`が明確にライブストリームであることを意味し、durationが**-1**の場合EMSはライブストリームを待ち続けます。durationがそれ以外の場合は設定値秒数待った後プレイリストの次項目に進みます。**0**または**正の値**の場合は`localStreamName`がメディアファイルであることを意味します。ファイルの先頭から`sourceOffset`ミリ秒オフセットで再生を開始します。ファイルが見つからない場合はプレイリスト項目はスキップされます。その他**-1000** および -**2000** 以外の負の値は**-2000**と同義です |
+|       duration       | 整数値 |   false   |     -1000     | ストリームの継続時間(ミリ秒) **-1000** はライブストリーム・メディアファイルの終わりまで再生します。**0**は１フレームのみ再生。**正の値** はEMSがストリームをdurationミリ秒間か、ライブストリーム／メディアファイルの終了のどちらか早い方の終わりまで再生。**-1000**以外の**負の値**は**-1000**と同義です
+| playlistInstanceName | 文字列 |   false   |    *null*     | `<UUID>;*<playlistFileName>`でフォーマットされたプレイリストインスタンスを特定するのに使用されます。null以外では`localStreamName`を指定したplaylistInstanceNameに、さもなくばすべてのストリーミングプレイリストに`localStreamName`を挿入します |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 insertPlaylistItem playlistName=<testPlaylist.lst> localStreamName=<localStreamName> insertPoint=<value> sourceOffset=<value> duration=<value>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 insertPlaylistItem playlistName=bunny.lst localStreamName=testpullStream insertPoint=-1000 sourceOffset=0 duration=10
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "durations":[60.1],
@@ -59,30 +59,30 @@ insertPlaylistItem playlistName=bunny.lst localStreamName=testpullStream insertP
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - duration – An array of durations for each stream/file in the list, expressed in seconds
-  - insertPoint - The absolute time in milliseconds on the playlist timeline where the insertion will occur
-  - localStreamName – The name of the live stream or file that needs to be inserted
-  - playlistName - The name of the *.lst file into which the stream will be inserted
-  - sourceOffsets – An array of offsets for each stream/file in the list
+- data – パースすべきデータ
+  - duration – リストの各ストリーム／ファイルの継続時間(秒)アレイ
+  - insertPoint - 挿入されるプレイリストタイムライン上の絶対ミリ秒値
+  - localStreamName – 挿入ライブストリーム／ファイル名
+  - playlistName - ストリームが挿入される*.lstファイル名
+  - sourceOffsets – リストの各ストリーム／ファイルのオフセット値のアレイ
 
 
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
 ## Notes
 
-- This function does NOT modify the actual playlist file. Instead it modifies ONLY the in-memory copy of the file.
+- この関数はプレイリストファイルそのものを変更しせず、メモリ上のファイルを変更するのみです
 
-- The `sourceOffset` and duration parameters behave exactly as they do when creating Playlist Files. However, they are measured in **MILLISECONDS** as opposed to seconds.
+- `sourceOffset`およびdurationパラメータはプレイリストファイルの作成と同様の動作ですが、秒単位ではなく**ミリ秒**単位で動作します
 
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [generateServerPlaylist](generateServerPlaylist.html)

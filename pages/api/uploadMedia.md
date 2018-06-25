@@ -7,38 +7,38 @@ folder: api
 toc: false
 ---
 
-Creates an acceptor which receives an HTTP POST binary upload. The acceptor will be opened on a specified port and the uploaded media file will be written on a specified directory. The acceptor then waits for an HTTP POST from a client with the media file as payload. The media file is then written on the specified location in the server.
+HTTP POSTバイナリアップロードを受信するacceptorを作成します。特定ポート上でacceptorは開かれ、アップロードメディアファイルは特定のディレクトリに保存されます。acceptorはクライエントからメディアファイルをペイロードとするHTTP POSTを待ちます。メディアファイルはサーバーの特定の場所に書き込まれます。
 
 
 
-## API Parameter Table
+## API パラメータ
 
-| Parameter Name |  Type   | Mandatory | Default Value | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :------------: | :-----: | :-------: | :-----------: | ---------------------------------------- |
-|      port      | integer |   true    |    *null*     | The port value to bind on                |
-|  targetFolder  | string  |   true    |    *null*     | The folder where the binary upload will be serialized |
+|      port      | integer |   true    |    *null*     | バインドされるポート |
+|  targetFolder  | string  |   true    |    *null*     | バイナリアップロードが配置されるフォルダ |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 uploadMedia port=<portNumber> targetFolder=<targetFolder>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 uploadMedia port=3333 targetFolder=../media
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "ip":"0.0.0.0",
@@ -54,26 +54,26 @@ uploadMedia port=3333 targetFolder=../media
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - ip – The IP referring to the EMS, normally 0.0.0.0
-  - port – The specified port number where the acceptor will wait for HTTP POSTs
-  - targetFolder – The specified folder where the media file will be written
+- data – パースすべきデータ
+  - ip – EMSを参照するIP 通常 0.0.0.0
+  - port – acceptorがHTTP POSTを受け付けるポート
+  - targetFolder – メディアファイルが保存されるフォルダ
 
 
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
 ## Notes
 
-- The sending client must conform to the following:
-  - It must send the data by way of HTTP POST
-  - The POST request must be in http/1.1 format
-  - A StreamName must be provided in the POST line. This will then be the filename of the media file (mp4) when written. (e.g., *POST /mystreamname HTTP/1.1\r\n*)
-  - Content-type must be set to *video/mp4* or *application/octet-stream*
-  - Content-length must be used. This function is intended for uploading VOD MP4 so the EMS will expect that the size of the file is already known
+- メディアを送信するクライエントは下記に従う必要があります
+  - HTTP POSTを使用してデータを送信
+  - POSTリクエストは http/1.1 フォーマット
+  - StreamNameがPOSTの中で指定されていること、これはメディアファイル(mp4) 名に使用されます(例 *POST /mystreamname HTTP/1.1\r\n*)
+  - Content-typeは *video/mp4* または *application/octet-stream*に指定
+  - Content-length が必要。VOD MP4のアップロードに使用されるため、ファイルサイズは予めわかっていると想定
 
 
