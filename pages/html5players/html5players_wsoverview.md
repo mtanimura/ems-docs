@@ -1,5 +1,5 @@
 ---
-title: WebSocket Overview
+title: WebSocketの概要
 keywords: websocket
 sidebar: html5players_sidebar
 permalink: html5players_wsoverview.html

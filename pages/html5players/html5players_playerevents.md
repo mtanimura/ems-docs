@@ -1,5 +1,5 @@
 ---
-title: Player Events
+title: プレーヤーイベント
 keywords: events
 sidebar: html5players_sidebar
 permalink: html5players_playerevents.html

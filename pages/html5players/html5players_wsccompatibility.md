@@ -1,5 +1,5 @@
 ---
-title: Browser Compatibility
+title: ブラウザ互換性
 keywords: websocket
 sidebar: html5players_sidebar
 permalink: emscloud_wscompatibility.html

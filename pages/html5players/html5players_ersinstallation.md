@@ -1,5 +1,5 @@
 ---
-title: ERS Installation
+title: ERSのインストール
 keywords: html5
 sidebar: html5players_sidebar
 permalink: html5players_ersinstallation.html

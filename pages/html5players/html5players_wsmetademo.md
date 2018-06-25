@@ -1,5 +1,5 @@
 ---
-title: Websockets Metadata Read and Write Demo Page
+title: Websocketsメタデータ読み書きデモページ
 keywords: websocket
 sidebar: html5players_sidebar
 permalink: html5players_wsmetademo.html

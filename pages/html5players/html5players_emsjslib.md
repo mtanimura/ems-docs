@@ -1,5 +1,5 @@
 ---
-title: EMS Integration Ready Player Libraries
+title: EMSインテグレーションReadyプレーヤーライブラリ
 keywords: js
 sidebar: html5players_sidebar
 permalink: html5players_emsjslib.html

@@ -1,5 +1,5 @@
 ---
-title: Streaming Using WebRTC
+title: WebRTCを使ったビデオ再生
 keywords: webrtc
 sidebar: html5players_sidebar
 permalink: html5players_wrtcdemo.html

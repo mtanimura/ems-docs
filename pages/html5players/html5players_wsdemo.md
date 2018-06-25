@@ -1,5 +1,5 @@
 ---
-title: Streaming Using WebSockets
+title: WebSocketsを使ったストリーミング
 keywords: websocket
 sidebar: html5players_sidebar
 permalink: html5players_wsdemo.html

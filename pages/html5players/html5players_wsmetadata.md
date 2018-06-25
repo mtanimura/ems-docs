@@ -1,5 +1,5 @@
 ---
-title: WebSocket Metadata
+title: WebSocketメタデータ
 keywords: websocket
 sidebar: html5players_sidebar
 permalink: html5players_wsmetadata.html

@@ -1,5 +1,5 @@
 ---
-title: ERS Admin Page
+title: ERS Adminページ
 keywords: html5
 sidebar: html5players_sidebar
 permalink: html5players_ersadminpage.html

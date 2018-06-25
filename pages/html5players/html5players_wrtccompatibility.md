@@ -1,5 +1,5 @@
 ---
-title: Browser Compatibility
+title: ブラウザ互換性
 keywords: webrtc
 sidebar: html5players_sidebar
 permalink: html5players_wrtccompatibility.html
@@ -7,7 +7,7 @@ folder: html5players
 toc: false
 ---
 
-The following diagram shows the compatibility of various browsers with the EvoStream WebRTC feature. 
+The following diagram shows the compatibility of various browsers with the EvoStream WebRTC feature.
 
 ![](images/html5/webrtc_compatibility.JPG)
 

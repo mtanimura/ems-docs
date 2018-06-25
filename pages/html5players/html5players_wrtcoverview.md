@@ -1,5 +1,5 @@
 ---
-title: WebRTC Overview
+title: WebRTCの概要
 keywords: webrtc
 sidebar: html5players_sidebar
 permalink: html5players_wrtcoverview.html
