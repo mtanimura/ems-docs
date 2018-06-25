@@ -9,29 +9,29 @@ toc: false
 
 
 
-Lists the currently available Ingest Points.
+インジェストポイントのリストを返します
 
 
 
 
 
-## API Parameter Table
+## API パラメータ
 
-This function has no parameters.
+パラメータはありません
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 listIngestPoints
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "privateStreamName":"testIngestPoint",
@@ -46,13 +46,13 @@ listIngestPoints
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data– List of pairs
-  - privateStreamName –The private stream name which was set
-  - publicStreamName – The public stream name which was set
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data– ペアのリスト
+  - privateStreamName –設定されたプライベートストリーム名
+  - publicStreamName – 設定されたパブリックストリーム名
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
@@ -63,7 +63,7 @@ The JSON response contains the following details:
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [hasIngestPoints](userguide_configlua.html#hasingestpoints)
 

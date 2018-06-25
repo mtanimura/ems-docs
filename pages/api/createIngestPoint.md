@@ -8,39 +8,38 @@ toc: false
 ---
 
 
-
-Creates an RTMP ingest point, which mandates that streams pushed into the EMS have a target stream name which matches one Ingest Point `privateStreamName`.
-
+RTMPインジェストポイントを作成します。EMSにプッシュされるストリームはインジェストポイントの`privateStreamName`に一致するターゲットストリーム名を持っている必要があります。
 
 
-## API Parameter Table
 
-|  Parameter Name   |  Type  | Mandatory | Default Value | Description                              |
+## API パラメータ
+
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :---------------: | :----: | :-------: | :-----------: | ---------------------------------------- |
-| privateStreamName | string |   true    |    *null*     | The name that RTMP Target Stream Names must match |
-| publicStreamName  | string |   true    |    *null*     | The name that is used to access the stream pushed to the `privateStreamName`. The `publicStreamName` becomes the streams `localStreamName` |
+| privateStreamName | 文字列 |   true    |    *null*     | RTMPターゲットストリーム名がマッチすべき名前 |
+| publicStreamName  | 文字列 |   true    |    *null*     | `privateStreamName`にプッシュされるストリームへアクセスするために使用される名前。`publicStreamName`は`localStreamName`ストリームになります |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 createIngestPoint privateStreamName=<theIngestPoint> publicStreamName=<publicStreamName>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 createIngestPoint privateStreamName=testIngestPoint publicStreamName=testPublicStreamName
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "privateStreamName":"testIngestPoint",
@@ -56,23 +55,24 @@ createIngestPoint privateStreamName=testIngestPoint publicStreamName=testPublicS
 #### JSON Response
 
 The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - privateStreamName –The privateStreamName which was set
-  - publicStreamName – The publicStreamName which was set
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - privateStreamName –設定されたprivateStreamName
+  - publicStreamName – 設定されたpublicStreamName
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
 ## Notes
 
-- **hasIngestPoint** is config.lua should be set to **TRUE**
-- Use the `publicStreamName` to play the stream
+-  config.luaの**hasIngestPoint** は**TRUE**である必要があります
+-  ストリーム再生には`publicStreamName`を使用してください
 
 ------
 
-## Related Link
+## 関連リンク
 
 - [hasIngestPoints](userguide_configlua.html#hasingestpoints)
 - [listIngestPoints](listIngestPoints.html)

@@ -7,36 +7,35 @@ folder: api
 toc: false
 ---
 
-Allows the user to launch an external process on the local machine. This can be used to do transcoding when paired with applications such as LibAVConv and FFMPEG.
+ローカルマシン上で外部プロセスの起動を許可します。LibAVConvやFFMPEGなどのアプリケーションと組み合わせてトランスコードする際に使用されます。
 
 
 
-## API Parameter Table
+## API パラメータ
 
 
-
-|  Parameter Name  |  Type   | Mandatory |              Default Value               | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :--------------: | :-----: | :-------: | :--------------------------------------: | ---------------------------------------- |
-|  fullBinaryPath  | string  |   true    |                  *null*                  | The path to the executable               |
-|    keepAlive     | boolean |   false   |                 1 *true*                 | If the process dies for any reason, the EMS will restart the external application when `keepAlive` is 1 |
-|    arguments     | string  |   false   |           *zero-length string*           | Complete list of arguments that need to be passed to the process, delimited by ESCAPED SPACES (“\ “) |
-|    groupName     | string  |   false   | *if not assigned, will create a random value process_group_xxx* | The group name assigned to the process   |
-|  $[ENV]=[VALUE]  | string  |   false   |           *zero-length string*           | Any number of environment variables that need to be set just before launching the process |
-| processKillTimer | integer |   false   |                    0                     | Will manually kill the process if it is still running after processKillTimer seconds of process execution |
+|  fullBinaryPath  | 文字列  |   true    |                  *null*                  | 実行可能バイナリへのパス |
+|    keepAlive     | ブーリアン |   false   |                 1 *true*                 | `keepAlive`が１の場合、何らかの理由でプロセスが落ちた場合にEMSは再起動を試みます |
+|    arguments     | 文字列  |   false   |           *zero-length string*           | プロセスにわたすべき引数リスト。エスケープされた空白(“\ “) 文字で区切られます |
+|    groupName     | 文字列  |   false   | *割当がない場合, ランダムな値のprocess_group_xxxが割当られます* | プロセスに割り当てるグループ名 |
+|  $[ENV]=[VALUE]  | 文字列  |   false   |           *zero-length string*           | プロセス起動前に設定が必要な環境変数 |
+| processKillTimer | 整数値 |   false   |                    0                     | processKillTimer(秒)経過後もプロセスが実行中の場合はkillします |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 launchProcess parameterA=<value> parameterB=<value> ...
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 launchProcess fullBinaryPath=/home/ems/ffmpeg_preset.sh arguments=10fps\ Stream1\ Stream1_10fps keepAlive=1 $SAMPLE_E_VAR=MyVal
 ```
 
@@ -48,12 +47,12 @@ The final parameter is an example for setting an environment variable (SAMPLE_E_
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
    "data":{
-      "$SAMPLE_E_VAR":"MyVal",   
+      "$SAMPLE_E_VAR":"MyVal",
       "arguments":"10fps\ Stream1\ Stream1_10fps",
       "configId":1,
       "fullBinaryPath":"/home/ems/ffmpeg_preset.sh",
@@ -71,19 +70,19 @@ The final parameter is an example for setting an environment variable (SAMPLE_E_
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse.
-  - $[ENV]=[VALUE] – Any number of environment variables that need to be set just before launching the process
-  - arguments – Complete list of arguments that need to be passed to the process
-  - configID – The configuration ID for this command
-  - fullBinaryPath – Full path to the binary that needs to be launched
-  - groupName - The group name assigned to the process
-  - keepAlive – If `keepAlive` is set to 1, the server will restart the process if it exits
-  - operationType – The type of operation
-  - processKillTimer – Will manually kill the process if it is still running after processKillTimer seconds of process execution
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - $[ENV]=[VALUE] – プロセス起動前に設定が必要な環境変数
+  - arguments – プロセスに渡されるべき引数のリスト
+  - configID – コマンドのconfig ID
+  - fullBinaryPath – 起動されたバイナリのフルパス
+  - groupName - プロセスに割り当てられたグループ名
+  - keepAlive – `keepAlive`が１に設定されている場合、サーバーはexitしたプロセスを再起動します
+  - operationType – オペレーションタイプ
+  - processKillTimer – processKillTimer(秒)後もプロセスの実行が続く場合はプロセスをkillします
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 

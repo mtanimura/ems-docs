@@ -1,4 +1,4 @@
-a---
+---
 title: getConfigInfo
 keywords: api
 sidebar: api_sidebar
@@ -14,6 +14,7 @@ configIdによるストリーム情報を返す
 
 
 ## API パラメータ
+
 
 
 | パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |

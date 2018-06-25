@@ -9,45 +9,45 @@ toc: false
 
 
 
-Records any inbound stream. The `record` command allows users to record a stream that may not yet exist. When a new stream is brought into the server, it is checked against a list of streams to be recorded.
+インバウンドストリームの録画を行います。`record`コマンドを使用してユーザがストリームの録画を行うことが可能です（当該ストリームがまだ存在していなくても）。サーバーに新規ストリームが入ってくると、ストリームリストに対して録画すべきかどうか確認が行われます。
 
 
 
-## API Parameter Table
+## API パラメータ
 
 
 
-|   Parameter Name    |  Type   | Mandatory | Default Value | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :-----------------: | :-----: | :-------: | :-----------: | :--------------------------------------- |
-|   localStreamName   | string  |   true    |    *null*     | The name of the stream to be used as input for recording |
-|     pathToFile      | string  |   true    |    *null*     | Specify path and file name to write to   |
-|        type         | string  |   false   |      mp4      | **TS** or **MP4** or **FLV**             |
-|      overwrite      | boolean |   false   |   0 *false*   | If **false**, when a file already exists for the stream name, a new file will be created with the next appropriate number appended. If **true**, files with the same name will be overwritten |
-|      keepAlive      | boolean |   false   |   1 *true*    | If **true**, the server will restart recording every time the stream becomes available again |
-|     chunkLength     | integer |   false   | 0 *disabled*  | If non-zero the record command will start a new recording file after `chunkLength` seconds have elapsed |
-|     waitForIDR      | boolean |   false   |   1 *true*    | This is used if the recording is being chunked. When true, new files will only be created on IDR boundaries |
-|     winQtCompat     | boolean |   false   |   0 *false*   | Mandates 32bit header fields to ensure compatibility with Windows QuickTime |
-| dateFolderStructure | boolean |   false   |   0 *false*   | If **true**, folders will be created with names in **YYYYMMDD** format. Recorded files will be placed inside these folders based on the date they were created |
+|   localStreamName   | 文字列  |   true    |    *null*     | 録画の入力に使われるストリーム名 |
+|     pathToFile      | 文字列  |   true    |    *null*     | 書き出しパスおよびファイル名 |
+|        type         | 文字列  |   false   |      mp4      | **TS** か **MP4** もしくは **FLV**             |
+|      overwrite      | ブーリアン |   false   |   0 *false*   | **false**の場合、ファイルがすでに存在していた場合には、ファイル名末尾に適切な番号が付け加えられます。 **true**の場合ファイルは上書きされます |
+|      keepAlive      | ブーリアン |   false   |   1 *true*    | **true**の場合、サーバーはストリームが得られる度に録画を再開します。|
+|     chunkLength     | 整数値 |   false   | 0 *disabled*  | 0意外の場合、recordコマンドは、`chunkLength`で指定した秒数毎に新規録画を開始します。|
+|     waitForIDR      | ブーリアン |   false   |   1 *true*    | trueの場合、録画がチャンクファイルを生成する場合に適用され、IDR境界のみで新規ファイル作成が行われます
+|     winQtCompat     | ブーリアン |   false   |   0 *false*   | Windows QuickTimeとの互換性を保持するため32ビットヘッダフィールドを強制します |
+| dateFolderStructure | ブーリアン |   false   |   0 *false*   | **true**の場合、フォルダ名は **YYYYMMDD** フォーマットで作成されます。録画されたファイルは作成された時刻にもとづいて該当フォルダに保存されます |
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 record localStreamName=<localStreamName> pathtofile=</recording/path/fileName> type=<ts/MP4/FLV>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 record localStreamName=testpullStream pathtofile=../media/testRecord type=mp4
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "chunkLength":0,
@@ -75,25 +75,25 @@ record localStreamName=testpullStream pathtofile=../media/testRecord type=mp4
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - chunkLength - The length (in seconds) of each playlist element
-  - computedPathToFile – The path and file name of the recorded stream
-  - configID – The configuration ID for this command
-  - dateFolderStructure – If **true**, will organize record chunks by date
-  - hasAudio – Indicates if the recorded stream has audio, false if none
-  - keepAlive – If **true**, the stream will attempt to reconnect if the connection is severed
-  - localStreamName – The local name for the stream
-  - mp4BinPath - The path of the mp4 writer
-  - operationType – The type of operation, for internal use only
-  - overwrite – If **true**, files with the same name will be overwritten
-  - pathToFile – Path to the folder where recorded files will be written
-  - type – Type of file for recording. Either \`**flv**\`,\`**ts**\`, or ‘**mp4’**
-  - waitForIDR – If **true**, new files will only be created on IDR boundaries
-  - winQtCompat – If **true**, andates 32bit header fields to ensure compatibility with Windows QuickTime
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - chunkLength - プレイリストエレメントの長さ(秒)
+  - computedPathToFile – 録画されるストリームのパスおよびファイル名The path and file name of the recorded stream
+  - configID – 設定ID
+  - dateFolderStructure – **true**の場合、日付ごとにチャンクファイルは整理されます
+  - hasAudio – 録画されるストリームがオーディオ含むかどうか、無しの場合はfalse
+  - keepAlive – **true**の場合、接続が切断した際、ストリーム再接続が試行されます
+  - localStreamName – ストリームのローカル名
+  - mp4BinPath - mp4 writerのパス
+  - operationType – オペレーションタイプ、内部使用
+  - overwrite – **true**の場合、同名ファイルは上書きされます
+  - pathToFile – 録画ファイルが保存されるフォルダパス
+  - type – 録画ファイル・タイプ。 \`**flv**\`か\`**ts**\`もしくは ‘**mp4’**
+  - waitForIDR – **true**の場合、新規ファイルはIDR境界上のみで作成されます
+  - winQtCompat – **true**の場合、Windows QuickTime互換性のため32ビットヘッダフィールドが強制されます
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
@@ -104,6 +104,6 @@ The JSON response contains the following details:
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [Record a Stream](userguide_record.html)

@@ -9,35 +9,35 @@ toc: false
 
 
 
-Returns a list with all push/pull configurations.
+全てのプッシュ／プル設定のリストを返します
 
-Whenever the `pullStream` or `pushStream` interfaces are called, a record containing the details of the pull or push is created in the pullpushconfig.xml file. Then, the next time the EMS is started, the pullpushconfig.xml file is read, and the EMS attempts to reconnect all of the previous pulled or pushed streams.
-
-
-
-## API Parameter Table
-
-This function has no parameters.
+`pullStream`または`pushStream`インターフェースがコールされた際にpullpushconfig.xmlファイルに詳細情報が記録されます。次回EMSが起動された際にpullpushconfig.xmlファイルが読み込まれ、すべてのプル／プッシュストリームの再接続が試行されます。
 
 
 
-## API Call Template
+## API パラメータ
 
-``` 
+パラメータはありません
+
+
+
+## API Call テンプレート
+
+```
 listConfig
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "dash":[details of dash streams],
     "hds":[details of hds streams],
     "hls":[details of hls streams],
-    "metalistener":[details of metalistener added],    
+    "metalistener":[details of metalistener added],
     "mss":[details of mss streams],
     "process":[details of on process commands sent],
     "pull":[details of pulled streams],
@@ -54,34 +54,33 @@ listConfig
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - dash - the details of [`createDASHStream`](createDASHStream.html)
-  - hds - the details of [`createHDSStream`](createHDSStream.html)
-  - hls - the details of [`createHLSStream`](createHLSStream.html)
-  - metalistener - the details of [addMetadataListener](addMetadataListener.html)
-  - mss - the details of [`createMSSStream`](createMSSStream.html)
-  - process - the details of process commands
-  - pull - the details of  [`pullStream`](pullStream.html)
-  - push - the details of [`pushStream`](pushStream.html)
-  - record - the details of [`record`](record.html)
-  - webrtc - the details of [`startWebrtc`](startWebRTC.html)
+- data – パースすべきデータ
+  - dash -  [`createDASHStream`](createDASHStream.html)の詳細情報
+  - hds -  [`createHDSStream`](createHDSStream.html)の詳細情報
+  - hls -  [`createHLSStream`](createHLSStream.html)の詳細情報
+  - metalistener -  [addMetadataListener](addMetadataListener.html)の詳細情報
+  - mss -  [`createMSSStream`](createMSSStream.html)の詳細情報
+  - process -  process commandsの詳細情報
+  - pull -   [`pullStream`](pullStream.html)の詳細情報
+  - push -  [`pushStream`](pushStream.html)の詳細情報
+  - record -  [`record`](record.html)の詳細情報
+  - webrtc -  [`startWebrtc`](startWebRTC.html)
 
-
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
 ## Notes
 
-- Only the configurations with a `keepAlive` value of **true** will be listed
-- Active configurations will also be listed
+- `keepAlive`が**true**の設定のみリストされます
+- アクティブな設定のみリストされます
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [removeConfig](removeConfig.html)
 - [getConfigInfo](getConfigInfo.html)
