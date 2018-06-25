@@ -252,7 +252,7 @@ entries:
       url: /userguide_playoverhttp.html
       output: web, pdf
 
-    - title: ブラックリストブラック設定
+    - title: ブラックリスト設定
       url: /userguide_blacklisting.html
       output: web, pdf
 
