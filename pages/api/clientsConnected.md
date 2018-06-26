@@ -8,28 +8,27 @@ toc: false
 ---
 
 
-
-Returns all the clients currently utilizing the EMS.
-
+EMSを利用中の全クライエント数を返します
 
 
-## API Parameter Table
 
-| **Parameter Name** |  Type  | **Mandatory** | **Default Value** | **Description**                          |
+## API パラメータ
+
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :----------------: | :----: | :-----------: | :---------------: | ---------------------------------------- |
-|  localStreamName   | string |     false     |      *null*       | The name of the particular stream. If this parameter is specified, the command will return the number of clients connected which use that stream |
+|  localStreamName   | 文字列 |     false     |      *null*       | 特定のストリーム名。このパラメータが指定されている場合コマンドは特定のストリームに接続しているクライエント数を返します |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 clientsConnected
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
 ```
 clientsConnected
@@ -41,9 +40,9 @@ clientsConnected localStreamName=testpullStream
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "outboundCount":3
@@ -67,17 +66,17 @@ clientsConnected localStreamName=testpullStream
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data –  The data to parse.
-  - outboundCount – The number of client connections
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - outboundCount – クライエント接続数
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [httpClientsConnected](httpClientsConnected.html)
 

@@ -8,28 +8,27 @@ toc: false
 ---
 
 
-
-Returns the current and limit bandwidth values.
-
-
-
-## API Parameter Table
-
-This function has no parameters.
+現在の帯域設定値および制限値を返します
 
 
 
-## API Call Template
+## API パラメータ
 
-``` 
+パラメータはありません
+
+
+
+## API Call テンプレート
+
+```
 getBandwidth
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "current":{
@@ -50,20 +49,20 @@ getBandwidth
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data –  The data to parse
-  - current – The current bandwidths
-    - in – The inbound bandwidth
-    - out – The outbound bandwidth
-  - max – The maximum bandwidths
-    - in – The inbound limit
-    - out - The outbound limit
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - current – 現状の帯域
+    - in – インバウンド帯域
+    - out – アウトバウンド帯域
+  - max – 最大帯域
+    - in – インバウンドの制限値
+    - out - アウトバウンドの制限値
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## **Related Links**
+## 関連リンク
 
 - [setBandwidthLimit](setBandwidthLimit.html)

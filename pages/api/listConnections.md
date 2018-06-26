@@ -8,28 +8,27 @@ toc: false
 ---
 
 
-
-Returns details about every active stream-related connection. This does not include other connections used for EMS operations (telnet, license manager, interface, etc.).
-
+すべてのアクティブなストリームに関係する接続についての情報を返します。EMS運用に使用される接続は含まれません(telnet、ライセンスマネージャ、インターフェース等)
 
 
-## API Parameter Table
 
-|     **Parameter Name**     |  Type   | **Mandatory** | **Default Value** | **Description**                          |
+## API パラメータ
+
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :------------------------: | :-----: | :-----------: | :---------------: | ---------------------------------------- |
-| excludeNonNetworkProtocols | boolean |     false     |      *null*       | The unique Id of the connection. Usually a value returned by `listStreamsIds` |
+| excludeNonNetworkProtocols | ブーリアン |     false     |      *null*       | 接続ID。通常は`listStreamsIds`の返り値 |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 listConnections
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
 ```
 listConnections excludeNonNetworkProtocols=0
@@ -37,9 +36,9 @@ listConnections excludeNonNetworkProtocols=0
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":[
     {
@@ -78,36 +77,36 @@ listConnections excludeNonNetworkProtocols=0
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data –  The data to parse.
-  - carrier – Details about the connection itself
-    - farIP – The IP address of the distant party
-    - farPort – The port used by the distant party
-    - Id - ID of the service
-    - nearIP – The IP address used by the local computer
-    - nearPort – The port used by the local computer
-    - rx – Total bytes received on this connection
-    - tx – Total bytes transferred on this connection
-    - type – The connection type (TCP, UDP)
-  - pullSettings/pushSettings/hlsSettings/hdsSettings/mssSettings/dashSettings/recordSettings – A copy of the parameters used in the stream command that caused this connection to be made
-    - Other fields present depend on the stream type (see `pushStream`, `pullStream`, `createHLSStream`, `createHDSStream`, `createMSSStream`, `createDASHStream`, `record` commands)
-  - stack – details about what internal resources are using the connection
-    - applicationID – the ID of the internal application using the connection
-    - creationTimestamp – The time (in UNIX seconds) when the application started using the connection
-    - id – The unique ID for this stack relation
-    - isEnqueueForDelete – Internal flag used for cleanup
-    - queryTimestamp – The time (in UNIX seconds) when this data was populated
+- data – パースすべきデータ
+  - carrier - 接続に関する詳細情報
+    - farIp - far側のIPアドレス
+    - farPort - far側の使用ポート
+    - Id - サービスID
+    - nearIp - ローカルコンピューターで使用されるIPアドレス
+    - nearPort - ローカルコンピューターで使用されるポート
+    - rx – この接続で受信したバイト総数
+    - tx – この接続で転送されたバイト総数
+    - type – 接続タイプ(TCP, UDP)
+  - pullSettings/pushSettings/hlsSettings/hdsSettings/mssSettings/dashSettings/recordSettings – この接続の確立に使用されたストリームコマンドパラメータのコピー
+    - 他のフィールドはそれぞれのストリームタイプにより異なります (`pushStream`, `pullStream`, `createHLSStream`, `createHDSStream`, `createMSSStream`, `createDASHStream`, `record` commandsを参照してください)
+  - stack - 接続を使用している内部リソースに関する情報
+    - applicationId - 接続を使用している内部アプリケーションID
+    - creationTimeStamp - アプリケーションが接続の使用を開始した時間(UNIX秒)
+    - Id - スタック関係のユニークID
+    - isEnqueForDelete - 削除に使用する内部フラグ
+    - queryTimeStamp - データがクエリーされた時間(UNIX秒)
     - rxInvokes – Number of received RTMP function invokes
     - streams – Details about the streams that are using the connection (see fields in`listStreams`)
     - txInvokes – Number of sent RTMP function invokes
-    - type – A descriptor for how the application is using the connection
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+    - type - アプリケーションの接続の使用についての記述子
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [getConnectionInfo](getConnectionInfo.html)
 - [getConnectionsCount](getConnectionsCount.html)

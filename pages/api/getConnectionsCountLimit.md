@@ -8,30 +8,29 @@ toc: false
 ---
 
 
-
-Returns the limit of concurrent connections. This is the maximum number of connections an EMS instance will allow at one time.
-
+同時接続数制限を返します。EMSインスタンスが許可する最大接続数
 
 
 
 
-## API Parameter Table
 
-This function has no parameters.
+## API パラメータ
+
+パラメータはありません
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 getConnectionsCountLimit
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     “cuurent”:3
@@ -46,17 +45,17 @@ getConnectionsCountLimit
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data –  The data to parse
-  - current – The current number of concurrent connections
-  - limit – The maximum number of concurrent connections
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - current – 現在の同時接続数
+  - limit – 最大同時接続数
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## **Related Links**
+## 関連リンク
 
 - [setConnectionsCountLimit](setConnectionsCountLimit.html)
 - [getConnectionsCount](getConnectionsCount.html)

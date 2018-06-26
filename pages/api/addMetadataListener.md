@@ -11,7 +11,7 @@ toc: false
 
 
 
-## API Parameter Table
+## API パラメータ
 
 | パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :-------------: | :-----: | :-------: | :-----------: | ---------------------------------------- |
@@ -65,13 +65,13 @@ addMetadataListener port=3535 localstreamname=meta
 JSON responseは以下を含みます:
 
 - data – パースすべきデータ
-  - acceptedConnectionsCount - アクティブな接続数
-  - appId - serviceを使用するアプリケーションID
-  - appName - serviceを使用するアプリケーション
+  - acceptedConnectionsCount - サービスを利用するアクティブな接続数
+  - appId - サービスを使用するアプリケーションID
+  - appName - サービスを使用するアプリケーション
   - droppedConnectionsCount - ドロップした接続数
-  - enabled - serviceが有効の場合は`true`、そうでなければ `false`
-  - id - serviceのID
-  - ip - serviceが使用するipアドレス
+  - enabled - サービスが有効の場合は`true`、そうでなければ `false`
+  - id - サービスのID
+  - ip - サービスが使用するipアドレス
   - localStreamName - 関連メタデータが送られるストリーム名Name of the stream to which the associated metadata will be sent
   - port - serviceが使用するポート
   - protocol - serviceが使用するプロトコル

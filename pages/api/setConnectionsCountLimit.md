@@ -7,27 +7,27 @@ folder: api
 toc: false
 ---
 
-This interface sets a limit on the number of concurrent connections the EMS will allow.
+EMSが許可する同時接続数を設定するインターフェースです
 
 
 
-## API Parameter Table
+## API パラメータ
 
-| **Parameter Name** |  Type   | Mandatory | Default Value | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :----------------: | :-----: | :-------: | :-----------: | ---------------------------------------- |
-|       count        | integer |   true    |    *null*     | The maximum number of connections allowed on this instance at one time. CLI connections are not affected |
+|       count        | 整数値 |   true    |    *null*     | 一度に接続を許可する最大値 CLI接続は影響をうけません |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 setConnectionsCountLimit count=<count>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
 ```
 setConnectionsCountLimit count=500
@@ -37,9 +37,9 @@ This sets the connection limit to 500.
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     “cuurent”:3
@@ -54,17 +54,17 @@ This sets the connection limit to 500.
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data –  The data to parse
-  - current – The current number of concurrent connections
-  - limit – The maximum number of concurrent connections
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - current – 現在の同時接続数
+  - limit – 最大同時接続数
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [getConnectionsCountLimit](getConnectionsCountLimit.html)
 - [getConnectionsCount](getConnectionsCount.html)

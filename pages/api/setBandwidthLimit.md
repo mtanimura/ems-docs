@@ -8,39 +8,38 @@ toc: false
 ---
 
 
-
-Enforces a limit on input and output bandwidth.
-
+入出力帯域制限を設定します
 
 
-## API Parameter Table
 
-| Parameter Name |  Type   | Mandatory | Default Value | Description                              |
+## API パラメータ
+
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :------------: | :-----: | :-------: | :-----------: | ---------------------------------------- |
-|       in       | integer |   true    |    *null*     | Maximum input bandwidth. **0** means disabled. CLI connections are not affected |
-|      out       | integer |   true    |    *null*     | Maximum output bandwidth. **0** means disabled. CLI connections are not affected. |
+|       in       | 整数値 |   true    |    *null*     | 最大入力帯域。**0**は無効 CLI接続には影響はおよびません |
+|      out       | 整数値 |   true    |    *null*     | 最大出力帯域。**0**は無効 CLI接続には影響はおよびません |
 
 
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 setBandwidthLimit in=<maximumInputValue> out=<maximumOutputValue>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
 ```
 setBandwidthLimit in=400000 out=300000
 ```
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "current":{
@@ -61,21 +60,21 @@ setBandwidthLimit in=400000 out=300000
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data –  The data to parse
-  - current – The current bandwidths
-    - in – The inbound bandwidth
-    - out – The outbound bandwidth
-  - max – The maximum bandwidths
-    - in – The inbound limit
-    - out - The outbound limit
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - current – 現状の帯域
+    - in – インバウンド帯域
+    - out – アウトバウンド帯域
+  - max – 最大帯域値
+    - in – インバウンド制限値
+    - out - アウトバウンド制限値
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [getBandwidth](getBandwidth.html)
 - [Configuring Bandwidth Limits](userguide_bandwidthlimits.html)

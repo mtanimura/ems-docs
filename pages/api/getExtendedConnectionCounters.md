@@ -8,30 +8,29 @@ toc: false
 ---
 
 
-
-Returns a detailed description of the network descriptors counters. This includes historical high-water-marks for different connection types and cumulative totals.
-
+ネットワーク記述子カウンターに関する詳細情報を返します。異なる接続タイプでの最大値履歴や累積値などが含まれます。
 
 
 
 
-## API Parameter Table
 
-This function has no parameters.
+## API パラメータ
+
+パラメータはありません
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 getExtendedConnectionCounters
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "origin":{
@@ -78,23 +77,21 @@ getExtendedConnectionCounters
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data –  The data to parse.
-
+- data – パースすべきデータ
   - origin
-    - grandTotal – Stats for all connections
-    - managedNonTcpUdp – Stats for non-TCP/UDP connections
-    - managedTcp – Stats for TCP connections
-    - managedTcpAcceptors – Stats for TCP acceptors
-    - managedTcpConnectors – Stats for TCP connectors
-    - managedUdp – Stats for UDP connections
-    - rawUdp – Stats for raw UDP
-  - Total – total number of connections
+    - grandTotal – 全接続の統計情報
+    - managedNonTcpUdp – non-TCP/UDP接続の統計情報
+    - managedTcp – TCP接続の統計情報
+    - managedTcpAcceptors – TCP acceptorsの統計情報
+    - managedTcpConnectors – TCP connectorsの統計情報
+    - managedUdp – UDP connectionsの統計情報
+    - rawUdp – raw UDPの統計情報
+  - Total – 総接続数
 
-- description– Describes the result of parsing/executing the command
-
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 

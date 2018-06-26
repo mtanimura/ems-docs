@@ -8,32 +8,30 @@ toc: false
 ---
 
 
-
-Creates a new service. 
-
+新しいサービスを作成します
 
 
-## API Parameter Table
+## API パラメータ
 
-| **Parameter Name** |  Type  | **Mandatory** | **Default Value** | **Description**                    |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :----------------: | :----: | :-----------: | :---------------: | ---------------------------------- |
-|         ip         | string |     true      |      *null*       | The IP address to bind on          |
-|        port        | string |     true      |      *null*       | The port to bind on                |
-|      protocol      | string |     true      |      *null*       | The protocol stack name to bind on |
-|      sslCert       | string |     false     |      *null*       | The SSL certificate to be used     |
-|       sslKey       | string |     false     |      *null*       | The SSL certificate key to be used |
+|         ip         | 文字列 |     true      |      *null*       | バインドするIPアドレス |
+|        port        | 文字列 |     true      |      *null*       | バインドするポート |
+|      protocol      | 文字列 |     true      |      *null*       | バインドするプロトコル・スタック名 |
+|      sslCert       | 文字列 |     false     |      *null*       | 使用されるSSL証明書 |
+|       sslKey       | 文字列 |     false     |      *null*       | 使用されるSSL証明書鍵 |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 createService ip=<ipAddress> port=<portNumber> protocol=<protocolName>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
 ```
 createService ip=0.0.0.0 port=9556 protocol=inboundRtmp
@@ -43,7 +41,7 @@ This will create a service called **inboundRtmp** which will use port **9556** a
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
 ```
 {
@@ -67,31 +65,31 @@ This will create a service called **inboundRtmp** which will use port **9556** a
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data –  The data to parse.
-  - acceptedConnectionsCount – The number of active connections using the service
-  - appId – The ID of the application using the service
-  - appName – The name of the application using the service
-  - droppedConnectionsCount – The number of dropped connections
-  - enabled - **true** if the service is enabled, **false** if not
-  - id = ID of the service
-  - ip = The IP address bound to the service
-  - port – The port bound to the service
-  - protocol – The protocol bound to the service
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - acceptedConnectionsCount – サービスを利用しているアクティブな接続すう
+  - appId – サービスを利用するアプリケーションID
+  - appName – サービスを利用するアプリケーション名
+  - droppedConnectionsCount – ドロップした接続数
+  - enabled - サービスが有効なら**true** 、そうでなければ **false**
+  - id = サービスID
+  - ip = サービスにバインドされたIPアドレス
+  - port – サービスにバインドされたポート
+  - protocol – サービスにバインドされたプロトコル
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
 ## Notes
 
-- The created service will not be added in config.lua
+- 作成したサービスはconfig.luaには書き込まれません
 
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [enableService](enableService.html)
 - [listServices](listServices.html)

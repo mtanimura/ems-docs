@@ -7,27 +7,28 @@ folder: api
 toc: false
 ---
 
-Returns the number of active connections.  This includes connections necessary for EMS operations (telnet, license manager, interface, etc.) and all connections opened by streams (RTSP-UDP-RTP ports).
+アクティブな接続数を返します。EMSオペレーションのための接続(telnet、ライセンスマネージャ、インターフェース等) やストリームによって開かれた接続(RTSP-UDP-RTP ports)も含まれます
 
 
 
-## API Parameter Table
 
-This function has no parameters.
+## API パラメータ
+
+パラメータはありません
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 getConnectionsCount
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "count":3
@@ -41,16 +42,16 @@ getConnectionsCount
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data –  The data to parse
-  - count – The number of active connections
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - count – アクティブな接続数
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [setConnectionsCountLimit](setConnectionsCountLimit.html)
 - [getConnectionsCountLimit](getConnectionsCountLimit.html)

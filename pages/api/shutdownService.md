@@ -8,38 +8,37 @@ toc: false
 ---
 
 
-
-Enable or disable a service.
-
+サービスのシャットダウン
 
 
-## API Parameter Table
 
-| **Parameter Name** |  Type   | **Mandatory** | **Default Value** | **Description**       |
+## API パラメータ
+
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :----------------: | :-----: | :-----------: | :---------------: | --------------------- |
-|         id         | integer |     true      |      *null*       | The id of the service |
+|         id         | 整数値 |     true      |      *null*       | サービスID |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 shutdownService id=<serviceId>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
 ```
 shutdownService id=5
 ```
 
-This shuts down the service with an id of 5.
+この場合idが5のサービスをシャットダウンします
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
 ```
 {
@@ -64,26 +63,27 @@ This shuts down the service with an id of 5.
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data –  The data to parse.
-  - acceptedConnectionsCount – The number of active connections using the service
-  - appId – The ID of the application using the service
-  - appName – The name of the application using the service
-  - droppedConnectionsCount – The number of dropped connections
-  - enabled - **true** if the service is enabled, **false** if not
-  - id = ID of the service
-  - ip = The IP address bound to the service
-  - port – The port bound to the service
-  - protocol – The protocol bound to the service
-  - sslCert – The SSL certificate
-  - sslKey – The SSL certificate key
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - acceptedConnectionsCount – サービスを使用するアクティブな接続数
+  - appId – サービスにリンクするアプリケーションID
+  - appName – サービスにリンクするアプリケーション名
+  - droppedConnectionsCount – ドロップした接続数
+  - enabled - サービスが有効なら**true**、 そうでなければ **false**
+  - id = サービスID
+  - ip = サービスにバインドされたIPアドレス
+  - port – サービスにバインドされたポート
+  - protocol – サービスにバインドされたプロトコル
+  - sslCert – SSL証明書
+  - sslKey – SSL証明書鍵
+
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## **Related Links**
+## 関連リンク
 
 - [createService](createService.html)
 - [enableService](enableService.html)

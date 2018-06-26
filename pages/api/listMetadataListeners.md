@@ -11,23 +11,22 @@ Returns the list of all metadata listeners created either through the config.lua
 
 
 
-## API Parameter Table
+## API パラメータ
 
 This function has no parameters.
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 listMetadataListeners
 ```
 
 
+### JSONのSuccess Response
 
-### Success Response in JSON
-
-``` 
+```
 {
 "data":{
 "listeners":[
@@ -102,28 +101,28 @@ listMetadataListeners
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – Provides the following information for each protocol
-  - acceptedConnectionsCount – The number of active connections using the service
-  - appId – The ID of the application linked to the service
-  - appName – The name of the application linked to the service
-  - droppedConnectionsCount – The number of dropped connections
-  - enabled - **true** if the service is enabled, **false** if not
-  - id = ID of the service
-  - ip = The IP address bound to the service
-  - port – The port bound to the service
-  - protocol – The protocol bound to the service
-  - sslCert – The SSL certificate (for some protocols only)
-  - sslKey – The SSL certificate key (for some protocols only)
-  - useLengthPadding – **true** if padding is enabled, **false** if not (for some protocols only)
-  - waitForMetadata – **true** if metadata is required, **false** if not (for some protocols only)
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – 各プロトコルについて下記の情報を提供します
+  - acceptedConnectionsCount - サービスを利用するアクティブな接続数
+  - appId - サービスを使用するアプリケーションID
+  - appName - サービスを使用するアプリケーション
+  - droppedConnectionsCount - ドロップした接続数
+  - enabled - サービスが有効の場合は`true`、そうでなければ `false`
+  - id - サービスのID
+  - ip - サービスが使用するipアドレス
+  - port – サービスにバインドされたポート
+  - protocol – サービスにバインドされたプロトコル
+  - sslCert – SSL証明書 (いくつかのプロトコルのみ)
+  - sslKey – SSL証明書鍵 (いくつかのプロトコルのみ)
+  - useLengthPadding – paddingが有効なら**true**、そうでなければ **false** (いくつかのプロトコルのみ)
+  - waitForMetadata – メタデータが必須なら**true** そうでなければ **false** (いくつかのプロトコルのみ) 
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [addMetadataListener](addMetadataListener.html)
 - [createService](createService.html)

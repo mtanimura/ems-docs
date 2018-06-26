@@ -8,28 +8,27 @@ toc: false
 ---
 
 
-
-Returns all the clients which are currently utilizing the EWS.
-
+EWSを利用している全クライエント数を返します
 
 
-## API Parameter Table
 
-| **Parameter Name** |  Type  | **Mandatory** | **Default Value** | **Description**                          |
+## API パラメータ
+
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :----------------: | :----: | :-----------: | :---------------: | ---------------------------------------- |
-|     groupName      | string |     false     |      *null*       | The name of the particular group. If this parameter is specified, the command will return the number of clients connected which are playing streams falling under that group |
+|     groupName      | 文字列 |     false     |      *null*       | 特定のグループ名 このパラメータが指定されている場合、当該グループに属するストリームを再生しているクライエント数を返します |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 httpClientsConnected
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
 ```
 httpClientsConnected
@@ -41,9 +40,9 @@ httpClientsConnected groupName=MyGroupStream
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "groupName":"",
@@ -69,16 +68,16 @@ httpClientsConnected groupName=MyGroupStream
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data –  The data to parse.
-  - groupName – The group name to which the clients are connected to
-  - httpStreamingSessionsCount – The number of client connections
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - groupName – クライエントが接続するグループ名
+  - httpStreamingSessionsCount – 接続クライエント数
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [clientsConnected](clientsConnected.html)
