@@ -113,7 +113,7 @@ JSON responseは以下を含みます:
 
 - data – パースすべきデータ
   - audioCodecBytes - RTPストリームがオーディオの場合のオーディオcodec。`0x`や`h`をのぞく16進数表記
-  - emulateUserAgent – EMSが他のサーバーと自身を区別するために使用する文字列。EMSが自身をFlash Media Serverと特定する等に使用可能です
+  - emulateUserAgent – EMSが他のサーバーと自身を区別するために使用する文字列。EMSが自身をFlash Media Serverと指定する等に使用可能です
   - forceTcp – TCPを強制するかどうか
   - httpProxy – IP:Portの組み合わせまたはself
   - isAudio – プルしたストリームがオーディオソースであるかを示します
@@ -155,4 +155,3 @@ JSON responseは以下を含みます:
 
 
 ------
-

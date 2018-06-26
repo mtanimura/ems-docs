@@ -166,7 +166,7 @@ JSON responseは以下を含みます:
     - _callback -lazy pullでは必須。内部使用のみ
     - audioCodecBytes - オーディオの場合のRTPストリームのオーディオcodec設定
     - configId – pullPushConfig.xmlエントリでのid
-    - emulateUserAgent – EMSが他のサーバーから自身を特定するための文字列。EMSが自身を例えばFlash Media Serverとして特定させるよう編集可能
+  - emulateUserAgent – EMSが他のサーバーと自身を区別するために使用する文字列。EMSが自身をFlash Media Serverと指定する等に使用可能です
     - forceTcp – TCPを強制するかどうか
     - httpProxy - IP:Portの組み合わせまたはself
     - isAudio - 現在プルされているストリームがオーディオソースかどうかを示す

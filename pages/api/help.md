@@ -8,28 +8,27 @@ toc: false
 ---
 
 
-
-This function prints out descriptions of the API in JSON format.
-
-
-
-## API Parameter Table
-
-This function has no parameters.
+API情報をJSONフォーマットでプリントします
 
 
 
-## API Call Template
+## API パラメータ
 
-``` 
+パラメータはありません
+
+
+
+## API Call テンプレート
+
+```
 help
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 “data":[
     {
@@ -60,19 +59,19 @@ help
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - command – The name of a valid command.
-  - deprecated – Is **true** if the command is deprecated, **false** if not
-  - description – Describes the use of the command
-  - parameters – Parameter settings for the command
-    - defaultValue – The default value if the parameter is omitted
-    - description – Describes the use of the parameter
-    - mandatory – Is **true** if the parameter is mandatory, **false** if not
-    - name – The name of a parameter for the command
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - command – 有効なコマンド名
+  - deprecated – **true**の場合コマンドは廃止予定です。**false** の場合そうではありません
+  - description – コマンドの使用に関する情報
+  - parameters – コマンドのパラメータ設定
+    - defaultValue – パラメータが省略された場合のデフォルト値
+    - description – パラメータの詳細
+    - mandatory – **true**の場合パラメータは必須**false**はそうではない
+    - name – コマンドパラメータ名
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 

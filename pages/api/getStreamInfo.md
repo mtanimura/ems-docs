@@ -146,7 +146,7 @@ JSON responseは以下を含みます:
 - data – パースすべきデータ
   - appName - serviceを利用するアプリケーション名
   - audio – ストリームのオーディオ部分の統計情報
-    - aveAudioBitRate - ストリーム開始店からのオーディオフレームの平均ビットレート
+    - aveAudioBitRate - ストリームの先頭からのオーディオフレームの平均ビットレート
     - bytesCount - 受信したオーディオデータ総量
     - codec - オーディオcodec名
     - codecNumeric - 内部使用コード
@@ -157,8 +157,8 @@ JSON responseは以下を含みます:
   - bandwidth – ストリームの現在の使用帯域
   - connectionType - 1=pull, 2=push, 3=HLS, 4=HDS, 5=MSS, 6=DASH, 7=record, 8=launchprocess, 9=webrtc, 10=metadata, 0=standard
   - creationTimestamp – ストリーム生成時点のUNIXタイムスタンプ。UNIXタイムはUNIXエポック(1970年1月1日)からの秒数です
-  - farIp - リモート側のIPアドレス
-  - farPort - リモート側の使用ポート
+  - farIp - far側のIPアドレス
+  - farPort - far側の使用ポート
   - ip - ソースストリームホストのIPアドレス
   - name – ストリームの`localStreamName`
   - nearIp - ローカルコンピューターで使用されるIPアドレス
@@ -172,7 +172,7 @@ JSON responseは以下を含みます:
     - _callback -lazy pullでは必須。内部使用のみ
     - audioCodecBytes - オーディオの場合のRTPストリームのオーディオcodec設定
     - configId – pullPushConfig.xmlエントリでのid
-    - emulateUserAgent – EMSが他のサーバーから自身を特定するための文字列。EMSが自身を例えばFlash Media Serverとして特定させるよう編集可能
+  - emulateUserAgent – EMSが他のサーバーと自身を区別するために使用する文字列。EMSが自身をFlash Media Serverと指定する等に使用可能です
     - forceTcp – TCPを強制するかどうか
     - httpProxy - IP:Portの組み合わせまたはself
     - isAudio - 現在プルされているストリームがオーディオソースかどうかを示す
@@ -220,6 +220,7 @@ JSON responseは以下を含みます:
     - packetsCount – ビデオパケット受信総数
     - profile - H264プロファイル
     - width - ビデオストリームの横ピクセル数
+
 - description– コマンドのパース・実行結果
 - status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 

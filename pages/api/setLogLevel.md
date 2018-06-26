@@ -7,21 +7,21 @@ folder: api
 toc: false
 ---
 
-Change the log level for all log appenders. Default value in the system is set in the config.lua file, which is usually set to 6.
+全てのLog Appenderのログレベルを変更します。デフォルト値は通常6にセットされておりconfig.luaファイルに設定されています。
 
 
 
-## API Parameter Table
+## API パラメータ
 
-| Parameter Name |  Type   | Mandatory | Default Value | Description                      |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :------------: | :-----: | :-------: | :-----------: | -------------------------------- |
-|     level      | integer |   true    |    *null*     | A value between **-1** and **6** |
+|     level      | 整数値 |   true    |    *null*     | **-1** から **6**までの整数値 |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 setLogLevel level=1
 ```
 
@@ -29,9 +29,9 @@ This sets the log level to 1. It means it will only output the error logs.
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":null,
 "description":"Log level is set",
@@ -43,19 +43,19 @@ This sets the log level to 1. It means it will only output the error logs.
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – Nothing to parse for this command
+- data – パースすべきデータはありません
 
 
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
 ## Notes
 
-- Log Levels:
+- ログレベル:
   - 0 – Fatal
   - 1 – Error
   - 2 – Warning
@@ -68,6 +68,6 @@ The JSON response contains the following details:
 
 
 
-## **Related Links**
+## 関連リンク
 
 - [logAppenders](userguide_configlua.html#logappenders)

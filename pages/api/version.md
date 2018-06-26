@@ -7,27 +7,27 @@ folder: api
 toc: false
 ---
 
-Returns the versions for framework and this application.
+フレームワークおよびアプリケーションのバージョンを返します
 
 
 
-## API Parameter Table
+## API パラメータ
 
-This function has no parameters.
+パラメータはありません
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 version
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "banner":"EvoStream Media Server (www.evostream.com) version 1.7.0 build 4242 with hash: 86bdcde75942b25390a15a6b1de521e913182bcf - PacMan|m| - (built for Ubuntu-14.04-x86_64 on 2015-11-18T10:54:56.000)",
@@ -47,16 +47,16 @@ version
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data– Contains an integer representing the version
-  - banner – The EMS banner
-  - branchName – The branch name where the package is created
-  - buildDate – The build date of the released package
-  - buildNumber – The build number of the released package
-  - codeName – The code name of the released EMS version
-  - hash – The hash of the released package
-  - releaseNumber – The version of the released package
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - banner – EMSバナー
+  - branchName – パッケージのブランチ名
+  - buildDate – リリースパッケージのビルド日付
+  - buildNumber – リリースパッケージのビルド番号
+  - codeName – リリースされたEMSバージョンのコード名
+  - hash – リリースパッケージのハッシュ
+  - releaseNumber – リリースパッケージのバージョン
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 

@@ -8,28 +8,28 @@ toc: false
 ---
 
 
-
-Returns a detailed set of information about a connection.
-
+接続に関する情報を返します
 
 
-## API Parameter Table
 
-| **Parameter Name** |  Type   | **Mandatory** | **Default Value** | **Description**                          |
+
+## API パラメータ
+
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :----------------: | :-----: | :-----------: | :---------------: | ---------------------------------------- |
-|         id         | integer |     true      |      *null*       | The uniqueId of the connection. Usually a value returned by `listStreamsIds` |
+|         id         | 整数値 |     true      |      *null*       | 接続のuniqueId 通常は`listStreamsIds`で返される値 |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 getConnectionInfo id=<id>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
 ```
 getConnectionInfo id=144
@@ -37,9 +37,9 @@ getConnectionInfo id=144
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
     "data":{
         "carrier":null,
@@ -63,22 +63,22 @@ getConnectionInfo id=144
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data –  The data to parse.
-  - carrier - Details about the connection itself
-  - stack - details about what internal resources are using the connection
-    - applicationId - the ID of the internal application using the connection
-    - creationTimeStamp - The time (in UNIX seconds) when the application started using the connection
-    - Id - The unique ID for this stack relation
-    - isEnqueForDelete - Internal flag used for cleanup
-    - queryTimeStamp - The time (in UNIX seconds) when this data was populated
-    - type - A descriptor for how the application is using the connection
-- description– Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - carrier - 接続に関する詳細情報
+  - stack - 接続を使用している内部リソースに関する情報
+    - applicationId - 接続を使用している内部アプリケーションID
+    - creationTimeStamp - アプリケーションが接続の使用を開始した時間(UNIX秒)
+    - Id - スタック関係のユニークID
+    - isEnqueForDelete - 削除に使用する内部フラグ
+    - queryTimeStamp - データがクエリーされた時間(UNIX秒)
+    - type - アプリケーションの接続の使用についての記述子
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [listConnections](listConnections.html)

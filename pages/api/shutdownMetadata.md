@@ -7,44 +7,44 @@ folder: api
 toc: false
 ---
 
-Stops a metadata pseudo-stream. This command shuts down all multiple pull streams that were issued for a given `localStreamName`.
+メタデータpseudoストリームを停止します。このコマンドは与えられた`localStreamName`に発行されたすべての複数のプルストリームをシャットダウンします。
 
 
 
-## API Parameter Table
+## API パラメータ
 
-| Parameter Name  |  Type  | Mandatory | Default Value | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :-------------: | :----: | :-------: | :-----------: | ---------------------------------------- |
-| localStreamName | string |   true    |    *null*     | Metadata associated with this incoming stream name |
+| localStreamName | 文字列 |   true    |    *null*     | 入力ストリーム名に関連するメタデータ |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 shutdownMetadata localStreamName=<localStreamName>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 shutdownMetadata localStreamName=testpullStream
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "localStreamName":"testpullStream",
     "streamName":"testpullStream",
     "type":"vmf"
 },
-"description":"Shutdown Metadata Push Stream", 
+"description":"Shutdown Metadata Push Stream",
 "status":"SUCCESS"
 }
 ```
@@ -53,20 +53,20 @@ shutdownMetadata localStreamName=testpullStream
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - localStreamName – Name of the stream to which the associated metadata will be sent
-  - streamName – Name of the stream to which the associated metadata will be sent
-  - type – The type of stream
+- data – パースすべきデータ
+  - localStreamName – 関連メタデータが送られるストリーム名
+  - streamName – 関連メタデータが送られるストリーム名
+  - type – ストリームタイプ
 
 
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## **Related Links**
+## 関連リンク
 
 - [pushMetadata](pushMetadata.html)
 - [getMetadata](getMetadata.html)

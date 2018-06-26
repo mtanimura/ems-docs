@@ -7,29 +7,29 @@ folder: api
 toc: false
 ---
 
-Will enable/disable RTMP authentication.
+RTMP認証の有効／無効設定
 
 
 
-## API Parameter Table
+## API パラメータ
 
-| Parameter Name |  Type   | Mandatory | Default Value | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :------------: | :-----: | :-------: | :-----------: | ---------------------------------------- |
-|    enabled     | boolean |   true    |    *null*     | **1** to enable, **0** to disable authentication |
+|    enabled     | ブーリアン |   true    |    *null*     | **1** が認証有効、**0**が認証無効 |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 setAuthentication enabled=1
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "enabled":true
@@ -43,17 +43,17 @@ setAuthentication enabled=1
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - enabled – **true** if authentication is enabled, **false** if not
+- data – パースすべきデータ
+  - enabled – **true**の場合認証は有効 **false** は無効
 
 
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [Adding Stream Authentication](userguide_addstreamauth.html)

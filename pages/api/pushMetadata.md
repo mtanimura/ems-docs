@@ -7,40 +7,40 @@ folder: api
 toc: false
 ---
 
-Opens an outboundVmf TCP stream over which each modified JSON metadata object is sent.
+JSONメタデータオブジェクトが送られるアウトバウンドVmf TCPストリームを開きます
 
 
 
-## API Parameter Table
+## API パラメータ
 
-| Parameter Name  |  Type   | Mandatory | Default Value | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :-------------: | :-----: | :-------: | :-----------: | ---------------------------------------- |
-| localStreamName | string  |   true    |    *null*     | Name of the stream to which the associated metadata will be sent |
-|      type       | string  |   false   |      vmf      | Type of push stream                      |
-|       ip        | string  |   false   |   127.0.0.1   | IP address to push to                    |
-|      port       | integer |   false   |     8110      | Port to push to                          |
+| localStreamName | 文字列  |   true    |    *null*     | 関連するメタデータがおくられるストリーム名 |
+|      type       | 文字列  |   false   |      vmf      | プッシュストリームタイプ |
+|       ip        | 文字列  |   false   |   127.0.0.1   | プッシュ先IPアドレス                |
+|      port       | 整数値 |   false   |     8110      | プッシュ先ポート                        |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 pushMetadata localStreamName=testpullStream ip=<ipAddress> port=<portNumber>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 pushMetadata localStreamName=testpullStream ip=192.168.0.1 port=8110
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
    "data":{
       "applicationName":"evostreamms",
@@ -62,26 +62,26 @@ pushMetadata localStreamName=testpullStream ip=192.168.0.1 port=8110
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - applicationName – The EMS (evostreamms)
-  - ip – The IP address to push to
-  - keepAlive – Indicates if it will be enabled after restart
-  - localStreamName – Name of the stream to which the associated metadata will be sent
-  - name – Name of the application (evostreamms)
-  - port – The port to push to
-  - protocol – The type of stream
-  - streamName – Name of the stream to which the associated metadata will be sent
-  - type – The type of stream
+- data – パースすべきデータ
+  - applicationName – EMS (evostreamms)
+  - ip – プッシュ先IPアドレス
+  - keepAlive – 再起動後に有効化されるかどうか
+  - localStreamName – 関連メタデータが送られるストリーム名
+  - name – アプリケーション名(evostreamms)
+  - port – プッシュ先ポート
+  - protocol – ストリームタイプ
+  - streamName – 関連メタデータが送られるストリーム名
+  - type – ストリームタイプ
 
 
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [getMetadata](getMetadata.html)
 - [shutdownMetadata](shutdownMetadata.html)

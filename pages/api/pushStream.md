@@ -109,7 +109,7 @@ pullStreamに対するJSON responseは下記の詳細を含みます:
 
 - data – パースすべきデータ
   - configID – コマンドのconfig id
-  - emulateUserAgent – EMSが自身を同定するために使用する文字列。EMSが自身を同定するのにたとえばFlash Media Serverなどと変更することが可能
+  - emulateUserAgent – EMSが他のサーバーと自身を区別するために使用する文字列。EMSが自身をFlash Media Serverと指定する等に使用可能です
   - forceTcp – TCPを強制するかどうか、またはUDPを許容するか
   - httpProxy - **IP:Port**の組み合わせまたは**Self**
   - keepAlive – **true**の場合、接続が切断した場合にストリーム再接続を試行する

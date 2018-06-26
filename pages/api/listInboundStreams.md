@@ -8,28 +8,27 @@ toc: false
 ---
 
 
-
-Provides a complete detailed list of all the current inbound `localStreamNames`.
-
-
-
-## API Parameter Table
-
-This function has no parameters.
+全てのインバウンド`localStreamNames`の詳細なリストを返します
 
 
 
-## API Call Template
+## API パラメータ
 
-``` 
+パラメータはありません
+
+
+
+## API Call テンプレート
+
+```
 listInboundStreams
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
           "data": {
                     "data": [
@@ -263,104 +262,70 @@ listInboundStreams
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data –  The data to parse.
-
+- data – パースすべきデータ
   - appName - EvoStream Media Server
-
-  - audio – stats about the audio portion of the stream
-
-    - aveAudioBitRate - The average bitrate of the audio frames from the start of the stream
-    - bytesCount - Total amount of audio data received
-    - codec - The name of the audio codec 
-    - codecNumeric - Code used for internal use only
-    - currAudioBitRate - The bitrate of the last audio frame received when calling the command
-    - droppedBytesCount - The number of video bytes lost
-    - droppedPacketsCount – The number of lost audio packets
-    - packetsCount – Total number of audio packets received
-
-  - bandwidth – The current bandwidth utilization of the stream
-
+  - audio – ストリームのオーディオ部分の統計情報
+    - aveAudioBitRate - ストリームの先頭からのオーディオフレームの平均ビットレート
+    - bytesCount - 受信したオーディオデータ総量
+    - codec - オーディオcodec名
+    - codecNumeric - 内部使用コード
+    - currAudioBitRate - コマンドコール時点で最後のオーディオフレームのビットレート
+    - droppedBytesCount - ロストしたビデオバイト数
+    - droppedPacketsCount – ロストオーディオパケット数
+    - packetsCount – 受信オーディオパケット総数
+  - bandwidth – ストリームの現在の使用帯域
   - connectionType - 1=pull, 2=push, 3=HLS, 4=HDS, 5=MSS, 6=DASH, 7=record, 8=launchprocess, 9=webrtc, 10=metadata, 0=standard
-
-  - canDropFrames – *Outstreams only*. Flag set by client allowing for dropped frames/packets
-
-  - creationTimestamp – The UNIX timestamp for when the stream was created. UNIX time is expressed as the number of seconds since the UNIX Epoch (Jan 1, 1970)
-
-  - edgePid – Internal flag used for clustering
-
-  - farIp - The IP address of the distant party
-
-  - farPort - The port used by the distant party
-
-  - ip - IP address of the source stream’s host
-
-  - inStreamUniqueID – *For pushed streams.* The id of the source stream.
-
-  - name – the `localStreamName` for this stream
-
-  - nearIp - The IP address used by the local computer
-
-  - nearPort - The port used by the local computer
-
-  - outStreamsUniqueIDs – *For pulled streams.* An array of the “out” stream IDs associated with this “in” stream
-
-  - pageUrl - A link to the page that originated the request (often unused)
-
-  - port - The port bound to the service
-
-  - processId - The process ID of the EMS instance processing the API command
-
-  - processType - Origin or edge, depending on the EMS instance processing the API command
-
-  - queryTimestamp – The time (in UNIX seconds) when the information in this request was populated
-
-  - serverAgent - The server agent used
-
-  - type – The type of stream this is. The first two characters are of most interest:
-
-    - char 1 = I for inbound, O for outbound
-
-    - char 2 = N for network, F for file
-
-    - char 3+ = further details about stream
-
+  - canDropFrames – *アウトストリームのみ*  クライエントによりセットされるフラグでフレーム／パケット落ちを許す
+  - creationTimestamp – ストリーム生成時点のUNIXタイムスタンプ。UNIXタイムはUNIXエポック(1970年1月1日)からの秒数です
+  - edgePid – クラスタリング用の内部使用フラグ
+  - farIp - far側のIPアドレス
+  - farPort - far側の使用ポート
+  - ip - ソースストリームホストのIPアドレス
+  - inStreamUniqueID – *プッシュストリーム*のソースストリームid
+  - name – ストリームの`localStreamName`
+  - nearIp - ローカルコンピューターで使用されるIPアドレス
+  - nearPort - ローカルコンピューターで使用されるポート
+  - outStreamsUniqueIDs – *プルストリームの際* 入力ストリームに関連する出力ストリームIDのアレイ
+  - pageUrl - リクエスト元のページへのリンク
+  - port - serviceにバインドされたポート
+  - processID - APIコマンドを処理するEMSインスタンスのプロセスID
+  - processType - APIコマンドを処理するEMSインスタンスにより、Origin または edge
+  - queryTimestamp – リクエストがクエリーされた時間のタイムスタンプ(UNIX時間)
+  - serverAgent - 使用されたサーバーエージェント
+  - type – ストリームタイプ。重要な情報は最初の２文字:
+    - char 1 = インバウンドはI、アウトバウンドは O
+    - char 2 = ネットワークはN、 ファイルはF
+    - char 3+ = ストリームに関する詳細情報
       example: INR = Inbound Network Stream (a stream coming from the network into the EMS)
+  - typeNumeric - ストリームタイプ文字に0で埋めて8バイトにした配列から得られる数値
+  - uniqueId – ストリームのuniqueID(整数値)
+  - upTime – ストリームがaliveかつ実行中の期間(秒数)
+  - emulateUserAgent – EMSが他のサーバーと自身を区別するために使用する文字列。EMSが自身をFlash Media Serverと指定する等に使用可能です
+  - video – ストリームのビデオ部分の統計情報
+    - aveFrameRate- ストリーム開始からの平均フレームレート
+    - aveKeyFramesPerSec - ストリーム開始からの平均毎秒キーフレーム
+    - aveVideoBitRate -  ストリーム開始からのビデオフレームの平均ビットレート
+    - bytesCount - 受信ビデオデータ総量
+    - codec - ビデオcodec名
+    - codecNumeric - 内部使用コード
+    - currFrameRate - 秒あたりで処理されているビデオフレーム数
+    - currKeyFramesPerSec - 秒あたりで処理されるビデオキーフレーム数
+    - currVideoBitRate - コマンドコール時点の最後のビデオフレームのビットレート
+    - droppedBytesCount – ロストしたビデオバイト数
+    - droppedPacketsCount – ロストしたビデオパケット数
+    - height - ビデオストリームの縦ピクセル数
+    - level - H264レベル
+    - packetsCount – ビデオパケット受信総数
+    - profile - H264プロファイル
+    - width - ビデオストリームの横ピクセル数
 
-  - typeNumeric - A number obtained from an array of 8 bytes filled with the characters of the stream type padded with 0's
-
-  - uniqueId – The unique ID of the stream
-
-  - uptime – The time in seconds that the stream has been alive/running for
-
-  - userAgent -  The string that the EMS uses to identify itself with the other server. It can be modified so that EMS identifies itself as, say, a Flash Media Server
-
-  - video – Stats about the video portion of the stream
-
-    - aveFrameRate- The average frame rate since the stream has started
-    - aveKeyFramesPerSec - The average keyframe per second since the stream has started
-    - aveVideoBitRate -  The average bitrate of the video frames from the start of the stream
-    - bytesCount - Total amount of video data received
-    - codec - The name of the video codec 
-    - codecNumeric - Code used for internal use only
-    - currFrameRate - The number of video frames processed within a one second time frame
-    - currKeyFramesPerSec - The number of video keyframes processed within a one second time frame
-    - currVideoBitRate - The bitrate of the last video frame received when calling the command
-    - droppedBytesCount – The number of video bytes lost
-    - droppedPacketsCount – The number of lost video packets
-    - height - The video stream’s pixel height
-    - level - H264 level
-    - packetsCount – Total number of video packets received
-    - profile - H264 profile
-    - width - The video stream’s pixel width
-
-- description– Describes the result of parsing/executing the command
-
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [listInboundStreamNames](listInboundStreamNames.html)

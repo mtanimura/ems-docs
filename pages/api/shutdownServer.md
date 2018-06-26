@@ -7,21 +7,21 @@ folder: api
 toc: false
 ---
 
-This function ends the server process, completely shutting down the EMS. This function must be called twice, once with a blank parameter, allowing you to obtain the shutdown key, and then a second time with the key, which actually causes the EMS to terminate.
+サーバープロセスを終了し、EMSを完全にシャットダウンします。２回コールする必要があり、一回目はパラメータなしで、シャットダウンキーの取得を行い、２回目でキー付きでコールすることで実際にEMSを終了させることができます。
 
 
 
-## API Parameter Table
+## API パラメータ
 
-| Parameter Name |  Type   | Mandatory | Default Value | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :------------: | :-----: | :-------: | :-----------: | ---------------------------------------- |
-|      key       | integer |   true    |    *null*     | The key to shutdown the server. shutdownServer must be called without the key to obtain the key and once again with the returned key to shutdown the server |
+|      key       | 整数値 |   true    |    *null*     | サーバーシャットダウンキー。キー無しでshutdownServerがコールされるとキーの取得を行えます。改めてキー付きでコールしてサーバーをシャットダウンできます |
 
 
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 shutdownServer
 ```
 
@@ -29,9 +29,9 @@ This will send a key in response
 
 
 
-### Success Response in JSON
+### サンプル API Call
 
-``` 
+```
 {
 "data":{
     "key":"GCY6IXniMf6NDOxY"
@@ -45,24 +45,25 @@ This will send a key in response
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data –The data to parse
-  - key – The key that needs to be used in a subsequent call to `shutdownServer`
-
-
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- data – パースすべきデータ
+  - key – `shutdownServer`の後に続けて使用する必要があるキー
 
 
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 
 
-**To shutdown the Server enter the same command with the key parameter given:**
+
+
+**サーバーをシャットダウンするには、同コマンドを与えられたキーパラメータ付きでコールしてください:**
 
 ```
 shutdownServer key=GCY6IXniMf6NDOxY
 ```
 
-The connection will end after sending the command.
+コマンド送信後は接続は終了します
+
 
