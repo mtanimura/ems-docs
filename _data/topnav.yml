@@ -5,11 +5,11 @@ topnav:
   items:
     - title: HOME
       url: /index.html
-    - title: USER GUIDE
+    - title: ユーザガイド
       url: /userguide_overview.html
-    - title: API GUIDE
+    - title: APIガイド
       url: /api_overview.html
-    - title: ERS and HTML5 PLAYERS
+    - title: ERSおよびHTML5 PLAYERS
       url: /html5players_ersoverview.html
     - title: EMS ON CLOUD
       url: /emscloud_overview.html
