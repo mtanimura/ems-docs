@@ -277,7 +277,7 @@ JSON responseは以下を含みます:
     - packetsCount – 受信オーディオパケット総数
   - bandwidth – ストリームの現在の使用帯域
   - connectionType - 1=pull, 2=push, 3=HLS, 4=HDS, 5=MSS, 6=DASH, 7=record, 8=launchprocess, 9=webrtc, 10=metadata, 0=standard
-  - canDropFrames – *アウトストリームのみ*  クライエントによりセットされるフラグでフレーム／パケット落ちを許す
+  - canDropFrames – *アウトストリームのみ*  クライエントによりセットされるフラグでフレーム／パケット落ちを許可
   - creationTimestamp – ストリーム生成時点のUNIXタイムスタンプ。UNIXタイムはUNIXエポック(1970年1月1日)からの秒数です
   - edgePid – クラスタリング用の内部使用フラグ
   - farIp - far側のIPアドレス

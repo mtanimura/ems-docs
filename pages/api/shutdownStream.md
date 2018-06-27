@@ -7,43 +7,43 @@ folder: api
 toc: false
 ---
 
-Terminates a specific stream. When `permanently=1` is used, this command is analogous to`removeConfig`.
+特定のストリームを終了します。`permanently=1`が使用される場合、このコマンドは`removeConfig`と同義です
 
 
 
-## API Parameter Table
+## API パラメータ
 
-| Parameter Name  |  Type   | Mandatory |    Default Value     | Description                              |
+| パラメータ名  |  タイプ | 必須かどうか | デフォルト値 | 説明 |
 | :-------------: | :-----: | :-------: | :------------------: | ---------------------------------------- |
-|       id        | integer |   true    |         null         | The unique Id of the stream that needs to be terminated. The stream ID’s can be obtained using the `listStreams` command. This parameter is not mandatory but either this or `localStreamName` should be present to identify the particular stream |
-| localStreamName | string  |   true    | *zero length string* | The name of the inbound stream which you wish to terminate. This will also terminate any outbound streams that are dependent upon this input stream. This parameter is not mandatory but either this or the id should be present to identify the particular stream |
-|   permanently   | boolean |   false   |       1 *true*       | If **true**, the corresponding push/pull configuration will also be terminated. Therefore, the stream will NOT be reconnected when the server restarts |
+|       id        | 整数値 |   true    |         null         | 終了するストリームのユニークid。ストリームIDは`listStreams`コマンドで参照できます。このパラメータは必須ではありませんが、このパラメータまたは`localStreamName`のどちらかがストリームの特定に必要です
+| localStreamName | 文字列  |   true    | *zero length string* | 終了したいインバウンドストリーム名、入力ストリームに依存するアウトバウンドストリームも一緒に終了します。このパラメータは必須ではありませんが、このパラメータまたはidがストリーム特定に必要です |
+|   permanently   | ブーリアン |   false   |       1 *true*       | **true**の場合、一致するpush/pull設定も削除されます。したがってサーバーが再起動した際ストリーム再接続は行われません。 |
 
-## API Call Template
+## API Call テンプレート
 
-``` 
+```
 shutdownstream id=<configId>
 ```
 
-OR
+または
 
-``` 
+```
 shutdownstream localStreamName=<localStreamName>
 ```
 
 
 
-### Sample API Call
+### サンプル API Call
 
-``` 
+```
 shutdownstream localStreamName=testpullStream permanently=1
 ```
 
 
 
-### Success Response in JSON
+### JSONのSuccess Response
 
-``` 
+```
 {
 "data":{
     "protocolStackInfo":{
@@ -165,86 +165,86 @@ shutdownstream localStreamName=testpullStream permanently=1
 
 #### JSON Response
 
-The JSON response contains the following details:
+JSON responseは以下を含みます:
 
-- data – The data to parse
-  - protocolStackInfo – Contains key/value pairs describing the protocol stack used by the stream
-    - carrier – Details about the connection itself
-      - farIP – The IP address of the distant party
-      - farPort – The port used by the distant party
-      - nearIP – The IP address used by the local computer
-      - nearPort – The port used by the local computer
-      - rx – Total bytes received on this connection
-      - tx – Total bytes transferred on this connection
-      - type – The connection type (TCP, UDP)
-    - stack[1] – Describes the farthest protocol primitive
-      - applicationID – the ID of the internal application using the connection
-      - creationTimestamp – The time (in UNIX seconds) when the application started using the connection
-      - id – The unique ID for this stack relation
-      - isEnqueueForDelete – Internal flag used for cleanup
-      - queryTimestamp – The time (in UNIX seconds) when this data was populated
-      - type – A descriptor for how the application is using the connection
-    - stack[2] – Describes the next protocol primitive.
-      - applicationId – the ID of the internal application using the connection
-      - creationTimestamp – The time (in UNIX seconds) when the application started using the connection
-      - id – The unique ID for this stack relation
-      - isEnqueueForDelete – Scheduled for deletion
-      - queryTimestamp – The time (in UNIX seconds) when this data was populated
-      - rxInvokes – Number of received RTMP function invokes
+- data – パースすべきデータ
+  - protocolStackInfo – ストリームに使用されるプロトコル・スタックのキー／値ペアを含みます
+     - carrier - 接続に関する詳細情報
+      - farIp - far側のIPアドレス
+      - farPort - far側の使用ポート
+      - nearIp - ローカルコンピューターで使用されるIPアドレス
+      - nearPort - ローカルコンピューターで使用されるポート
+      - rx – この接続で受信したバイト総数
+      - tx – この接続で転送されたバイト総数
+      - type – 接続タイプ(TCP, UDP)
+    - stack[1] – farthest protocol primitiveについて
+      - applicationID – 接続を使用する内部アプリケーションID
+      - creationTimestamp – アプリケーションが接続の使用を開始したUNIX時間
+      - id – stack relationのユニークID
+      - isEnqueueForDelete – 削除に用いられる内部フラグ
+      - queryTimestamp – データがクエリーされたUNIX時間
+      - type – アプリケーションが接続をどのように使用するかについての記述子
+    - stack[2] – next protocol primitiveについて
+      - applicationID – 接続を使用する内部アプリケーションID
+      - creationTimestamp – アプリケーションが接続の使用を開始したUNIX時間
+      - id – stack relationのユニークID
+      - isEnqueueForDelete – 削除スケジュール
+      - queryTimestamp – データがクエリーされたUNIX時間
+      - rxInvokes – RTMP関数がinvokeされた回数
       - streams[1]
-        - audio – Stats about the audio portion of the stream
-          - bytesCount – Total amount of audio data received
-          - droppedBytesCount – The number of audio bytes lost
-          - droppedPacketsCount – The number of lost audio packets
-          - packetsCount – Total number of audio packets received
-        - bandwidth – The current bandwidth utilization of the stream
-        - canDropFrames – *Outstreams only*. Flag set by client allowing for dropped frames/packets
-        - creationTimestamp – The time (in UNIX secs) when the stream was created
-        - inStreamUniqueId – *For pushed streams.* The id of the source stream
-        - name – the `localstreamname` for this stream
-        - queryTimestamp – The time (in UNIX secs) when this data was populated
-        - type – The type of stream this is. See `getStreamInfo` for details
-        - uniqueId – The unique ID of the stream (integer)
-        - upTime – The time in seconds that the stream has been alive/running for
+        - audio – ストリームのオーディオ部分の統計情報
+          - bytesCount - 受信したオーディオデータ総量
+          - droppedBytesCount - ロストしたビデオバイト数
+          - droppedPacketsCount – ロストオーディオパケット数
+          - packetsCount – 受信オーディオパケット総数
+        - bandwidth – ストリームの現在の使用帯域
+        - canDropFrames – *アウトストリームのみ*  クライエントによりセットされるフラグでフレーム／パケット落ちを許可
+        - creationTimestamp – ストリーム生成時点のUNIXタイムスタンプ。UNIXタイムはUNIXエポック(1970年1月1日)からの秒数です
+        - inStreamUniqueID – *プッシュストリーム*のソースストリームid
+        - name – ストリームの`localStreamName`
+        - queryTimestamp – データがクエリーされたUNIX時間
+        - type – ストリームタイプ。くわしくは`getStreamInfo`を参照
+        - uniqueId – ストリームのuniqueID(整数値)
+        - upTime – ストリームがaliveかつ実行中の期間(秒数)
         - video
-          - bytesCount – Total amount of video data received
-          - droppedBytesCount – The number of video bytes lost
-          - droppedPacketsCount – The number of lost video packets
-          - packetsCount – Total number of video packets received
+          - bytesCount - 受信ビデオデータ総量
+          - droppedBytesCount – ロストしたビデオバイト数
+          - droppedPacketsCount – ロストしたビデオパケット数
+          - packetsCount – 受信したビデオパケット数
       - streams[2]
-        - bandwidth – The current bandwidth utilization of the stream
-        - creationTimestamp – The time (in UNIX secs) when the stream was created
-        - name – the `localStreamName` for this stream
-        - outStreamsUniqueIDs – *For pulled streams.* An array of the “out” stream IDs associated with this “in” stream.
-        - queryTimestamp – The time (in UNIX secs) when this data was populated.
-        - type – The type of stream this is. See `getStreamInfo` for details.
-        - uniqueId – The unique ID of the stream (integer)
-        - uptime – The time in seconds that the stream has been alive/running for
-      - txInvokes – Number of sent RTMP function invokes
-      - type – A descriptor for how the application is using the connection
+        - bandwidth – ストリームの現在の使用帯域
+        - creationTimestamp – ストリーム生成時点のUNIXタイムスタンプ
+        - name – ストリームの`localStreamName`
+        - outStreamsUniqueIDs – *プルストリームの際* 入力ストリームに関連する出力ストリームIDのアレイ
+        - queryTimestamp – データがクエリーされたUNIX時間
+        - type – ストリームタイプ。くわしくは`getStreamInfo`を参照
+        - uniqueId – ストリームのuniqueID(整数値)
+        - upTime – ストリームがaliveかつ実行中の期間(秒数)
+      - txInvokes – 送られたRTMP関数がinvokeされた回数
+      - type – アプリケーションが接続をどのように使用するかについての記述子
   - streamInfo
-    - bandwidth – The current bandwidth utilization of the stream
-    - creationTimestamp – The time (in UNIX seconds) when the stream was created
-    - name – the `localStreamName` for this stream
-    - outStreamsUniqueIds – *For pulled streams.* An array of the “out” stream IDs associated with this “in” stream
-    - queryTimestamp – The time (in UNIX seconds) when this data was populated
-    - type – The type of stream this is. See `getStreamInfo` for details
-    - uniqueId – The unique ID of the stream (integer)
-    - upTime – The time in seconds that the stream has been alive/running for
+    - bandwidth – ストリームの現在の使用帯域
+    - creationTimestamp – ストリーム生成時点のUNIXタイムスタンプ
+    - name – ストリームの`localStreamName`
+    - outStreamsUniqueIDs – *プルストリームの際* 入力ストリームに関連する出力ストリームIDのアレイ
+    - queryTimestamp – データがクエリーされたUNIX時間
+    - type – ストリームタイプ。くわしくは`getStreamInfo`を参照
+    - uniqueId – ストリームのuniqueID(整数値)
+    - upTime – ストリームがaliveかつ実行中の期間(秒数)
 
 
-- description – Describes the result of parsing/executing the command
-- status – **SUCCESS** if the command was parsed and executed successfully, **FAIL** if not.
+- description– コマンドのパース・実行結果
+- status – コマンドがパースされ正常実行された場合は**SUCCESS** そうでなければ**FAIL**
 
 ------
 
 ## Notes
 
-- The stream ID shown by the `listStreams` command is not the same as the config ID shown by the `listConfig` command. The `shutdownStream` command uses the stream ID, not the config ID.
+- `listStreams` コマンドで参照できるストリームIDは`listConfig`コマンドで参照できるconfig IDとは違うものです。`shutdownStream` コマンドはストリームIDを使用します。
 
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [removeConfig](removeConfig.html)
