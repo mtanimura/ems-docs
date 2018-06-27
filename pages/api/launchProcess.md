@@ -39,11 +39,11 @@ launchProcess parameterA=<value> parameterB=<value> ...
 launchProcess fullBinaryPath=/home/ems/ffmpeg_preset.sh arguments=10fps\ Stream1\ Stream1_10fps keepAlive=1 $SAMPLE_E_VAR=MyVal
 ```
 
-This sample command launches a script, named ffmpeg_prest.sh, which presumably contains a shell-script that will run FFMPEG with a specific set of parameters.
+このサンプルはffmpeg_prest.shスクリプトを起動します。FFMPEGを特定のパラメータ付きで起動するシェルスクリプトです
 
-The arguments field passes the three values (“10fps”, “Stream1”, “Stream1_10fps”) to the ffmpeg_preset.sh script. In this example, these parameters might tell this hypothetical script to transcode Stream1 to be only 10 frames-per-second, and then name the resultant stream “Stream1_10fps”.
+ffmpeg_preset.shスクリプトへの引数には(“10fps”, “Stream1”, “Stream1_10fps”)と３つの値が例として含まれています。この例ではStream1を10fpsにトランスコードし“Stream1_10fps”というストリーム名として出力するものです。
 
-The final parameter is an example for setting an environment variable (SAMPLE_E_VAR set to MyVal) on the command line prior to script/binary execution.
+最後に付加されているパラメータは環境変数(SAMPLE_E_VAR を MyValに設定) 設定例です。
 
 
 

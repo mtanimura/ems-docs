@@ -39,7 +39,7 @@ addStreamAlias localStreamName=<localStreamName> aliasName=<aliasName>
 addStreamAlias localStreamName=testpullStream aliasName=testStreamAlias expirePeriod=0
 ```
 
-Stream with “**testpullStream**” as `localStreamName` will have an alias of “**testStreamAlias**”.
+`localStreamName`が“**testpullStream**”ストリームは“**testStreamAlias**”というエイリアスを持ちます
 
 
 

@@ -36,13 +36,13 @@ enableService id=<serviceId> enable=<enableValue>
 enableService id=5 enable=0
 ```
 
-This **disables** the service with an id of 5.
+idが5のサービスを**無効化します**
 
 ```
 enableService id=5 enable=1
 ```
 
-This **enables** the service with an id of 5.
+idが5のサービスを**有効化します**
 
 
 

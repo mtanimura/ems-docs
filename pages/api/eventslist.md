@@ -1,8 +1,8 @@
 ---
-title: Events List
+title: Event List
 keyword: events
 sidebar: api_sidebar
-permalink: eventslist.html
+permalink: eventlist.html
 folder: api
 toc: true
 ---

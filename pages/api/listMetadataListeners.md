@@ -7,13 +7,13 @@ folder: api
 toc: false
 ---
 
-Returns the list of all metadata listeners created either through the config.lua or through the `addMetadataListener` API.
+config.luaまたは`addMetadataListener` APIにより作成されたメタデータlisternerのリストを返します
 
 
 
 ## API パラメータ
 
-This function has no parameters.
+パラメータはありません
 
 
 

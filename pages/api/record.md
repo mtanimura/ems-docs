@@ -99,7 +99,7 @@ JSON responseは以下を含みます:
 
 ## Notes
 
-- If you wan't your recorded file to start at the very beginning of the stream, issue the record first before `pullStream` command
+- 録画ファイルを先頭からストリーム再生開始させたい場合は、recordを`pullStream`より先に発行してください
 
 
 ------

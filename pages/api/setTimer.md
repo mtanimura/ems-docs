@@ -98,7 +98,7 @@ JSON responseは以下を含みます:
 
 ## Notes
 
-- Using **HH:MM:SS** means the trigger will be done on the **current date** on the given time
+- **HH:MM:SS** を使用する場合トリガは**今日**の指定時間という意味です
 
 
 ------

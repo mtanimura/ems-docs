@@ -37,7 +37,7 @@ createService ip=<ipAddress> port=<portNumber> protocol=<protocolName>
 createService ip=0.0.0.0 port=9556 protocol=inboundRtmp
 ```
 
-This will create a service called **inboundRtmp** which will use port **9556** and can be accessed by **0.0.0.0** IP.
+ポート**9556** を使用し、**0.0.0.0**ipからアクセス可能な**inboundRtmp**サービスを作成します
 
 
 
