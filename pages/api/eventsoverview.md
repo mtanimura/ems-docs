@@ -1,5 +1,5 @@
 ---
-title: Events Overview
+title: イベントの概要
 keyword: events
 sidebar: api_sidebar
 permalink: eventsoverview.html
@@ -7,17 +7,13 @@ folder: api
 toc: true
 ---
 
-The EMS Event Notification System provides an extremely powerful way of interacting with the EMS. At the basic level it allows you to easily understand and monitor the usage of your server. You can either poll and parse the log file, or simply subscribe to the HTTP based notifications sent out by the EMS. **The notifications mean that you can have a fully RESTful monitor, gathering metrics in real time!**
+EMSイベント通知システムを活用してEMSととてもパワフルなインタラクションができます。またサーバーの使用状況の把握と監視を簡単に行うことができます。ログをポーリングしたりパースができますし、EMSからのHTTPベースの通知をサブスクライブすることもできます。RESTfulモニタリングや統計情報収集が行えます。
 
+イベント通知システムをつかって**カスタムストリーム処理**を作成することも可能です。たとえば新規インバウンドストリームにたいしてHLS/HDS/MSS/DASHを自動生成したい場合、“new inbound stream”イベントに呼応して`createHLSStream` / `createHDSStream` / `createMSSStream` / `createDASHStream`をコールするよう設定します。アウトバウンドストリームがロストした時に関連するインバウンドストリームを閉じたい場合、“outbound stream closed”イベントを受けたら`shutdownStream`をコールするよう設定します。
 
+## イベント通知の設定
 
-Beyond monitoring and gathering metrics, you can **use the Event Notification System to create custom stream processing.** If you want to automatically create HLS/HDS/MSS/DASH streams out of new inbound streams, simply call `createHLSStream` / `createHDSStream` / `createMSSStream` / `createDASHStream` in response to each “new inbound stream” event. If you want to close inbound streams when the associated outbound stream is lost, call `shutdownStream` when you receive an “outbound stream closed” event.
-
-
-
-## Configuring Event Notification
-
-Events can be sent to multiple destinations, or “sinks”, at the same time. A “sink” can be either a file or a network destination. Multiple sinks can be enabled at the same time, allowing you to both log events and receive them in your web service(s). These sinks can be configured so that only the events you will be consuming will be generated. Event Sinks are configured in the `config.lua` file.
+イベントは複数の宛て先（"sink"）に同時に送ることができます。sinkはファイルまたはネットワークの宛て先がとれます。複数のsinkが同時に有効化できますので、イベントをログにとりつつweb serviceも受け取るといったことができます。必要なイベントのみ発行するようsinkを設定することができます。イベントSinkは`config.lua`ファイルで設定されます
 
 ```
 eventLogger=
@@ -40,48 +36,40 @@ eventLogger=
 
 ### Sinks
 
-Sinks are defined as “a specific destination for events” and can be of two types: “file” and “RPC” which are detailed below. 
+Sinkは"イベントの指定の宛て先"と定義され２つのタイプ: “ファイル” と"RPC”があります
 
-For any Sink, users can define an array of *enabledEvents*. When this array is present, **only** the events listed will be sent to that sink. If this array is not present, **all** events will be sent to the sink. The full list of events can be found later in this document.
-
-
-
-### Application vs. Server Events
-
-The config.lua file has two eventLogger sections as follows:
-
-1. Application-owned – This is lower in the file and is “inside” the application configuration section. It configures “application level” events. **This is the recommended configuration section to modify.**
-2. Server-wide (or default) – This is higher in the file and is at the outer-most variable scope level. This section configures events that are outside the application or events which the application level fails to catch. This is typically only for system events like server startup, server shutdown and application load.
+Sinkではユーザーは *enabledEvents*アレイを定義できます。定義リストに記述されたイベントのみがsinkに送り込まれます。アレイが無い場合は全てのイベントがsinkに送られます。
 
 
+### アプリケーション vs. サーバーイベント
 
-### Enabling Event Logs
+config.luaファイルは次の２つのeventLoggerセクションがあります
 
-Event Notifications are off by default. To use the Event Notification System, you must modify the EMS configuration file:
-
-1.  Remove comment to the eventLogger section in the configuration `--[[ ]]--`
-2.  Select your preferred filename and file format
-3.  Configure time-stamp if to be used
-4.  Select events that will be enabled under 
+1. Application-owned – application configurationセクションに記述されています。"application level"イベントを設定します。**この設定は編集していただいてよい**セクションです
+2. Server-wide (またはデフォルト) – このセクションはアプリケーション外またはアプリケーションレベルが補足できないイベントの設定です。通常はサーバーの起動やシャットダウン、アプリケーションの読み込みなどのシステムイベント用の設定です
 
 
 
+### イベントログの有効化
+
+イベント通知はデフォルトではオフになっています。イベント通知システムを使用するには下記のようにEMS設定ファイルを編集する必要があります:
+
+1.  eventLoggerセクションのコメント`--[[ ]]--`を取り除いてください
+2.  ファイル名およびファイルフォーマットを選択してください
+3.  使用する場合タイムスタンプを設定してください
+4.  有効化するイベントを選択してください
 
 
+## イベント Sinksタイプ
+
+イベントsinkには**File Event Sink** と**Remote Procedure Calls Event Sink**２つの主要なタイプがあります。
 
 
+### ファイル イベント Sink
 
-## Types of Event Sinks
+ファイルsinkはイベントをファイルに書き込むもので"filename"パラメータで定義されます。システムロガーに似ています。ユーザーは書き出しフォーマットをJSON, XML, W3C, textなどから選択可能です。ファイルsinkはデフォルトで**off**となっており、`config.lua`内でsinkを記述してオンにすることができます
 
-There are two main types of event sinks, the **File Event Sink** and the **Remote Procedure Calls Event Sink**
-
-
-
-### File Event Sink
-
-File sinks simply write events to a file, as defined by the “filename” parameter. This works much like a system logger. Users can choose the format of the output between JSON, XML, W3C and text. The file sink is **off** by default, but can be turned on by creating the sink in the `config.lua` file.
-
-**Note:** The log file is overwritten each time the EMS starts up.
+**Note:** EMSが起動する度にログ・ファイルは上書きされます
 
 ```
 type="file",
@@ -90,21 +78,20 @@ format="text",
 customData="my custom data"
 ```
 
-**File sink configuration:**
+**ファイルsink設定:**
 
-The format can be one of the following types:
+フォーマットは次のタイプのどれかを選択できます:
 
-- “text” (plain text) - The Text format writes to the event file in a way that is easy to read, where events are on multiple lines
+- “text” (プレーンテキスト) - テキストフォーマットは可読性の高い形でイベントファイルに書き込まれます
 
-- “xml” - Each event files are written to a single line in XML format
+- “xml” - 各イベントファイルがXMLフォーマットで一行に書き込まれます
 
-- “json” - Each event files are written to a single line in JSON format
+- “json” - 各イベントファイルがJSONフォーマットで一行に書き込まれます
 
-- “w3c” - The W3C formatted file is compliant with the requirement of having space or tab-delimited columns. In addition, it has a header line that is commented out (#) that indicates the names of the columns
+- “w3c” - W3Cフォーマットファイルはスペースまたはタブ区切のコラムをもつ仕様に準拠しています。またコラム名を表記する(#)でコメントされたヘッダ行があります。
 
 
-
-A typical configuration of a file sink follows:
+下記はファイルsinkの一般的な設定です:
 
 ```
 eventLogger=
@@ -128,10 +115,10 @@ eventLogger=
                   "inStreamCreated",
                   "outStreamCreated",
                   "streamCreated",
-                  -- content removed for clarity
+                  -- 中略
               },
               {
-                  -- content removed for clarity
+                  -- 中略
 
               },
           },
@@ -139,45 +126,45 @@ eventLogger=
   },
 ```
 
-**Note:** This is disable by default in config.lua. 
+**Note:** config.luaでデフォルトでは無効にされています
 
 
 
-#### File Sink Structure Table
+#### ファイルSinkストラクチャ
 
-|       Key       |  Type   | Mandatory | Description                              |
+|       Key       |  Type   | 必須か | 説明                              |
 | :-------------: | :-----: | :-------: | ---------------------------------------- |
-|   customData    | object  |    no     | Custom data that will be appended to all events generated by this sink. It overrides the custom data node defined on the upper level. It can also be a complex structure, see illustration above. |
-|      type       | string  |    yes    | The type of sink, “file”.                |
-|    filename     | string  |    yes    | The base name of the file.               |
-|     format      | string  |    yes    | Sets the file format. Allowed values are “text”, “xml”, “json” and “w3c” |
-|    timestamp    | boolean |    no     | Adds timestamp to file                   |
-| appendTimestamp | boolean |    no     | Sets the option to append a timestamp. If **true**, timestamp (YYYYMMDD_HHmmSS) is appended on every log file created. Otherwise, a 4-digit running number is appended. Default value is **true** |
-| appendInstance  | boolean |    no     | Appends a random 4-digit instance ID after every log file. Default is false. |
-| fileChunkLength | number  |    no     | Number of seconds to create new file.    |
-|  fileChunkTime  | string  |    no     | Time of the day to chunk log file, in HH:MM:SS format. **Note:** No file chunking when `fileChunkLength` and `fileChunkTime` are both present. |
-|  enabledEvents  | object  |    no     | Events that are logged. If not set, all are logged. But for W3C, non-stream-related events are ignored. |
+|   customData    | オブジェクト  |    no     | このsinkが生成するすべてのイベントに追加されるカスタムデータ。上位レベルでのカスタムデータ定義より優先されます。複雑な構造にすることも可能です |
+|      type       | 文字列        |    yes    | sinkタイプ, “file”.                |
+|    filename     | 文字列        |    yes    | ファイルのbase name |
+|     format      | 文字列        |    yes    | ファイルフォーマット設定 “text”, “xml”, “json”, “w3c”が指定可 |
+|    timestamp    | ブーリアン    |    no     | ファイル名にタイムスタンプを付加します                   |
+| appendTimestamp | ブーリアン    |    no     | タイムスタンプ追加オプション設定 **true**の場合、タイムスタンプ (YYYYMMDD_HHmmSS)が全生成ログファイル名に付加されます。falseの場合は4桁の連番が付加されます。デフォルトは**true**です |
+| appendInstance  | ブーリアン    |    no     | ランダムな４桁のインスタンスIDがログファイル名に追加されます。デフォルトはfalseです |
+| fileChunkLength | 数値          |    no     | 新規ファイルが作成されるまでの秒数 |
+|  fileChunkTime  | 文字列        |    no     | ログファイルをチャンクする時刻設定 HH:MM:SS フォーマットです。 **Note:** `fileChunkLength`および `fileChunkTime`両方ある場合はファイルチャンキングは行われません |
+|  enabledEvents  | オブジェクト  |    no     | イベントがログに記録されます。セットされていない場合すべてログ記録されます。ただしW3Cではnon-stream-evventは無視されます |
 
 
+上記のようにファイル名設定にはさまざまなオプションがありますが、下記に例を示します。
 
-As indicated above, the name of the file can be set using a number of options. For example,
 
 ```
 filename = "/var/evostreamms/logs/streams"
 appendTimestamp = true
 appendInstance = true
 ```
-The log file would be `/var/evostreamms/logs/streams_0237_20140311_183046.txt`.
+の場合、ログファイル名は `/var/evostreamms/logs/streams_0237_20140311_183046.txt`になります。
 
 
 
-### RPC (Remote Procedure Calls) Event Sink
+### RPC (リモートプロシージャコール)イベント Sink
 
-To receive HTTP based Event Notifications, an RPC type sink must be defined (and is by default). The URL parameter defines the location that will be called with each event. The URL can be a specific web service script or just an IP and port on which service is listening to that can interpret these events. RPC sinks have the option of one of three serializer types, or in other words, the way the data will be formatted within the HTTP post: JSON, XML, XMLRPC
+HTTPベースのイベント通知を受けるにはRPCタイプsinkの定義が必要です(デフォルト)。URLパラメータは各イベントでコールされる場所を定義します。URLは特定のweb serviceスクリプトや、イベント処理するサービスが動作するIPアドレス・ポートなどに設定できます。RPC sinkは次の３つのシリアライザタイプ（HTTP post内フォーマット）を選択できます: JSON, XML, XMLRPC
 
-Event details are transmitted to a remote host via HTTP POST. The EMS will ignore any response from the remote host.
+イベントの詳細情報がHTTP postでリモートホストに転送され、EMSはリモートホストからのresponseは無視します
 
-**RPC sink configuration:**
+**RPC sink 設定:**
 
 ```
 type="RPC",
@@ -186,13 +173,13 @@ serializerType="JSON",
 customData="my custom data"
 ```
 
-The `url` field specifies the destination which will be accepting the HTTP POST event notifications..
+`url`フィールドにはHTTP postイベント通知を受ける宛て先を指定します
 
-The `serializer` type can be one of the following formats:
+`serializer`タイプは次の３つのフォーマットのどれか:
 
 - **JSON**
 
-  The JSON serializer type has the same schema as XML, but is formatted as JSON.
+  JSONシリアライザタイプはXMLと同じスキーマでJSONとしてフォーマットされます
 
   ```
   {"payload":{"creationTimestamp":1349335053486.4370,"name":"","queryTimestamp":1349335053487.4370,"type":"NR","uniqueId":1,"upTime":1.0000},"type":"streamCreated"}
@@ -200,7 +187,7 @@ The `serializer` type can be one of the following formats:
 
 - **XML**
 
-  The XML serializer type uses an XML schema that is more condensed and specific to the EMS Event Notification System
+  XMLシリアライザはXMLスキーマを使い、よりEMSイベント通知システムに特化しています
 
   ```
   <?xml version="1.0" ?>
@@ -219,7 +206,7 @@ The `serializer` type can be one of the following formats:
 
 - **XMLRPC**
 
-  The XML format using a traditional XML-RPC schema
+  以前からあるXML-RPCスキーマのXMLフォーマット
 
   ```
   <?xml version="1.0"?>
@@ -253,23 +240,22 @@ The `serializer` type can be one of the following formats:
   ```
 
 
+ファイルおよびRPCイベントsinkにおいて`customData`パラメータはオプションで使え、追加的データ記述用です。イベントを生成するEMSインスタンスを同定したり、イベント処理に関係する特定のIDやKeyを返したりするために使うことができます。`customData`パラメータはシンプルな文字列または複雑なLUAオブジェクトもとれます。
 
-The `customData` parameter for both File and RPC Event Sinks can be *optionally* used to extra data to each event for that sink. This could be used to identify the particular EMS instance which is generating the event, return a particular ID or Key which is pertinent to your handling of the event, or anything really! A `customData` parameter can be a simple sting value or a complex LUA object.
-
-If a `customData` parameter is not specified for a node, the value of the parent `eventLogger` `customData` node will be used. If that is also not specified, the value will be V_NULL.
+`customData`パラメータがノードで指定されていない場合、親`eventLogger` `customData` ノードの値が使用されますが、それも指定がなければ値はV_NULLとなります。
 
 ------
 
 ## Notes
 
-- The event sinks should be enabled to be able to use events
-- Event logs will be saved in the configured `filename` 
-- You can add or remove events in list
-- Only the events selected will be shown in the logs
+- イベントsinkは有効化しなければ動作しません
+- イベントログは設定された`ファイル名`で保存されます
+- リストにイベントを追加・削除ができます
+- 選択したイベントのみログに表示されます
 
 ------
 
-## Related Links
+## 関連リンク
 
 - [List of Events](eventslist.html)
 
