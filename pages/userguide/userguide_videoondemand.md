@@ -106,10 +106,10 @@ EMSでHLSをつかってVODすることもできなくはありません。ま�
 サンプル手順:
 
 ```
-Issue a pullStream command:
+下記プルストリームコマンドを発行：
 pullStream uri=rtmp://<SERVER_ADDRESS>/vod/video.mov keepAlive=1 localstreamname=DummyLive
 
-Issue createHLSStream command:
+下記createHLSStreamコマンドを発行:
 createHLSStream localstreamnames=DummyLive bandwidths=128 targetfolder=../evo-webroot/ groupname=hls playlisttype=rolling playlistLength=10 chunkLength=20
 ```
 

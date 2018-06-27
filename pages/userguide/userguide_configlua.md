@@ -1035,7 +1035,7 @@ authentication=
 					},
 					usersFile="path/to/config/users.lua",
 					--verifierUri="http://authserver/verifier.php",
-					--token="secretstring",					
+					--token="secretstring",
 				},
 				rtsp=
 				{
@@ -1095,8 +1095,7 @@ Token = MD5 (SecretString + "/" + StreamName + "?e=" + ValidUntilUnixTime)
   ​
 
   **トークン認証**
-  The EMS accepts play requests that contains token authenticaion. Prior to serving the requested stream the EMS validates that the timestamp is for a time and date that is in the future. The EMS then recomputes the MD5 hash using the timestamp in the play request with the secret string and validates that the resultant hash value matches the value passed in on the play request. If any validation step fails, the EMS will not serve the requested stream. If all validation steps succeed, the EMS will serve the requested stream to the player.
-
+  EMSはトークン認証のある再生リクエストを受け付けます。リクエストされたストリームを配信する事前にEMSはタイムスタンプを検証し、再生リクエストのタイムスタンプと秘密文字列をつかってMD5 hash値を生成し、再生リクエストからの値とハッシュ値がマッチするか検証します。不合格となるとEMSはリクエストされたストリームを配信しません。すべての検証手順が合格となればプレーヤーへリクエストされたストリームの配信を行います。
 
 
 **Notes:**
@@ -1207,13 +1206,13 @@ eventLogger=
 			"hdsMasterPlaylistUpdated",
 			"hdsChildPlaylistUpdated",
 			"hdsChunkClosed",
-			"hdsChunkDeleted",							
+			"hdsChunkDeleted",
 			"hlsMasterPlaylistUpdated",
 			"hlsChunkClosed",
-			"hlsChunkDeleted",									
+			"hlsChunkDeleted",
 			"dashPlaylistUpdated",
 			"dashChunkClosed",
-			"dashChunkDeleted",									
+			"dashChunkDeleted",
 		},
 },
 ```

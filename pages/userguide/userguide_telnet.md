@@ -90,7 +90,7 @@ port 1112をつかってtelnetでAPIにアクセスすると、JSONでフ�
 
 
 
-**Please note that the first character returned by the JSON response is the LENGTH of the JSON payload, allowing you to allocate properly sized structures at runtime.**
+**JSON responseの最初の文字はJSON payloadのLENGTHで、ランタイムで適切なサイズの構造体を用意できます**
 
 Configuration in config.lua:
 
