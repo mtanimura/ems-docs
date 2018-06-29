@@ -2,8 +2,8 @@
 title: ブラウザ互換性
 keywords: websocket
 sidebar: html5players_sidebar
-permalink: emscloud_wscompatibility.html
-folder: emscloud
+permalink: html5players_wscompatibility.html
+folder: html5players
 toc: false
 ---
 
