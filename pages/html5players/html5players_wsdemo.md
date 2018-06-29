@@ -36,19 +36,19 @@ WebSocketの使用方法について下記に記述します:
 
    **RTMP/RTSPでプルされたストリームの再生:**
 
-   ![](../../images/html5/websocket.JPG)
+   ![](images/html5/websocket.JPG)
 
    ​
 
    **Lazypullされたファイルの再生:**
 
-   ![](../../images/html5/play_ws_lazypull.jpg)
+   ![](images/html5/play_ws_lazypull.jpg)
 
    ​
 
    **プレイリストファイルの再生:**
 
-   ![](../../images/html5/play_ws_playlist.jpg)
+   ![](images/html5/play_ws_playlist.jpg)
 
    ​
 

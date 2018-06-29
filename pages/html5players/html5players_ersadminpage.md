@@ -22,7 +22,7 @@ http://localhost:3030/ersadmin.html
 2. **Parameter** を入力し
 3. **Send**ボタンをクリックしてください
 
-![](images/html5/ers_sendapi.JPG)
+![](/images/html5/ers_sendapi.JPG)
 
 
 

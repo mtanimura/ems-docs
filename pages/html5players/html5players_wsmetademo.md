@@ -24,7 +24,7 @@ toc: true
 
 2.  **Host**、 **Port**、 **Stream**をそれぞれ入力してください:
 
-   ![](../../images/html5/wsdemo_write.JPG)
+   ![](images/html5/wsdemo_write.JPG)
 
    ​
 
@@ -34,13 +34,13 @@ toc: true
 
 3. **Connect**ボタンをクリックしてください
 
-   ![](../../images/html5/wsdemo_connected.JPG)
+   ![](images/html5/wsdemo_connected.JPG)
 
    ​
 
 4. ストリーム設定の詳細情報を編集し、click **Send**ボタンをクリックしてください。
 
-   ![](../../images/html5/wsdemo_send.JPG)
+   ![](images/html5/wsdemo_send.JPG)
 
    ​
 
@@ -64,7 +64,7 @@ toc: true
 
 2. **Host**、 **Port**、 **Stream**をそれぞれ入力してください:
 
-   ![](../../images/html5/wsdemo_write.JPG)
+   ![](images/html5/wsdemo_write.JPG)
 
    ​
 
@@ -74,13 +74,13 @@ toc: true
 
 3. **Connect**ボタンをクリックしてください
 
-   ![](../../images/html5/wsdemo_connected.JPG)
+   ![](images/html5/wsdemo_connected.JPG)
 
    ​
 
 4. ストリームに送られたメタデータが表示されますe:
 
-   ![](../../images/html5/wsdemo_read.JPG)
+   ![](images/html5/wsdemo_read.JPG)
 
 
 
