@@ -9,7 +9,7 @@ toc: false
 
 下図はさまざまなブラウザとEvoStream WebSocket機能の互換性対応表です
 
-![](../../images/html5/ws_compatibility.JPG)
+![](/images/html5/ws_compatibility.JPG)
 
 
 

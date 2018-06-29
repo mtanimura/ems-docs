@@ -14,7 +14,7 @@ Metadata Outbound PushやMetadata Ingestといったメタデータの送受信�
 
 ## データのインジェストと集約化
 
-![](../../images/html5/capab1.png)
+![](/images/html5/capab1.png)
 
 
 EMSは、メタデータが統合されたライブRTMPストリームとどうようにメタデータを受けることができます。メタデータ受信方法としてはTCP accpetor経由およびwebsockets経由の２種類があります。
@@ -76,7 +76,7 @@ acceptors =
 
 ## Metadataの配信
 
-![](../../images/html5/capab2.png)
+![](/images/html5/capab2.png)
 
 EMSはメタデータ送信に２種のメカニズムを使用できます。ひとつはクライエントが手動クエリーを投げ、EMSからのメタデータをポーリングするというものです。下記のようなコマンドです:
 
