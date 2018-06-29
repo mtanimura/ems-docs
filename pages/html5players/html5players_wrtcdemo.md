@@ -45,17 +45,17 @@ toc: true
 
    **RTMP/RTSPでプルされたストリームの再生:**
 
-   ![](../../images/html5/webrtc-1.jpg)
+   ![](/images/html5/webrtc-1.jpg)
 
 
    **lazypullファイルの再生:**
 
-   ![](../../images/html5/play_wrtc_lazypull.jpg)
+   ![](/images/html5/play_wrtc_lazypull.jpg)
 
 
    **プレイリストファイルの再生:**
 
-   ![](../../images/html5/play_wrtc_playlist.jpg)
+   ![](/images/html5/play_wrtc_playlist.jpg)
 
 **Note:**
 
@@ -65,7 +65,7 @@ WebRTCプレーヤーは２つありますが、同じソースや別々のソ�
 
 このプレーヤーはフラグメントMP4ではなくSRTPをトランスポートに使用します。使い方は上記と同様の手順です
 
-![](../../images/html5/play_wrtcsrtp.jpg)
+![](/images/html5/play_wrtcsrtp.jpg)
 
 **Note:**
 
