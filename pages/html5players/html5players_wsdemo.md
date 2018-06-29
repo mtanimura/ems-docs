@@ -83,7 +83,7 @@ WebSocketの使用方法について下記に記述します:
 
 4. `demo/evoplayers.html`テストページにアクセスしWebSocket over SSLプレーヤーでのストリーム再生を確認してください
 
-   ![](/images/html5/play_wsssl.jpg)
+   ![](images/html5/play_wsssl.jpg)
 
    ​
 
