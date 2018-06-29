@@ -20,7 +20,7 @@ toc: true
 
 ## WebRTCストリーミング
 
-1. webRTCを使用しEMSからストリーム再生するにはまず`startWebrtc`コマンドを実行する必要があります。 [startWebRTCAPI](api_startWebRTC.html)を参照する
+1. webRTCを使用しEMSからストリーム再生するにはまず`startWebrtc`コマンドを実行する必要があります。 [startWebRTCAPI](/api/api_startWebRTC.html)を参照する
 
 
    ```
