@@ -1282,8 +1282,7 @@ transcoder = {
 |     Key      |  Type  | 必須かどうか | 内容                              |
 | :----------: | :----: | :-------: | ---------------------------------------- |
 |  scriptPath  | string |    yes    | トランスコーダーのヘルパースクリプトのパス。トランスコードAPI関数はバイナリを直接呼び出すのではなくスクリプトを経由します。これはカスタムトランスコーダーバイナリを使用するケースに対応しています。 |
-| srcUriPrefix | string |    yes    | `transcode`API関数使用時にソースストリーム指定に`localStreamName`を使用できますが、その場合に付加される接頭語です。たとえば
- `srcUriPrefix="rtsp://localhost:5544"`と設定されており、ストリーム名が`"test1"`とトランスコードコマンドに与えられると、URIは `rtsp://localhost:5544/test1`が使用されます |
+| srcUriPrefix | string |    yes    | `transcode`API関数使用時にソースストリーム指定に`localStreamName`を使用できますが、その場合に付加される接頭語です。たとえば `srcUriPrefix="rtsp://localhost:5544"`と設定されており、ストリーム名が`"test1"`とトランスコードコマンドに与えられると、URIは `rtsp://localhost:5544/test1`が使用されます |
 | dstUriPrefix | string |    yes    | srcUriPrefixの逆です。`localStreamName`がトランスコードコマンドに与えられると、設定された接頭語がストリーム名に付加されdestinationにむけて出力されます |
 
 
