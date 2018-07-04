@@ -12,7 +12,7 @@ toc: false
 
 本文書はEMS Web Servicesのユーザー向けに書かれています。マルチメディアストリーミングおよび関連技術について基礎的な理解がある前提です。
 
-## WEMS Web Servicesとは?
+## EMS Web Servicesとは?
 
 EMS Web Servicesはwebサーバーならどれでも取り扱いができるスクリプト一式で、EMSのイベント通知システムやランタイムAPIを利用します。
 EMS Web Servicesをつかってユーザーのニーズや環境に合わせてEMSに拡張機能を与え、カスタマイズすることができます。
@@ -38,5 +38,3 @@ EMS Web ServicesはEMS通知システムと協調動作し、ストリーミン�
   - Web Server (.phpスクリプトを使用する場合)
   - Node.js (.js スクリプトを使用する場合)
   - インターネットアクセス
-
-
