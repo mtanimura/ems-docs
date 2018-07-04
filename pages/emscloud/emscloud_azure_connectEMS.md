@@ -1,5 +1,5 @@
 ---
-title: Connecting to EMS
+title: EMSへの接続
 keywords: azure
 sidebar: emscloud_sidebar
 permalink: emscloud_azure_connectEMS.html
@@ -7,199 +7,165 @@ folder: emscloud
 toc: true
 ---
 
-
-
-## Starting the EMS Machine
-
-All the virtual machines in your account is seen under the Virtual machines in the left-side menu bar. 
-
-Click on the Virtual Machine name. Click on **Start**.
-
+## EMSマシンの起動
+左側のメニューバーのVirtual machines欄にアカウントの全仮想マシンが表示されます
+仮想マシン名を選択しクリックし、**Start**ボタンをクリックしてください
 ![](images/emscloud/startVM.JPG)
 
-
-
-## Connecting To EMS
-
-After starting the EMS instance, you will need to connect to your EMS to use it. Here are the steps on how you can connect to EMS using **SSH Terminal**, **Windows PuTTy**, **Remote Desktop**, **EMS Web UI** and **EMS HTTP Based API**.
-
-
+## EMSへの接続
+EMSインスタンスを起動したら、EMSに接続してみましょう。それぞれ**SSH Terminal**, **Windows PuTTy**, **Remote Desktop**, **EMS Web UI**, **EMS HTTP Based API**などでの接続について下記を参照してください
 
 ### SSH via Terminal
 
-1. Send command: `ssh <username>@<IP_address>`
+1. コマンドを実行: `ssh <username>@<IP_address>`
 
    ```
    user@ubuntu:~/Desktop$ ssh user@11.221.105.202
 
    The authenticity of host '111.221.105.202 (111.221.105.202)' can't be established.
    RSA key fingerprint is ae:02:ee:41:ff:38:96:ab:78:7b:3a:e6:09:ed:1f:4c.
-   Are you sure you want to continue connecting (yes/no)? 
+   Are you sure you want to continue connecting (yes/no)?
    ```
 
-2. Input "**yes**", press **Enter**
+2. "**yes**"と入力し、**Enter**を押してください
 
    ```
    Warning: Permanently added '111.221.105.202' (RSA) to the list of known hosts.
    user@111.221.105.202's password:
    ```
 
-3. Enter password, press **Enter**. A welcome note will open. You then need to **<u>install the license</u>** to be able to use the EMS capabilities.
+3. パスワードを入力し**Enter**をおしてください。welcomeと表示されます。次に**<u>ライセンスのインストール</u>** を行ってください
 
+**Note:** ライセンスファイルはLinuxでは `/etc/evostreamms`、Windowsでは `./config`に配置する必要があります
 
-**Note:** The license should be placed in `/etc/evostreamms` for Linux and in `./config` in Windows
+### Windows (PuTTy)によるSSH接続
 
+**事前準備:**
 
+- PuTTY Secure Shell Clientをインストールしてください
 
-### Connecting  via SSH from Windows (PuTTy)
+1. **PuTTY**を起動してください
 
-**Pre-requisites:**
-
-- PuTTY Secure Shell Client
-
-  ​
-
-
-1. Run **PuTTY**
-
-2. Select **Session** under the category tree
+2. category から**Session** を選択
 
    ![](images/emscloud/image16.png)
 
-   ​
-
-3. Specify the destination you want to connect to:
+3. 接続先を指定してください:
 
    ![](images/emscloud/putty.JPG)
 
-   **Host Name** – the public IP address in Amazon EC2 instance running EvoStream Media Server
+   **Host Name** – EvoStream Media Server実行するインスタンスのパブリックIPアドレス
 
-   **Port** – 22 (default)
+   **Port** – 22 (デフォルト)
 
    **Connection type** – SSH
 
-   ​
+4. **Open**をクリックしてください
 
-4. Click **Open**
+5. PuTTy Security Alert Windowが表示されますので**Yes** をクリックしてください
 
-5. Click  **Yes** to accept the security key on the PuTTy Security Alert Window
-
-6. Enter the username's password, hit **Enter**
+6. ユーザーのパスワードを入力し、**Enter**を押してください
 
    ```
    Using username "EvoStream".
-   EvoStream@111.221.105.202's password: 
+   EvoStream@111.221.105.202's password:
    ```
 
-7. You are now connected to the machine! You then need to **<u>install the license</u>** to be able to use the EMS capabilities.
+7. 仮想マシンに接続されます。**<u>ライセンスのインストール</u>** に進んでください。
 
+**Note:** ライセンスファイルはLinuxでは `/etc/evostreamms`、Windowsでは `./config`に配置する必要があります
 
-**Note:** The license should be placed in `/etc/evostreamms` for Linux and in `./config` in Windows
+### Remote Desktop経由での接続
 
+1. **Remote Desktop Application**を起動してください
 
+   **Note:** remote desktopアプリケーションはOSに依存します
 
+2. 仮想マシンの情報を入力し、**Connect**ボタンをくりっくしてください
 
+   **Computer** -  イメージのIPアドレス
 
-### Connecting via Remote Desktop
-
-1. Run the **Remote Desktop Application** to be used
-
-   **Note:** The remote desktop application will depend on the OS you will use.
-
-2. Enter the details of the virtual machine image, click **Connect**
-
-   **Computer** -  the IP address of the image
-
-   **Username** -  the username set for the image
+   **Username** -  イメージに設定されたユーザー名
 
    ![](images/emscloud/remotedesktop.jpg)
 
-   ​
 
-3. Enter the **password** for the user, click **OK**
+3. **パスワード** を入力し **OK**ボタンをクリックしてください
 
-4. The connection will be established. You may now **install the license** to use the EMS capabilities!
+4. 接続が確立されたら、**ライセンスのインストール** に進んでください
 
-   **Note:** The EMS is installed in ``C:\EvoStream``
-
-
-
+   **Note:** The EMSは``C:\EvoStream``にインストールされています
 
 ### EMS Web UI
 
-While most work with the EMS happens at the command line or through the HTTP based API calls, the EMS does have a Web UI that can be used. To access the UI simply point your browser at the proper URL: `http://<DomainOrPublicIP>:8888/EMS_Web_UI/index.php`
+EMSでの作業はコマンドラインまたはHTTPベースAPIコールで行えますが、Web UIを使うこともできます。Web UIへアクセスするにはブラウザで下記のURLを開いてください:
+`http://<DomainまたはPublicIP>:8888/EMS_Web_UI/index.php`
 
-**< DomainOrPublicIP >** will need to be replaced with the Public Domain or Public IP of your new  EMS instance.
+**< DomainまたはPublicIP >** 部分はEC2インスタンスのパブリックドメインまたはパブリックIPに置き換えてください
+**Note:** UIにアクセスするにはEMSが起動している必要があります。
 
-**Note:** EMS should be running to be able to access the EMS Web UI.
+#### Public IPの確認
+
+1. *http://portal.azure.com/* にサインインしてください
 
 
+2. Virtual Machinesを選択しクリックしてください
 
-#### Determining Public IP
+3. 仮想マシンを起動してください
 
-1. Sign in to *http://portal.azure.com/*
+4. EssentialsペインにPublic IP/DNS値が表示されます
 
-2. Click on virtual machine created under Virtual Machines menu
-
-3. Start the virtual machine
-
-4. In the Essentials pane, the Public IP address/DNS name label is displayed
-
-   **Note:** The IP address is changing everytime the virtual machine is restarted
+   **Note:** 仮想マシンが再起動される度にIPアドレスは変わります
 
    ![](images/emscloud/IPinAzure.jpg)
 
 
-#### Authentication
+#### 認証
 
-The authentication is only enabled starting the 1.7.1 version of EMS. The Authentication is enabled by default in EMS Web UI and HTTP Based API.
+認証機能はEMS v1.7.1以降で有効となります。 EMS Web UIおよび HTTP Based APIでは認証はデフォルトで有効となっています
 
+#### Web UIへのログイン
 
-
-#### Login for Web UI
-
-The Web UI is protected by default when using the EMS on Azure.  When accessing the Web UI you will be prompted for a username and password.
+EMS on AzureではWeb UIはデフォルトで認証が必要です。ユーザー名・パスワードの入力を促されます。
 
 ![](images/emscloud/authentication.JPG)
 
-- Username: evostream
-- Password: "UID" - the unique identifier of the virtual machine, this will be seen in webconfig.lua
+- ユーザー名: evostream
+- パスワード: "UID" - 仮想マシンのユニークID、webconfig.luaで見られます
+
+### HTTPベースAPI
+
+EMS on AzureにおけるHTTPベースAPIは認証が必要です。ベーシック認証が使用されますのでユーザー名・パスワードの入力が必要です:
 
 
+- ユーザー名: evostream
+- パスワード: "UID" - 仮想マシンのユニークID、webconfig.luaで見られます
 
-
-### HTTP Based API
-
-For the EMS on Azure, the HTTP based API is exposed, but it requires authentication to be used.  We call this **Proxy Authentication**. Basic Authentication is used and so just a username and password are required:
-
-- Username: evostream
-- Password: "UID" - the unique identifier of the virtual machine, this will be seen in webconfig.lua
-
-**Command will take this general format:**
+**下記のようなフォーマットでコマンドは受け付けられます:**
 
 ```
 http://Username:Password@IPAddress:Port/apiproxy/CommandName?params=<base64EncodedString>
 ```
 
-Run the command in a browser. 
+ブラウザからのコマンド実行
 
-**Sample Command:** 
+**サンプルコマンド:**
 
 ```
 http://evostream:i-D817E76F-B6F2-CC4F-ACAC-EAE9D84CEE3F@52.91.237.115:8888/apiproxy/version
 ```
 
-**Note:** username is “**evostream**” and password is the “**instance ID**”
+**Note:** ユーザー名は “**evostream**”、 パスワードは “**instance ID**”です
 
-See EMS [HTTP JSON CLI](userguide_telnet.html#http-json-cli) for more details.
+くわしくはEMS [HTTP JSON CLI](userguide_telnet.html#http-json-cli)をご参照ください
 
 
 
-#### Getting the Unique ID
+#### Unique IDの取得
 
-The UID will serves as the password for the Proxy and Web UI authentication. The UID is obtained once a virtual machine is made. It can only be checked in the EMS webconfig.lua.
+Proxy認証およびWeb UI認証ではUIDがパスワードとして使用されます。仮想マシンが作成されるとUIDを取得することができます。EMS webconfig.luaでのみ確認することができます
 
-**in webconfig.lua:**
+**webconfig.luaファイル内の下記を参照:**
 
 ```
 apiProxy=

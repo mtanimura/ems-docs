@@ -7,26 +7,27 @@ folder: emscloud
 toc: false
 ---
 
-The EvoStream Media Server on Azure provides highly efficient and scalable Live Video streaming.
+EvoStream Media Server on Azureは高効率でスケーラブルなライブビデオストリーミングを提供可能です。
 
-- Stream Security Cameras in real time directly to HTML 5 Browsers
-- Share your Drone stream with sub-second latency to iPhones and Androids
-- Broadcast a racing event to both in-stadium fans and online viewers
+- 監視カメラ映像をHTML 5ブラウザに直接リアルタイムにストリーミング
+- ドローンからのストリームを秒以下の遅延でiPhoneやアンドロイドにシェア
+- レース会場のイベントを会場内およびオンライン視聴者にむけて配信
 
-Ditch browser plugins and stream with Sub-Second delay directly to HTML 5 browsers, including Android and iOS! The EvoStream Media Server provides complete transcode capabilities at NO extra cost for full support for DASH and HLS. Easily and immediately stream with seamless adaptive bitrate broadcasting. With the EvoStream Media Server you can:
+プラグイン無しに低遅延ストリーミングをHTML 5ブラウザ、iOS、Androidに直接配信できます。EvoStream Media Serverは追加費用無しでトランスコード機能が使用でき、DASHやHLSにも対応しています。アダプティブビットレートストリーム配信を簡易にシームレスに行うことができます。EvoStreamは下記に対応しています:
 
-- Stream to YouTube Live, Akamai, Twitch and more to facilitate broader distribution through CDNs.
-- Lower your costs by doing more with smaller Azure instances
-- Take advantage of all Premium Features, like Load Balancing, DRM, Transcoding, and more, **at no extra cost**!
-- Secure your content with Encryption, Atomic Access Control, and DRM.
+- YouTube Live、Akamai、Twitch等ふくめCDNを介した大規模な配信
+- Azureインスタンスを活用したコスト低減
+- 追加費用無しでロードバランシングやDRM、トランスコードなどの高度機能
+- 暗号化コンテンツ保護、細かなアクセスコントロール、DRM機能
 
-The EvoStream Media Server does not rely on Java, which means a secure platform to operate from. Running the EvoStream Media Server on Azure gives you the maximum efficiency for each of your servers, and total flexibility for all of your streaming requirements.
+EvoStream Media ServerはJavaに依存しておらずセキュアなプラットフォームです。Azure上でEvoStream Media Serverを実行することでサーバーの高効率な運用が行え、ストリーミングニーズに柔軟に対応できます。
+
+## テンプレートの活用
+
+Azure marketplaceでは2つのEMSテンプレートが使用可能です:
 
 
+- EvoStream Media Server BYOL (Bring Your Own License) - このテンプレートはEMS v1.7.1がインストールされており。保有するライセンスを適切に配置して使用する必要があるものです。
 
-## Available Templates
+- EvoStream HTML5 Low-Latency Broadcast Template - このテンプレートはロードバランシング機能が含まれております。ロードバランシングやオートスケーリング機能を活用しパフォーマンスやスケーラビリティの向上、TCOの改善をはかるものです。くわしくは [ここ](https://evostream.com/evostream-html5-microsoft-azure/) を参照してください
 
-There are two EMS templates available in Azure marketplace:
-
-- EvoStream Media Server BYOL (Bring Your Own License) - this template has the EMS v1.7.1  installed in it. Bring Your Own License means you have to place your own license since the template does not include any.
-- EvoStream HTML5 Low-Latency Broadcast Template - this template includes the load balancing feature. The template leverages and optimize from the load balancing and auto-scaling capability to increase the performance, scalability and TCO. Click [here](https://evostream.com/evostream-html5-microsoft-azure/) to read more of the template.

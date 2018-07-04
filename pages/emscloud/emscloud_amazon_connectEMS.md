@@ -145,7 +145,7 @@ EMSでの作業はコマンドラインまたはHTTPベースAPIコールで行�
 
 4. 実行中のインスタンスを選択してください
 
-5. **Description tab**をクリックしてください。Public DNS値は実行中のインスタンスのパブリックドメイン名です。
+5. **Description tab**をクリックしてください。Public IP/DNS値は実行中のインスタンスのパブリックドメイン名です。
    ![](images/emscloud/image13.jpeg)
 
 #### B.2. Web UIにログイン

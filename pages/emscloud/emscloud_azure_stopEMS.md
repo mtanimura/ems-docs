@@ -1,5 +1,5 @@
 ---
-title: Stopping/Terminating EMS
+title: EMSインスタンスの停止／終了
 keywords: azure
 sidebar: emscloud_sidebar
 permalink: emscloud_azure_stopEMS.html
@@ -9,28 +9,27 @@ box_number: 1
 folder: emscloud
 ---
 
+## EMSマシンの停止
 
+仮想マシンを停止したい場合は、下記の手順でマシンをサスペンドできます
 
-## Stopping EMS machine
-
-When you want to stop the virtual machine, fret not, all the changes remains in the server. The machine is only in suspended.
-
-1. Click on the Virtual machine menu
-2. Right click on the virtual machine name, click on **Stop**
-3. or, simply click **Stop** on the virtual machine window
-4. Confirm stopping the virtual machine by clicking **Yes**
+1. Virtual machine メニューをクリックしてください
+2. 仮想マシン名を右クリックし、**Stop**をクリックしてください
+3. または仮想マシンウインドウで**Stop**をクリックしてください
+4. **Yes**をクリックして仮想マシンの停止を確認してください
 
 ![](images/emscloud/stopVM.JPG)
 
 
 
-## Deleting EMS machine
+## EMSマシンの削除
 
-Deleting the EMS virtual machine will remove all the changes and the virtual machine itself in the Azure Virtual Machine list. 
+EMS仮想マシンを削除すると、設定およびAzure Virtual Machineリストから仮想マシンが削除されます
 
-1. Click on the Virtual machine menu
-2. Right click on the virtual machine name, click on **Delete**
-3. or, simply click **Delete** on the virtual machine window
-4. Choose if you want to delete or keep the attached disk
+1. Virtual machine メニューをクリックしてください
+2. 仮想マシン名を右クリックし、**Delete**をクリックしてください
+3. または仮想マシンウインドウで**Delete**をクリックしてください
+4. 付随するディスクを削除するか保持するかを選択してください
 
 ![](images/emscloud/deleteVM.jpg)
+
