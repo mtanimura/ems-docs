@@ -1,5 +1,5 @@
 ---
-title: EMS on Amazon Marketplace
+title: Amazon Marketplace上でのEMS
 keywords: amazon
 sidebar: emscloud_sidebar
 permalink: emscloud_amazon_overview.html
@@ -7,25 +7,24 @@ folder: emscloud
 toc: false
 ---
 
-Amazon EC2 is a cloud-computing platform that virtualizes computing resources as virtual machines. A single virtual machine configuration is registered as an Amazon Machine Image (AMI).
+Amazon EC2はコンピューティングリソースを仮想マシンとして仮想化するクラウドコンピューティングプラットフォームです。仮想マシンの設定はAmazon Machine Image(AMI)として登録されます。
 
-EvoStream provides an Amazon Linux  AMI with a preconfigured version of EvoStream Media Server that is ready to start using the Amazon Web Services (AWS) Management Console. You can use this AMI to launch EMS for EC2 instances, paying for your running instance time and bandwidth consumption only while the instances are running. You can launch EMS instances in specific geographical locations that are closer to your audience to reduce latency and in multiple geographical locations to provide high levels of redundancy.
+EvoStreamは事前設定済みバージョンのEvoStream Media Serverを組み込んだAmazon Linux AMIを用意しており、Amazon Web Service (AWS) Management Consoleからすぐに使い始めることができます。このAMIを利用してEC2インスタンス用のEMSを起動でき、このインスタンスの実行時間および帯域消費に応じて課金されます。またこのインスタンスは視聴者により近い地域において起動することが可能ですので遅延を低減し、複数の拠点を利用することで冗長化がはかれます。
 
-This document describes how to install and configure EvoStream Media Server software on Amazon Elastic Compute Cloud (Amazon EC2), an Amazon web service that provides resizable compute capacity in the cloud.
-
-
-
-## Low Latency Streaming on AWS Cloud
-
-The EvoStream Media Server (EMS) is a highly efficient and scalable Live Streaming Media Server. Using the EMS on Amazon EC2 Instances through the Amazon Marketplace gives you unrivaled flexibility, scalability, and value through not only the highly competitive pricing of both the EMS and Amazon but also through the ease at which massive concurrent streaming can be achieved. You’ll find yourself saving money and spending far less time in building, growing and maintaining your streaming platform.
-
-The most often used word used to describe the EMS is “**FAST**”:
-
-- **FAST** in terms of CPU and memory usage: Can handle **at LEAST** 400% the number of streams as conventional Java-based software when run on identical hardware.
-- **FAST** in terms of deployment: Integrate with the EMS over HTTP with JSON. Use any technology you wish: JavaScript, PHP, Perl, etc. EvoStream even provides FREE PHP examples of common integration topics
-- **FAST** in terms of stream latency: Deliver sub-second end-to-end to your viewers with RTSP, RMTP and MPEG-TS. When we say real time, we mean REAL-TIME!
+本文書はEvoStream Media ServerソフトウェアをAmazon Elastic Compute Cloud (Amazon EC2)上にインストールし設定する方法について記述しています。
 
 
+## AWS Cloud上での低遅延ストリーミング
+
+EvoStream Media Server (EMS)は高効率でスケーラブルなライブストリーミングメディアサーバーです。Amazon EC2インスタンス上でEMSを使用することで比類ない柔軟性・スケーラビリティが得られ、EMSやAmazonによるコスト低減や大規模同時ストリーミングが簡単に構築できることも大きなメリットです。低コストで構築にかかる時間も少なくて済みますので、ストリーミングプラットフォームの維持・拡大に寄与します。
+
+EMSは以下の点で"**速さ**"を実現します
+
+- CPUやメモリ使用における速さ：従来のJavaベースのソフトウェアにくらべ同一ハードウェア上で比較した場合４倍のストリーム数を扱えます。
+
+- 運用までのスピード：HTTP経由でのEMSとJSONの統合。JavaScriptやPHP, Perl等利用可能で、EvoStreamはPHPのフリーサンプルを提供しており、一般的なインテグレーショントピックをカバーしています。
+
+- ストリームの低遅延：RTSP, RTMP, MPEG-TS等でのサブセカンドでのエンドツーエンド配信
 
 The Efficiency of the EMS is a critical cost-saving driver for platform operators. Doing more with fewer EC2 instances not only reduces instance up-time costs but it also reduces the amount of time and resources that are required to maintain such a platform. The EMS is 400% more efficient than conventional Java based solutions. This means that each EC2 instance running the EMS can handle the load of 4 conventional instances! The EMS can even be run on Micro instances. Use fewer instances, use smaller instances, save money, save time.
 

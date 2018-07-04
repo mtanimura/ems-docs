@@ -1,5 +1,5 @@
 ---
-title: Stopping/Terminating EMS
+title: EMSインスタンスの停止／終了
 keywords: amazon
 sidebar: emscloud_sidebar
 permalink: emscloud_amazon_stopEMS.html
@@ -7,31 +7,23 @@ folder: emscloud
 toc: false
 ---
 
-According to Amazon, *"You can stop and restart your instance if it has an Amazon EBS volume as its root device."*
 
-If you are not using the EMS anymore, it is highly recommended to STOP or TERMINATE the instance to avoid unnecessary charges. When you terminate an instance, you'll lose all changes or files that you have on the server. If you have anything that you don't want to lose, be sure to save it to Amazon Simple Storage Service (Amazon S3) before terminating the instance or you'll lose your data. 
+Amazonによると, *"インスタンスがAmazon EBSボリュームをルートデバイスとして持つ場合にインスタンスの停止やリスタートを行うことができます"*
 
-After you've saved your data, do the following to stop or terminate an instance:
+EMSを使用しなくなったら、不要な課金を防ぐためインスタンスを停止または削除することを推奨します。インスタンスを削除するとそのサーバー上に保存したファイル等もすべて削除されます。こうしたファイルを保存しておきたい場合はインスタンスを削除する前にAmazon Simple Storage Service (Amazon S3)に保存しておいてください。
 
-1. **Log in** to your AWS account.
+データを保存したら、次の手順でインスタンスの停止・削除を行えます:
 
-2. In the Navigation pane, under Instances, click **Instances**.
-
-3. Select the running instance(s) that you want to terminate.
-
-4. Click the **Actions** button, and then click on **Stop** or **Terminate**. Confirm the termination. The Instance State column for the selected instance(s) will show if the instance is shut down or terminated.
-
+1. AWSアカウントに**Log in**してください
+2. NavigationペインのInstancesで**Instances**をクリックしてください
+3. 削除したい実行中のインスタンスを選択してください
+4. Click the **Actions**ボタンをクリックし、**Stop**または**Terminate**ボタンをクリックしてください。Instance State欄にインスタンスがシャットダウンまたは削除されたことが表示されます
    ![](images/emscloud/stopter.jpg)
 
-
-
 - **EMS Stopped Instance**
-
   ![](images/emscloud/stop.jpg)
 
-
 - **EMS Terminated Instance**
-
   ![](images/emscloud/terminate.jpg)
 
-**Note:** Amazon recommends that you confirm the machine reaches the terminated state before signing out. Charges will continue to accrue for instances that fail to shut down. See Amazon documentation on stopping and terminating [here](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html).
+**Note:** Amazonはサインアウト前にマシンが削除ステータスになったことを確認するよう推奨しています。インスタンスシャットダウンに失敗していると課金は続いてしまいます。詳しくは[ここ](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html)のAmazonのドキュメントを参照してください

@@ -10,86 +10,72 @@ toc: true
 
 
 
-## Getting Started
+## 使い始める
 
-### Pre-requisites
+### 事前準備
 
-- Amazon Web Services Account
-- Amazon EC2 Console Account
+- Amazon Web Services のアカウント
+- Amazon EC2 Console のアカウント
 
+### フリー試用版
 
-
-
-
-### Free Trial
-
-EMS offers a 30-day free trial use for first-time customers.
+EMSは30日間のフリーの評価版を提供しています
 
 ![](images/emscloud/image12.png)
 
-**Note:** There will be no software changes but the AWS infrastructure charges still apply.
+**Note:** EMSのフリー評価版はフリーですが、AWSインフラの利用は課金されます
 
+## 構築
 
+Amazon EC2上でEvoStream Media Server (EMS)の利用をするためにはまずAmazon Web Services[website](https://aws.amazon.com/marketplace)でEMSインスタンスを購入する必要があります。
 
-## Deployment
-
-To get started with the EvoStream Media Server (EMS) on Amazon EC2 you will first need to purchase an EMS instance through the Amazon Web Services [website](https://aws.amazon.com/marketplace).
-
-1. Search for the EvoStream Media Server in the AWS marketplace, or simply follow this [link](https://aws.amazon.com/marketplace/pp/B00VTR946Y).
+1. AWS marketplaceでEvoStream Media Serverを検索するか、 [リンク](https://aws.amazon.com/marketplace/pp/B00VTR946Y)をクリックしてください
 
    ![](images/emscloud/image1.JPG)
 
-2. Click **Continue** and **Sign in** your AWS account
+2. **Continue**をクリックし、AWSアカウントに**Sign in**してください
 
    ![](images/emscloud/image2.png)
 
-   ​
-
-3. Select what type of EMS instance you will run: *(1-Click Launch or Manual Launch)*
+3. EMSインスタンスタイプを選択してください: *(1-Click Launch か Manual Launch)*
 
 - ### 1-Click Launch
 
   ![](images/emscloud/image3.jpeg)
 
-  The setup for the instance is made easy by the Amazon 1-click Launch utility and the EMS can be successfully deployed with all of the default settings.
+  Amazon 1-click Launchユーティリティによりインスタンスセットアップは簡単に行えます。EMSはデフォルト設定が適用された状態で構築されます
 
-  A.	Select the **Version** of the EMS to be used
+  A.EMSの **Version** を選択してください
 
   ![](images/emscloud/image4.JPG)
 
-  B.	Select the **Region** and **EC2 Instance Type** (size of computer) for your deployment
+  B. *Region** および**EC2 Instance Type** (コンピュータサイズ)を選択してください
 
   ![](images/emscloud/region.jpg)
 
   ![](images/emscloud/image5.JPG)
 
-  ​
+  **Note:** EMSはMicro EC2インスタンスなど小規模コンピュータ上でも実行可能です。インスタンスのサイズはホスティングするトラフィック規模が直接影響されます。通常仮想マシンのCPUやメモリを使い切る前に帯域を使い切ってしまうケースがほとんどです。
 
-  **Note:** The EMS can be run on very small computers, including Micro EC2 instances. The size of the instance should be a direct reflection of how much sustained traffic you expect to be hosting. In almost all scenarios you will run out of bandwidth prior to exhausting the CPU or memory limits of the virtual machine.
-
-  ​
-
-  C.	Select or create the **VPC** and **Subnet** to be used.
+  C. **VPC** および **Subnet** を選択・作成してください
 
   ![](images/emscloud/image6.JPG)
 
-  **Note:** See Amazon documentation on [VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html) for more information.
+  **Note:** 詳しくは [VPC](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Introduction.html)を参照してください
 
-  ​
-
-  D.	Choose a **Security Group**
+  D. **Security Group**を選択してください
 
   ![](images/emscloud/image7.JPG)
 
-  The default security group has been designed to provide outside access to all ports used for streaming. The ports are defined and used as follows:
+  デフォルトセキュリティグループはストリーミングに使用する全ポートへの外部アクセスを提供するようデザインされており、ポートは下記のように定義されています:
 
-| **Port** | **Use**                             |
+| **ポート** | **用途**                          |
 | -------- | ----------------------------------- |
 | 1112     | Telnet for API (JSON)               |
 | 1113     | (Internal use only)                 |
 | 1222     | Telnet for API (ASCII)              |
 | 1935     | RTMP                                |
-| 1936     | (Internal use only)                 |
+| 1936     | (内部使用)                 |
 | 22       | SSH                                 |
 | 3389     | RDP                                 |
 | 4443     | RTMP                                |
@@ -105,98 +91,78 @@ To get started with the EvoStream Media Server (EMS) on Amazon EC2 you will firs
 | 8888     | HTTP for EWS (EvoStream Web Server) |
 | 9999     | MPEG TS                             |
 
-These Security Settings can be changed but it will impact the accessibility of the streams on your server.
-
-**Note:** See Amazon documentation on [Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#default-security-group) for more information.
+これらのセキュリティ設定は変更可能ですが、サーバーのストリームアクセシビリティに影響がおよびます。
 
 
+**Note:** 詳しくはアマゾンの [Security Group](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html#default-security-group)をご参照ください
 
-E.	Choose or create a **Key Pair**
+E.	**Key Pair**の選択・作成
 
 ![](/images/emscloud/image8.JPG)
 
-Either choose an existing key pair for instance access or create a new one for your account. If you choose an existing pair you **MUST** have the .pem file already downloaded from that pair. Amazon does not allow you to download key pairs a second time.
+インスタンスへのアクセスに既存のkey pairを選択するかアカウント用に新規に作成してください。既存のペアを選択する場合.pemファイルをダウンロード済みであることを事前に確認してください。Amazonはkey pairの２回目のダウンロードを許可しません。
 
-**Note:** See Amazon documentation on [Key Pairs](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) for more information.
+**Note:** くわしくはアマゾンの[Key Pairs](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) をご参照ください
 
 
 
-F.	Review the settings created, click on **Launch with 1-Click**
+F.	作成した設定を再度確認し、**Launch with 1-Click**をクリックして起動してください
 
 ![](images/emscloud/image9.jpeg)
-
-
 
 - ### Manual Launch
 
 ![](images/emscloud/image10.jpeg)
 
+**Step 1: AMIの選択**
 
-
-**Step 1: Choose AMI**
-
-A.	Select the **EMS version** to be used
+A.	利用する**EMS version**を選択してください
 
 ![](images/emscloud/image11.JPG)
 
-
-
-B.	Click the **Launch with EC2 Console** of the chosen **Region**
+B.	選択**Region**の**Launch with EC2 Console** をクリックしてください
 
 ![]../images/emscloud/region_man.JPG)
 
+**Step 2: Instance Typeの選択**
 
+**Launch Instance Wizard in Step 2**にリダイレクトされます。
 
-**Step 2: Choose Instance Type**
-
-You will now be redirected to the **Launch Instance Wizard in Step 2**. You may launch or with continue the configuration of the image.
-
-C.	Select the **Instance Type** to be used. You may **Review and Launch** the AMI or click **Next** to continue with the configuration
+C.	Select the **Instance Type**を選択してください。**Review and Launch**または**Next**をクリックし設定を継続してください
 
 ![](images/emscloud/instancetype.JPG)
 
+**Step 3: インスタンスの詳細設定**
 
-
-**Step 3: Configure Instance Details**
-
-D.	Configure the instance to suit your requirements. You may **Review and Launch** the AMI or click **Next** to continue with the configuration
+D.	必要に応じてインスタンスの設定をおこなってください。**Review and Launch**か**Next**をクリックし設定を続けてください
 
 ![](images/emscloud/instance.JPG)
 
+**Step 4: ストレージの追加**
 
-
-**Step 4: Add Storage**
-
-E.	**Add New Volume** or you may **Review and Launch** the AMI or click **Next** to continue with the configuration
+E.	**Add New Volume** をクリックするかAMIの**Review and Launch** または **Next** をクリックして設定を継続してください
 
 ![](images/emscloud/volume.JPG)
 
-
-
-F.	Add a tag for the instance or you may **Review and Launch** the AMI or click **Next** to continue with the configuration
+F.	インスタンスにタグを付加するかまたはAMIの**Review and Launch** または**Next**をクリックして設定を継続してください
 
 ![](images/emscloud/tag.JPG)
 
-
-
-G.	**Create** or **select** the **security group** to be used then click **Review and Launch**
+G.	使用する**security group**を**Create** または **select**し、**Review and Launch**をクリックしてください
 
 ![](images/emscloud/securitygroup.JPG)
 
-
-
 **Step 7: Review and Launch**
 
-H.	Review the configuration made, click **Launch** or go back to modify the changes
+H.	設定を再確認し、必要なら修正をおこない、その後 **Launch**してください
 
 ![](images/emscloud/review.JPG)
 
-
-
-I.	A window for the keys will prompt. Select an existing key pair or create or proceed without the key pair to be used. Click **Launch instances**
+I.	keyのプロンプトウインドウが表示されます。既存のキーペアを選択または新規作成し、**Launch instances**をクリックしてください
 
 ![](images/emscloud/keypair.jpg)
 
+**Note:** **Instances Menu**でインスタンスが作成されたことが確認できます
 
 
-**Note:** You will find the instance created in Instances under **Instances Menu**.
+

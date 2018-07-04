@@ -1,5 +1,5 @@
 ---
-title: EMS Cloud Services
+title: EMSクラウドサービス
 keywords: cloud
 sidebar: emscloud_sidebar
 permalink: emscloud_overview.html
@@ -8,86 +8,73 @@ toc: true
 ---
 
 
+EvoStream Media Serverはクラウドでの利用にも適しています。クラウド上でのメディアストリーミングサービス運用は、運用コストやハードウェアメンテナンスコストの低減に有効です。クラウドでEvoStream Media Serverはさまざまに活用できます。
 
-The EvoStream Media Server is tailored for cloud deployments. Operating a Media Streaming Service in the cloud is great for many reasons: eliminating capital costs, eliminating hardware maintenance cost, immediate deployments, etc… You can do so much with the EvoStream Media Server in the cloud:
+## 機能
 
+### コンテンツ配信
 
+コンテンツを解き放ちましょう! 放送局やOTTコンテンツプロバイダー、その他さまざまなセクターで適切なスケールかつ目的に応じたコストでシステム構築ができます。EvoStream Media Serverを組み合わせることで迅速にクラウドでのオンラインストリーミングソリューションの展開が可能です。
 
-## Features
+### ネットワークデジタルビデオレコーダー (NDVR/NVR)
 
-### Content Distribution
+セキュリティカメラやアクションスポーツカメラ、ドローン等へのアクセスをNVRシステムを通して提供できます。低遅延なライブビデオストリームやライブビデオのタイムシフト再生といった機能も提供できます。
 
-Set your content free! Whether you are a Broadcaster, an OTT content provider, or operating a surfing camera website, you will be able to find the right mix of scale and cost to meet your unique needs. Rapidly deploy an online streaming solution in the cloud with the EvoStream Media Server!
+### コンテンツデリバリネットワーク(CDN) サービス
 
-
-
-### Networked Digital Video Recorder (NDVR/NVR)
-
-Provide access to your customer’s security cameras, action sports cameras, drones and more through an integrated NVR system. Stream live, low-latency, video. Record video and play it back later. Even provide true DVR functionality, allowing users to seek backwards in time during live video playback.
-
+自らCDNとなって運用することも可能です。ユーザーがビデオをプッシュし、コンテンツをとりまくコミュニティ構築をおこなう場を用意できます。さまざまなデバイスやスクリーンでユーザに到達し、広告の挿入やコンテンツ課金による収益化も可能です。
 
 
-### Content Delivery Network (CDN) Service
+### 負荷分散
 
-Operate your own CDN! Provide a place for users to push their video and build a community around that content. Reach users on any device and on any screen. Monetize with Ad insertion or put premium content behind a paywall.
+- Webサービス
 
-
-
-### Load Balancing
-
-- Web Services
-
-  Provide an extensible backend to manage your load balancing strategy
+  負荷分散計画を管理可能な拡張可能なバックエンドを提供
 
 - Lazy Pull
 
-  Allows you to only forward content when there is a current active viewer, hugely reducing overall bandwidth
+  アクティブな視聴者が居るときのみにコンテンツ配信を行うことができ、帯域コスト低減ができます
 
 - Auto Forwarding
 
-  To your different POPs to maintain content continuity
+  コンテンツの持続性の維持
+
+### コンテンツ収益化
+
+- ペイウォール
+
+  有料購読者のみにコンテンツへのアクセスを確保するような機能を簡単にEMSに統合できます
+
+- 広告挿入
+
+  追加費用なしにサーバーサイドプレイリストを利用して広告再生をスケジュール配信したり、オンザフライ挿入することができます
+
+- 透かし機能(Watermarking)
+
+  コンテンツの保護や顧客を有料サービスに移行させるインセンティブなどに利用できます。透かし挿入機能はフリーミアムモデルに最適です。
 
 
+### コンテンツ保護
 
-### Content Monetization
+- ストリームエイリアス機能
 
-- Paywalls
-
-  Can be easily integrated into the EMS to ensure only your paying customers can access your premium content
-
-- Ad Insertion
-
-  Included for no additional fee. Use Server Side Playlists to schedule ad playback or even insert content on the fly.
-
-- Water Marking
-
-  Can be used to both protect your content but to also introduce incentives to your customers to purchase paid services. Watermarking is great in “Freemium” product models.
-
-
-
-### Secure Content
-
-- Stream Aliasing
-
-  Gives you complete control over who can view your content and when.
+  誰がいつどのコンテンツを視聴できるかを制御できます
 
 - Verimatrix DRM
 
-  Fully integrated for securing your HLS streams
+  HLSストリームの保護のために完全に対応
 
 - Encryption
 
-  HLS AES encryption provides a secure way of encrypting your content without having to pay for an external DRM service. RTMPS provides secure encrypted connections with Flash players
+  外部DRMサービスを使わずともコンテンツ暗号化することができるHLS AES暗号化機能。RTMPSとFlashプレーヤーで暗号化された接続を利用可能
 
+### エッジトランスコード
 
+- トランスコーダ
 
-### Edge Transcoding
+  EvoStream Media Serverライセンスに付属しています。ストリームの低解像度コピーを作成しアダプテーションビットレートストリーミングを行えます
 
-- Transcoder
-
-  Included with every EvoStream Media Server License. Create lower resolution copies of your stream for true adaptive bitrate streaming.
-
-- Protocols
+- プロトコル
 
   HTTP Live Streaming (HLS): iOS, Android, Safari
 
