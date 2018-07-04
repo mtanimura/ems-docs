@@ -24,7 +24,7 @@ entries:
     output: web, pdf
 
     folderitems:
-    - title: 概要
+    - title: EMSクラウドサービス
       url: /emscloud_overview.html
       output: web, pdf
 
