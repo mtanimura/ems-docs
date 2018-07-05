@@ -1,5 +1,5 @@
 ---
-title: EMS on Microsoft Azure Marketplace
+title: Microsoft Azure Marketplace上のEMS
 keywords: azure
 sidebar: emscloud_sidebar
 permalink: emscloud_azure_overview.html

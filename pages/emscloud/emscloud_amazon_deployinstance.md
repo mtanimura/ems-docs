@@ -1,5 +1,5 @@
 ---
-title: Deploying EMS Instance
+title: インスタンスのディプロイ
 keywords: amazon
 sidebar: emscloud_sidebar
 permalink: emscloud_amazon_deployinstance.html
