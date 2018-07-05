@@ -26,15 +26,13 @@ EMSは以下の点で"**速さ**"を実現します
 
 - ストリームの低遅延：RTSP, RTMP, MPEG-TS等でのサブセカンドでのエンドツーエンド配信
 
-The Efficiency of the EMS is a critical cost-saving driver for platform operators. Doing more with fewer EC2 instances not only reduces instance up-time costs but it also reduces the amount of time and resources that are required to maintain such a platform. The EMS is 400% more efficient than conventional Java based solutions. This means that each EC2 instance running the EMS can handle the load of 4 conventional instances! The EMS can even be run on Micro instances. Use fewer instances, use smaller instances, save money, save time.
+高効率なEMSはプラットフォーム運用者にとってコスト低減に寄与します。EC2インスタンスによりアップタイムコスト低減のみならず、プラットフォームの維持にかかる時間やリソースコストの低減にもつながります。従来のJaveベースソリューションと比較してEMSは４倍の効率性が得られますので、EMSを実行するEC2インスタンスは従来比４倍の負荷を処理できることになります。EMSはMicroインスタンス上でも実行可能です。より少ないインスタンスの利用によりコスト・時間の低減に寄与します。
 
-Integration with the EMS could not be simpler. The EMS provides a full Runtime API designed to be used with any server-side code. Send HTTP posts to the EMS to issue commands like pulling streams, pushing streams, generating security aliases, querying usage and much, much more. On the flip side, get automatically notified via HTTP and JSON when critical events happen: Stream is lost, new stream is present, DASH chunk completed and again, much, much more. These dual mechanism provide simple, flexible, and incredibly powerful ways to integrate using traditional RESTful server-side programming!
+EMSとのインテグレショーンは非常にシンプルです。さまざまなサーバーサイドコードと共に使えるランタイムAPIをEMSは提供しています。HHTP postをEMSに送ることで、pullstreamやpushstream、エイリアスの生成、状況の取得その他のコマンドをEMSに送ることができます。またストリームロストや、新規ストリーム生成、DASHチャンク生成といった、イベント発生やエラー等をHTTPおよびJSONで通知として受信することができます。従来からのRESTfulサーバーサイドプログラム等と簡潔で柔軟に統合することができます。
 
-The low latency streaming of the EMS makes it ideal for many different types of devices and deployment models. EvoStream is often used by Action Sport camera and Wearables vendors for streaming live in Consumer, Prosumer and Enterprise applications. Whether the stream is being sent from a dirt-bike rider to a fan in the stands, or the EMS is enabling real-time-chat between a wearable operator and a back-end expert, low-latency is absolutely critical. The EMS is also deployed in many Security Camera NVR Systems providing real-time viewing of cameras across the internet (with NAT reach-back!).
+さまざまな機器を含むシステムに最適な低遅延ストリーミングをEMSは提供します。コンシューマー市場のアクションスポーツカメラやウェアラブルカメラを使ったストリーミングからプロシューマおよびエンタープライズアプリケーションにまでEvoStreamは幅広く対応しています。オフロードバイクのライダーに取り付けたアクションカメラ映像をスタンドの観客にストリーミングで届けたり、工場でのウェアラブルカメラをつけたオペレータのとバックエンドに控えている専門家との間でのリアルタイムチャットに利用したりといったさまざまな用途で利用できます。EMSはまたインターネット越しでリアルタイム監視するNVRシステムでもひろく活用されています。
 
-The bottom line: Scale your business with EvoStream and the Amazon EC2 Marketplace while saving both time, resources AND money!
+結論としては、EvoStreamとAmazon EC2 Marketplaceをつかえば、時間やリソース、コストを抑えつつビジネスをスケールアップすることができます。
 
-
-
-Read white paper [here](https://evostream.com/low-latency-streaming-on-aws-cloud/).
+Low LAtency Streaming on AWS Cloud whitepaperへの [リンク](https://evostream.com/low-latency-streaming-on-aws-cloud/).
 
