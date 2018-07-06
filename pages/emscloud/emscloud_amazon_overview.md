@@ -34,5 +34,5 @@ EMSとのインテグレショーンは非常にシンプルです。さまざ�
 
 結論としては、EvoStreamとAmazon EC2 Marketplaceをつかえば、時間やリソース、コストを抑えつつビジネスをスケールアップすることができます。
 
-Low LAtency Streaming on AWS Cloud whitepaperへの [リンク](https://evostream.com/low-latency-streaming-on-aws-cloud/).
+Low Latency Streaming on AWS Cloud whitepaperへの [リンク](https://evostream.com/low-latency-streaming-on-aws-cloud/).
 
